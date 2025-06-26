@@ -1,34 +1,33 @@
-Documentation starter pack
+Ubuntu for Jetson
 ==========================
 
-The documentation starter pack helps you to quickly set up, build, and publish documentation with Sphinx.
-
-It contains common styling and configuration through the `Canonical Sphinx`_ extension, supports both |RST| and Markdown, and includes automatic documentation checks.
+This documentation explains how to install and use an Ubuntu image on a Jetson Orin Developer kit.
 
 .. toctree::
    :hidden:
    :maxdepth: 2
 
-   Tutorials </tutorial/index>
+   Get started </get-started/index>
    How-to guides </how-to/index>
-   Reference </reference/index>
+   Ubuntu Classic (Server, Desktop) </classic/index>
+   Ubuntu Core </core/index>
 
 In this documentation
 ---------------------
 
 .. grid:: 1 1 2 2
 
-   .. grid-item-card:: Tutorial
-      :link: /tutorial/index
+   .. grid-item-card:: How to install Ubuntu on a Jetson Orin devkit
+      :link: /get-started/index
       :link-type: doc
 
-      **Get started** - use Sphinx and Read the Docs to host and test your documentation.
+      **Get started** - Install Ubuntu for Jetson
 
-   .. grid-item-card:: How-to guides
-      :link: /how-to/index
+   .. grid-item-card:: Server or Desktop image
+      :link: /classic/index
       :link-type: doc
 
-      **Step-by-step guides** - learn key operations and customisation.
+      **Ubuntu Classic on Jetson** - Ubuntu Server or Desktop on Jetson
 
 .. grid:: 1 1 2 2
 
@@ -36,4 +35,4 @@ In this documentation
       :link: /reference/index
       :link-type: doc
 
-      **Technical information** - understand the automatic checks and Sphinx capabilities.
+      **Core image** - Ubuntu Core on Jetson
