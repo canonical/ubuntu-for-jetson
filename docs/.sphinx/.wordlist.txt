@@ -329,3 +329,7 @@ snapcrafting
 subcluster
 swrast
 zSystems
+Jetson
+Nvidia
+devkit
+Jetpack
