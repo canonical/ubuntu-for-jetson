@@ -1,5 +1,5 @@
-.. _rn:
+.. _rn_core_jammy:
 
 ===================================
-Ubuntu for Jetson 22.04 Server (Jammy)
+Ubuntu for Jetson Core 22 (Jammy)
 ===================================

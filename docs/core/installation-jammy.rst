@@ -1,5 +1,5 @@
-.. _rn:
+.. _install_core_jammy:
 
 ===================================
-Run AI application on 22.04 Server
+Run AI application on Core 22
 ===================================

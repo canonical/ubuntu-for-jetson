@@ -1,5 +1,5 @@
 Ubuntu Core images
-=========
+===================
 
 
 Release Note.
