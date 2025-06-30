@@ -3,7 +3,7 @@
 Setup secure boot
 =================
 
-The NVIDIA Tegra boards come with full support for the Secure Boot specification, but do not come with any preloaded certificate in the firmware.
+The NVIDIA Tegra boards come with full support for the Secure Boot specification, but do not come with any pre-loaded certificate in the firmware.
 
 This document is supposed to be able to be used as  a step-by-step guide for setting up Secure Boot for use with Ubuntu Classic and Core on Jetson. Our Secure Boot implementation will specifically only cover UEFI Secure Boot and not Firmware Secure Boot which is also supported on Jetson Tegra platforms. However, implementing this would require the burning of fuses which is an irreversible process, and thus should only be done on production devices and by following the [nvidia documentation](https://docs.nvidia.com/jetson/archives/r36.4/DeveloperGuide/SD/Security/SecureBoot.html#).
 
@@ -89,7 +89,7 @@ For all keys and certificates, we also want to generate the corresponding EFI si
 Generating the Device Tree Overlay
 ----------------------------------
 
-The UEFI keys will be provisioned by flashing a specific device tree overlay. This is done by using the script `$BSP_DIR/tools/gen_uefi_keys_dts.sh`. It takes a .conf file as input and will output the .dtbo to be provisioned. The .conf file should look something like this:
+The UEFI keys will be provisioned by flashing a specific device tree overlay. This is done by using the script ``$BSP_DIR/tools/gen_uefi_keys_dts.sh``. It takes a .conf file as input and will output the .dtbo to be provisioned. The .conf file should look something like this:
 
 .. code-block:: bash
 
@@ -115,7 +115,7 @@ The UEFI keys will be provisioned by flashing a specific device tree overlay. Th
 
 It should be placed in the same directory as the keys themselves.
 
-We can now call the `gen_uefi_keys_dts.sh` script:
+We can now call the ``gen_uefi_keys_dts.sh`` script:
 
 .. code-block:: bash
 
@@ -123,12 +123,12 @@ We can now call the `gen_uefi_keys_dts.sh` script:
     sudo tools/gen_uefi_keys_dts.sh uefi_keys/uefi_keys.conf
 
 
-And it will output the file `uefi_keys/UefiDefaultSecurityKeys.dtbo`.
+And it will output the file ``uefi_keys/UefiDefaultSecurityKeys.dtbo``.
 
 Provisioning the Keys
 ---------------------
 
-We provision the keys by  running the `$BSP_DIR/tools/kernel_flash/l4t_initrd_flash.sh` script after booting the device into recovery. We copy the `UefiDefaultSecurityKeys.dtbo` into the `$BSP_DIR/bootloader` directory and then run the script:
+We provision the keys by  running the ``$BSP_DIR/tools/kernel_flash/l4t_initrd_flash.sh`` script after booting the device into recovery. We copy the ``UefiDefaultSecurityKeys.dtbo`` into the ``$BSP_DIR/bootloader`` directory and then run the script:
 
 .. code-block:: bash
 
@@ -145,7 +145,7 @@ We provision the keys by  running the `$BSP_DIR/tools/kernel_flash/l4t_initrd_fl
         $DEVICE external
 
 
-The `$DEVICE` variable can be either `jetson-agx-orin-devkit` or `jetson-orin-nano-devkit`.
+The ``$DEVICE`` variable can be either ``jetson-agx-orin-devkit`` or ``jetson-orin-nano-devkit``.
 
 Check if Secure Boot is Enabled
 -------------------------------
@@ -154,7 +154,7 @@ You can check if secure boot is enabled or not by either going through the UEFI 
 
 Once you enter the UEFI boot manager, you can enter “Device Manager” \-\> “Secure Boot Configuration” and check if the box next to “Attempt Secure Boot” is checked or not.
 
-Once the image is booted, you can simply run `bootctl` which will tell you if secure boot is enabled or not on the 4th line:
+Once the image is booted, you can simply run ``bootctl`` which will tell you if secure boot is enabled or not on the 4th line:
 
 .. code-block::
 
