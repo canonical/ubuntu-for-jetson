@@ -147,6 +147,9 @@ You can check if secure boot is enabled or not by either going through the UEFI 
 
 Once you enter the UEFI boot manager, you can enter “Device Manager” \-\> “Secure Boot Configuration” and check if the box next to “Attempt Secure Boot” is checked or not.
 
+.. image:: firmware_secureboot.png
+   :alt: Screenshot of the firmware Secure Boot Configuration menu
+
 Once the image is booted, you can simply run ``bootctl`` which will tell you if secure boot is enabled or not on the fourth line:
 
 .. code-block::
