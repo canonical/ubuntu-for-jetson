@@ -5,7 +5,7 @@ Setup secure boot
 
 The NVIDIA Tegra boards come with full support for the Secure Boot specification, but do not come with any pre-loaded certificate in the firmware.
 
-This document is supposed to be able to be used as  a step-by-step guide for setting up Secure Boot for use with Ubuntu Classic and Core on Jetson. Our Secure Boot implementation will specifically only cover UEFI Secure Boot and not Firmware Secure Boot which is also supported on Jetson Tegra platforms. However, implementing this would require the burning of fuses which is an irreversible process, and thus should only be done on production devices and by following the `NVIDIA documentation`_.
+This document is intended to serve as a step-by-step guide for setting up Secure Boot for use with Ubuntu Classic and Core on Jetson. Our Secure Boot implementation will specifically only cover UEFI Secure Boot and not Firmware Secure Boot which is also supported on Jetson Tegra platforms. However, implementing this would require the burning of fuses which is an irreversible process, and thus should only be done on production devices and by following the `NVIDIA documentation`_.
 
 UEFI Secure Boot will validate all binaries loaded by the UEFI boot firmware but no boot codes running before that.
 
@@ -31,7 +31,9 @@ Download the 2011 Microsoft ``DB`` and ``KEK``:
     wget -O msft_db_2011.der https://github.com/microsoft/secureboot_objects/raw/refs/heads/main/PreSignedObjects/DB/Certificates/MicCorUEFCA2011_2011-06-27.der
     wget -O msft_KEK_2011.der https://github.com/microsoft/secureboot_objects/raw/refs/heads/main/PreSignedObjects/KEK/Certificates/MicCorKEKCA2011_2011-06-24.der
 
-The first step is always to download and extract the latest NVIDIA BSP for Tegra.
+The first step is always to download and extract the latest `NVIDIA BSP for Tegra`_.
+
+.. _NVIDIA BSP for Tegra: https://developer.nvidia.com/embedded/jetson-linux-archive
 
 Inside the BSP, we need to create a new directory for the UEFI keys. Then we need to generate the ``PK``, ``KEK`` and ``DB`` and copy the Microsoft certificates into the newly created directory.
 
