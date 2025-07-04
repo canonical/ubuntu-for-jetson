@@ -14,6 +14,7 @@ This repo is based on Canonical's RTD starter pack and includes:
 See the full documentation: https://canonical-starter-pack.readthedocs-hosted.com/
 
 ### Building documentation
+
 * [Official Ubuntu for Jetson RTD] is built from the main branch
 * Documentation builds are monitored and administrated from the [RTD WebUI]
 

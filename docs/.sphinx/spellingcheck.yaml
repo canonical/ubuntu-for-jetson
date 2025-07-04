@@ -17,6 +17,7 @@ matrix:
             - title
             - alt
           ignores:
+            - abbr
             - code
             - pre
             - spellexception
