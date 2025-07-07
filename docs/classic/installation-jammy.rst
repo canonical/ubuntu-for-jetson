@@ -106,14 +106,20 @@ Snap
 ----
 
 It’s Ubuntu, you can install a snap!
-`![][image4]`
+
+.. image:: snap-hello.png
+   :alt: Screenshot of a sample snap installation
+
 
 
 Nvidia system management interface
 ----------------------------------
 
 ``nvidia-smi`` can be used to display GPU related information.
-![][image5]
+
+.. image:: nvidia-smi.png
+   :alt: Screenshot of the ``nvidia-smi`` tool
+
 
 Run GPU's sample code application
 ---------------------------------
