@@ -247,7 +247,7 @@ If your device is properly detected, the output should be close to this one:
             /dev/video0
 
 
-You should then be able to `detect it via the NVARGUS daemon <NVIDIA test plan imx274 verification step>`_ (in this example, the ``sensor-id`` is ``0``):
+You should then be able to `detect it via the NVARGUS daemon <https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/TestPlanValidation.html#verifying-imx274-camera-sensor>`_ (in this example, the ``sensor-id`` is ``0``):
 
 .. code-block::
 
@@ -263,7 +263,6 @@ You should then be able to `detect it via the NVARGUS daemon <NVIDIA test plan i
         Maximum Exposure time to 0.5 secs.
 
 .. _NVIDIA test plan camera setup: https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/TestPlanValidation.html#camera
-.. _NVIDIA test plan imx274 verification step: https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/TestPlanValidation.html#verifying-imx274-camera-sensor
 
 Capture a JPEG image with NVARGUS
 """""""""""""""""""""""""""""""""
