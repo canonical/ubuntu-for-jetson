@@ -46,6 +46,8 @@ Install missing dependencies and fix file permissions
 .. _Ubuntu download page for Nvidia Jetson: https://ubuntu.com/download/nvidia-jetson
 .. _Linux Tegra download page: https://developer.nvidia.com/linux-tegra
 
+.. _devkit-recovery-mode:
+
 Put the devkit into recovery mode
 ---------------------------------
 
@@ -59,7 +61,7 @@ Note that once an image is up and running on the device, alternative ways could 
 
     sudo reboot --force forced-recovery
 
-* From the :ref:`UEFI menu`, enter “Device Manager” menu, then “Boot Configuration” and check the “Boot Into Recovery” option before saving, and exit the UEFI menu with “Continue”
+* From the :ref:`UEFI menu<UEFI-menu>`, enter “Device Manager” menu, then “Boot Configuration” and check the “Boot Into Recovery” option before saving, and exit the UEFI menu with “Continue”
 
 .. _NVIDIA Jetson Quick Start reference: https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/IN/QuickStart.html?#to-determine-whether-the-developer-kit-is-in-force-recovery-mode
 
@@ -153,7 +155,7 @@ Program the Ubuntu image on your external boot media
 
 This method is the easiest way to program an internal disk, such as eMMC or pre-installed NVMe disk. It also allows you to program the image with limited human interaction (such as programming an external boot media with a side computer, then plugging it to the development kit).
 
-As a prerequisite for this method, you need to put the board into :ref:`recovery mode<Put the devkit into recovery mode>`. You can then use the `backup-restore tool from Nvidia`_ to install a raw disk image on any installed media. The tool loads an initrd flash image via the USB-C cable and boots it, enabling an IPv6 network connection over USB. It relies on the ``nfs-kernel-server`` service to host the raw image, allowing a NFS mount on the development kit, connected to the host machine (which runs the script). The script will use SSH to connect to the initrd image, mount the NFS volume, and perform the raw image copy using dd. Therefore, the boot media must be connected to the development kit, and a root file system must be available on the host for the development kit to boot from. For this purpose, you should download and extract the Sample Root Filesystem provided by NVIDIA with the version of Linux for Tegra you are using (downloaded from the `Jetson Linux archive`_), running similar commands in the Linux\_for\_Tegra directory:
+As a prerequisite for this method, you need to put the board into :ref:`recovery mode<devkit-recovery-mode>`. You can then use the `backup-restore tool from Nvidia`_ to install a raw disk image on any installed media. The tool loads an initrd flash image via the USB-C cable and boots it, enabling an IPv6 network connection over USB. It relies on the ``nfs-kernel-server`` service to host the raw image, allowing a NFS mount on the development kit, connected to the host machine (which runs the script). The script will use SSH to connect to the initrd image, mount the NFS volume, and perform the raw image copy using dd. Therefore, the boot media must be connected to the development kit, and a root file system must be available on the host for the development kit to boot from. For this purpose, you should download and extract the Sample Root Filesystem provided by NVIDIA with the version of Linux for Tegra you are using (downloaded from the `Jetson Linux archive`_), running similar commands in the Linux\_for\_Tegra directory:
 
 
 .. code-block:: bash
@@ -195,6 +197,7 @@ Connect a monitor
 
 You can connect to your development kit a USB keyboard/mouse and a monitor using a Display-Port cable. You can follow the boot and kernel execution on display, then get a console prompt once Ubuntu is started.
 
+.. _UEFI-menu:
 
 UEFI menu
 ---------
