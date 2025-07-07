@@ -2,6 +2,7 @@
 agx
 backend
 backends
+backport
 bluetooth
 BSP
 Charmcraft
@@ -9,8 +10,10 @@ cjk
 cryptographically
 CUDA
 cuDNN
+DisplayPort
 dvipng
 eMMC
+ethernet
 Filesystem
 firmwares
 fonts
@@ -23,6 +26,7 @@ gyre
 html
 https
 IMX
+initramfs
 initrd
 Intersphinx
 io
@@ -39,6 +43,7 @@ networkd
 NFS
 NVARGUS
 NX
+NXP
 orin
 otf
 PCIe
@@ -50,9 +55,12 @@ QSPI
 readthedocs
 Rockcraft
 rst
+RTC
 SDKs
+SHA
 sitemapindex
 SoC
+SOM
 subproject
 subprojects
 SVG
@@ -61,6 +69,7 @@ Tegra
 TensorRT
 tex
 texlive
+TI
 TOC
 toctree
 transcode
@@ -74,6 +83,7 @@ VPI
 WCAG
 whitespace
 whitespaces
+Wifi
 WLAN
 wordlist
 xetex
