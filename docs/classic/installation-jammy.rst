@@ -7,17 +7,17 @@ Start Ubuntu server 22.04 (classic) and install Tegra firmwares and libraries
 Grub
 ====
 
-The UEFI bootloader will automatically launch GRUB, which then will launch Ubuntu.
+The UEFI boot loader will automatically launch GRUB, which then will launch Ubuntu.
 
 Ubuntu, first boot
 ==================
 
-You will be required on first boot to change your password, as the pre-installed image comes with a predefined user *ubuntu* (password *ubuntu*).
+You will be required on first boot to change your password, as the pre-installed image comes with a predefined user ``ubuntu`` (password ``ubuntu``).
 
 WLAN
 ====
 
-You should be able to check the WLAN interface (using ip link for instance):
+You should be able to check the WLAN interface (using ``ip link`` for instance):
 
 .. code-block:: bash
 
@@ -31,7 +31,7 @@ You should be able to check the WLAN interface (using ip link for instance):
 Ubuntu server configuration
 ===========================
 
-Ubuntu server comes with [netplan \+ systemd-networkd preinstalled](https://ubuntu.com/blog/a-declarative-approach-to-linux-networking-with-netplan). The initial netplan configuration in the image should already take care of the Ethernet interface. To setup a wifi connection, you can perform the following steps to add the related configuration:
+Ubuntu server comes with `netplan and systemd-networkd preinstalled`_. The initial netplan configuration in the image should already take care of the Ethernet interface. To setup a WLAN connection, you can perform the following steps to add the related configuration:
 
 .. code-block:: bash
 
@@ -53,12 +53,14 @@ Ubuntu server comes with [netplan \+ systemd-networkd preinstalled](https://ubun
     EOF
     sudo netplan apply
 
-Once applied, your network interface should get up and running after a few seconds, which you can confirm using the “ip address” command.
+Once applied, your network interface should get up and running after a few seconds, which you can confirm using the ``ip address`` command.
+
+.. _netplan and systemd-networkd preinstalled: https://ubuntu.com/blog/a-declarative-approach-to-linux-networking-with-netplan
 
 Install NVIDIA proprietary software
 ===================================
 
-The Ubuntu image brings anything necessary to boot Linux on a Jetson development kit. However, to unlock the features of the Orin’s SoC (Wireless, bluetooth, GPU, …) you can install additional NVIDIA proprietary drivers and libraries using a Launchpad PPA :
+The Ubuntu image brings anything necessary to boot Linux on a Jetson development kit. However, to unlock the features of the Orin’s SoC (wireless network, bluetooth, GPU, …) you can install additional NVIDIA proprietary drivers and libraries using a Launchpad PPA :
 
 .. code-block:: bash
 
@@ -107,19 +109,19 @@ It’s Ubuntu, you can install a snap!
 `![][image4]`
 
 
-Nvidia-smi
-----------
+Nvidia system management interface
+----------------------------------
 
-Nvidia-smi can be used to display GPU related information.
+``nvidia-smi`` can be used to display GPU related information.
 ![][image5]
 
-Run GPU’s sample code application
+Run GPU's sample code application
 ---------------------------------
 
-cuda-samples
+CUDA samples
 ^^^^^^^^^^^^
 
-You can build and run [cuda-samples](https://github.com/NVIDIA/cuda-samples/tree/master) test applications. You can start with “deviceQuery”, but you can also build and try many others.
+You can build and run `CUDA sample`_ applications. You can start with ``deviceQuery``, but you can also build and try many others.
 
 .. code-block:: bash
 
@@ -179,6 +181,8 @@ Running this sample code should produce the following output
     deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 12.6, CUDA Runtime Version = 12.6, NumDevs = 1
     Result = PASS
 
+.. _CUDA sample: https://github.com/NVIDIA/cuda-samples/tree/master
+
 TensorRT
 ^^^^^^^^
 
@@ -216,7 +220,7 @@ The following commands were tested on an IMX219 camera module connected to a Nan
 Verify the camera is detected
 """""""""""""""""""""""""""""
 
-Please also refer to this [link](https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/TestPlanValidation.html#camera).
+Please also refer to the `NVIDIA test plan camera setup`_.
 
 .. code-block:: bash
 
@@ -237,7 +241,7 @@ If your device is properly detected, the output should be close to this one:
             /dev/video0
 
 
-You should then be able to [detect it via the NVARGUS daemon](https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/TestPlanValidation.html#verifying-imx274-camera-sensor) (in this example, the ‘sensor-id’ is ‘0’):
+You should then be able to `detect it via the NVARGUS daemon <NVIDIA test plan imx274 verification step>`_ (in this example, the ``sensor-id`` is ``0``):
 
 .. code-block::
 
@@ -252,10 +256,13 @@ You should then be able to [detect it via the NVARGUS daemon](https://docs.nvidi
     Changing
         Maximum Exposure time to 0.5 secs.
 
+.. _NVIDIA test plan camera setup: https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/TestPlanValidation.html#camera
+.. _NVIDIA test plan imx274 verification step: https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/TestPlanValidation.html#verifying-imx274-camera-sensor
+
 Capture a JPEG image with NVARGUS
 """""""""""""""""""""""""""""""""
 
-Still with the same ‘sensor-id’
+Still with the same ``sensor-id``
 
 .. code-block:: bash
 
@@ -265,13 +272,13 @@ Still with the same ‘sensor-id’
     nvargus_nvraw --c 0 --format jpg --file ${HOME}/frame-cam0.jpg
 
 
-Gstreamer
+GStreamer
 ^^^^^^^^^
 
 Pre-requisites
 """"""""""""""
 
-Make sure to install the necessary gstreamer packages
+Make sure to install the necessary GStreamer packages
 
 .. code-block:: bash
 
@@ -308,7 +315,7 @@ Camera capture using GStreamer
 Transcode using GStreamer
 """""""""""""""""""""""""
 
-Using a stream from the [Big Buck Bunny project](https://peach.blender.org/), you can easily test the transcoding pipelines (note that Jetson Orin Nano don’t have HW encoders and won’t be able to run these pipelines):
+Using a stream from the [Big Buck Bunny project](https://peach.blender.org/), you can easily test the transcoding pipelines (note that Jetson Orin Nano don’t have hardware encoders and won’t be able to run these pipelines):
 
 .. code-block:: bash
 
@@ -364,7 +371,7 @@ You can also try other sample applications.
 Nvidia Container runtime
 """"""""""""""""""""""""
 
-You can follow [these instructions](https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/TestPlanValidation.html#nvidia-containers) to install and configure the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-the-nvidia-container-toolkit) before running the JetPack container.
+You can follow the `NVIDIA container test plan`_ to install and configure the `NVIDIA Container Toolkit`_ before running the JetPack container.
 Try to run a previously built CUDA sample application:
 
 .. code-block:: bash
@@ -375,10 +382,13 @@ Try to run a previously built CUDA sample application:
         nvcr.io/nvidia/l4t-jetpack:r36.3.0 \
         /root/cuda-samples/Samples/1_Utilities/deviceQuery/deviceQuery
 
+.. _NVIDIA container test plan: https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/TestPlanValidation.html#nvidia-containers
+.. _NVIDIA container toolkit: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-the-nvidia-container-toolkit
+
 Install the desktop environment
 """""""""""""""""""""""""""""""
 
-Some use cases might require a desktop environment. To turn your Ubuntu server image into a Desktop one, with HW accelerated rendering, run the following commands:
+Some use cases might require a desktop environment. To turn your Ubuntu server image into a Desktop one, with hardware accelerated rendering, run the following commands:
 
 .. code-block:: bash
 
@@ -404,4 +414,6 @@ Install VPI and its sample applications
 Test
 """"
 
-Execute steps 1 to 6 from the [test plan](https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/TestPlanValidation.html#vpi), for each VPI sample application.
+Execute steps 1 to 6 from the `NVIDIA VPI test plan`_, for each VPI sample application.
+
+.. _NVIDIA VPI test plan: https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/TestPlanValidation.html#vpi
