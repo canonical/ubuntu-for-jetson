@@ -11,6 +11,7 @@ matrix:
     sources:
       - _build/**/*.html
     pipeline:
+      - pyspelling.filters.url:
       - pyspelling.filters.html:
           comments: false
           attributes:
