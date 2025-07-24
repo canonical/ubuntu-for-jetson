@@ -297,8 +297,8 @@ Make sure to install the necessary GStreamer packages
         libgstreamer-plugins-good1.0-dev \
         libgstreamer-plugins-bad1.0-dev
 
-Camera capture using GStreamer
-""""""""""""""""""""""""""""""
+`Camera capture using GStreamer <https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/TestPlanValidation.html#camera-capture-using-gstreamer>`_
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 .. code-block:: bash
 
@@ -317,10 +317,10 @@ Camera capture using GStreamer
         nvv4l2h265enc bitrate=8000000 ! h265parse ! qtmux ! \
         filesink location=test.mp4
 
-Transcode using GStreamer
-"""""""""""""""""""""""""
+`Transcode using GStreamer <https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/TestPlanValidation.html#transcode-using-gstreamer>`_
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-Using a stream from the [Big Buck Bunny project](https://peach.blender.org/), you can easily test the transcoding pipelines (note that Jetson Orin Nano don’t have hardware encoders and won’t be able to run these pipelines):
+Using a stream from the `Big Buck Bunny project <https://peach.blender.org/>`_, you can easily test the transcoding pipelines (note that Jetson Orin Nano don’t have hardware encoders and won’t be able to run these pipelines):
 
 .. code-block:: bash
 
@@ -356,8 +356,8 @@ Prerequisite
     sudo apt install cudnn libcudnn9-samples
 
 
-Run cuDNN Samples
-"""""""""""""""""
+`Run cuDNN Samples <https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/TestPlanValidation.html#run-cudnn-samples>`_
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 Build and run the Converted sample.
 
