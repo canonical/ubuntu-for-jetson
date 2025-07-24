@@ -94,7 +94,7 @@ Recovery on Jetson Orin Nano/NX
 3. Program the boot firmware or Ubuntu image
 4. (Optionally) Power-off the kit and remove the jumper cap connector, otherwise the next hard reboot of the kit will enable the recovery mode once again
 
-.. _carrier board specification: https://developer.download.nvidia.com/assets/embedded/secure/jetson/orin_nano/docs/Jetson-Orin-Nano-DevKit-Carrier-Board-Specification_SP-11324-001_v1.3.pdf
+.. _carrier board specification: https://developer.nvidia.com/embedded/downloads#?search=Jetson%20Orin%20Nano%20Developer%20Kit%20Carrier%20Board%20Specification
 
 Program the boot firmware (QSPI upgrade)
 --------------------------------------------
