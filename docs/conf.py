@@ -217,10 +217,12 @@ redirects = {}
 # A regex list of URLs that are ignored by 'make linkcheck'
 #
 # TODO: Remove or adjust the ACME entry after you update the contributing guide
+# Since the riverside project is private, no link check is possible on it
 
 linkcheck_ignore = [
     "http://127.0.0.1:8000",
-    "https://github.com/canonical/ACME/*"
+    "https://github.com/canonical/ACME/*",
+    "https://bugs.launchpad.net/riverside/"
     ]
 
 
