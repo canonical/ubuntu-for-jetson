@@ -42,7 +42,7 @@ Release Highlights
 
 
 * The kernel meta-package for Jetson devices is now changed to ``linux-nvidia-tegra-jetson`` (instead of ``linux-nvidia-tegra-igx`` ). Further details (\ `LP#2069179 <https://bugs.launchpad.net/riverside/+bug/2069179>`_\ ) : https://discourse.ubuntu.com/t/changes-to-ubuntu-for-tegra-kernel-metapackages-on-jetson-and-igx/48807
-* Nvidia introduced Nano Super power mode with Jetpack 6.2. To enable this power mode, as described in https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/PlatformPowerAndPerformance/JetsonOrinNanoSeriesJetsonOrinNxSeriesAndJetsonAgxOrinSeries.html#supported-modes-and-power-efficiency, it requires both `flashing JetPack <https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/IN/QuickStart.html#to-flash-the-jetson-developer-kit-operating-software>`_ with a specific configuration (the Ubuntu image must be reinstalled afterwards), and switching to a specific power mode using the ``nvpmodel`` command (installed by the ``nvidia-tegra-drivers-36`` packages, please refer to `Ubuntu 22.04 for NVIDIA Jetson Installation instructions <https://ubuntu.com/download/nvidia-jetson>`_\ ).
+* Nvidia introduced Nano Super power mode with Jetpack 6.2. To enable this power mode, as described in https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/PlatformPowerAndPerformance/JetsonOrinNanoSeriesJetsonOrinNxSeriesAndJetsonAgxOrinSeries.html#supported-modes-and-power-efficiency, it requires both `flashing JetPack <https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/IN/QuickStart.html#to-flash-the-jetson-developer-kit-operating-software>`_ with a specific configuration (the Ubuntu image must be reinstalled afterwards), and switching to a specific power mode using the ``nvpmodel`` command (installed by the ``nvidia-tegra-drivers-36`` packages, please refer to :doc:`the installation instructions <installation-jammy>`).
 * Canonical QA team has been running intensive testing of this release in order to qualify it as Ubuntu certified on the three hardware platforms referenced below:
 
   * `Jetson AGX Orin Developer kit`_
@@ -99,7 +99,7 @@ Features not supported in this release
 Tests skipped or adapted during the certification
 -------------------------------------------------
 
-The following tests have been excluded from the :abbr:`CQA (Compliance Quality A???)` tests
+The following tests have been excluded from the :abbr:`CQA (Compliance Quality Assurance)` tests
 
 .. list-table::
    :header-rows: 1
@@ -161,7 +161,7 @@ Known issues
    * - `2083009 <https://bugs.launchpad.net/riverside/+bug/2083009>`_
      - Similarly, on NX, after installing the ``nvidia-tegra-drivers-36`` packages, all CPU governor tests on policy 4 failed
    * - `2097636 <https://bugs.launchpad.net/riverside/+bug/2097636>`_
-     - While running the transcoding test pipelines described in `Ubuntu 22.04 for NVIDIA Jetson Installation instructions <https://ubuntu.com/download/nvidia-jetson>`_ : ``gst-launch-1.0 filesrc location=h264-reenc.mp4 ! qtdemux !   h264parse ! nvv4l2decoder ! nvv4l2av1enc ! matroskamux name=mux !   filesink location=av1-reenc.mkv -e`` thousands of error traces ``ParseObuFrameHeader: 2367: Invalid buf_idx = -1 or  offset`` are displayed. While this is looking suspicious, this trace isn’t actually preventing the command to finish properly and successfully.
+     - While running the transcoding test pipelines described in :doc:`the installation instructions <installation-jammy>`: ``gst-launch-1.0 filesrc location=h264-reenc.mp4 ! qtdemux !   h264parse ! nvv4l2decoder ! nvv4l2av1enc ! matroskamux name=mux !   filesink location=av1-reenc.mkv -e`` thousands of error traces ``ParseObuFrameHeader: 2367: Invalid buf_idx = -1 or  offset`` are displayed. While this is looking suspicious, this trace isn’t actually preventing the command to finish properly and successfully.
    * - NA
      - Running LXD and Docker on the same host can cause `connectivity issues <https://documentation.ubuntu.com/lxd/en/latest/howto/network_bridge_firewalld/#prevent-connectivity-issues-with-lxd-and-docker>`_. This is something to keep in mind after installing Nvidia Container runtime.
 
