@@ -74,13 +74,13 @@ The simplest way is to use the buttons on the front panel of the kit (see `NVIDI
 1. Press and hold down the Force Recovery button (button 12\)
 
 .. image:: recovery-agx-thor-btn12.png
-   :alt: Location of the Force Recovery button on the AGX Orin
+   :alt: Location of the Force Recovery button on the AGX Thor
    :width: 400
 
 2. Press and hold down the Reset button (button 13\)
 
 .. image:: recovery-agx-thor-btn13.png
-   :alt: Location of the Reset button on the AGX Orin
+   :alt: Location of the Reset button on the AGX Thor
    :width: 400
 
 3. Release both buttons.
