@@ -42,14 +42,14 @@ Ubuntu server comes with `netplan and systemd-networkd preinstalled`_. The initi
     # Create a netplan configuration for the WLAN
     cat <<EOF | sudo tee /etc/netplan/51-wireless.yaml
     network:
-    version: 2
-    wifis:
-      wlP1p1s0:
-        dhcp4: yes
-        dhcp6: yes
-        access-points:
-          "$SSID":
-            password: "$PASSWD"
+      version: 2
+      wifis:
+        wlP1p1s0:
+          dhcp4: yes
+          dhcp6: yes
+          access-points:
+            "$SSID":
+              password: "$PASSWD"
     EOF
     sudo netplan apply
 
