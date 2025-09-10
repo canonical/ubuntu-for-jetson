@@ -60,7 +60,7 @@ Once applied, your network interface should get up and running after a few secon
 Install NVIDIA proprietary software
 ===================================
 
-The Ubuntu image brings anything necessary to boot Linux on a Jetson development kit. However, to unlock the features of the Orin’s SoC (wireless network, bluetooth, GPU, …) you can install additional NVIDIA proprietary drivers and libraries using a Launchpad PPA and NVIDIA packages repository :
+The Ubuntu image brings anything necessary to boot Linux on a Jetson development kit. However, to unlock the features of the Tegra SoC (wireless network, bluetooth, GPU, …) you can install additional NVIDIA proprietary drivers and libraries using a Launchpad PPA and NVIDIA packages repository :
 
 .. code-block:: bash
 
