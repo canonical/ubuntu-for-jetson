@@ -83,8 +83,9 @@ NVIDIA provides a few SDKs like CUDA Toolkit and TensorRT that allow building AI
 .. code-block:: bash
 
     # CUDA
-    sudo apt-key adv --fetch-keys "https://repo.download.nvidia.com/jetson/jetson-ota-public.asc"
-    sudo add-apt-repository -y "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/sbsa/ /"
+    sudo wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/sbsa/cuda-keyring_1.1-1_all.deb
+    sudo dpkg -i cuda-keyring_1.1-1-all.deb
+    sudo apt update
     sudo apt install -y cuda-toolkit cuda-tools
 
     # Tensor RT
