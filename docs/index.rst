@@ -1,7 +1,7 @@
 Ubuntu for Jetson
 ==========================
 
-This documentation explains how to install and use an Ubuntu image on a Jetson Orin Developer kit.
+This documentation explains how to install and use an Ubuntu image on a Jetson Orin or a Jetson Thor Developer kit.
 
 .. toctree::
    :hidden:
@@ -16,7 +16,7 @@ In this documentation
 
 .. grid:: 1 1 2 2
 
-   .. grid-item-card:: How to install Ubuntu on a Jetson Orin devkit
+   .. grid-item-card:: How to install Ubuntu on a Jetson Orin or Thor devkit
       :link: /get-started/index
       :link-type: doc
 

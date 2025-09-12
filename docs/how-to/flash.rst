@@ -65,6 +65,30 @@ Note that once an image is up and running on the device, alternative ways could 
 
 .. _NVIDIA Jetson Quick Start reference: https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/IN/QuickStart.html?#to-determine-whether-the-developer-kit-is-in-force-recovery-mode
 
+
+Recovery on Jetson AGX Thor
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The simplest way is to use the buttons on the front panel of the kit (see `NVIDIA Jetson AGX Thor hardware layout`_)
+
+1. Press and hold down the Force Recovery button (button 12\)
+
+.. image:: recovery-agx-thor-btn12.png
+   :alt: Location of the Force Recovery button on the AGX Thor
+   :width: 400
+
+2. Press and hold down the Reset button (button 13\)
+
+.. image:: recovery-agx-thor-btn13.png
+   :alt: Location of the Reset button on the AGX Thor
+   :width: 400
+
+3. Release both buttons.
+
+.. _NVIDIA Jetson AGX Thor hardware layout: https://docs.nvidia.com/jetson/agx-thor-devkit/user-guide/latest/hardware_layout.html#how-to-enter-force-recovery-mode
+
+
+
 Recovery on Jetson AGX Orin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -100,6 +124,13 @@ Program the boot firmware (QSPI upgrade)
 --------------------------------------------
 
 From the Linux\_for\_Tegra directory, enter the following command to program the latest :abbr:`QSPI (Queued Serial Peripheral Interface)` boot firmware, it will then reboot the kit automatically upon success.
+
+QSPI for Jetson AGX Thor
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+    sudo ./l4t_initrd_flash.sh --qspi-only jetson-agx-thor-devkit mmcblk0p1
 
 QSPI for Jetson AGX Orin
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -180,6 +211,7 @@ You can now use the backup\_restore tools to flash your device. From the Linux\_
 
 Board type:
 
+* Jetson AGX Thor: ``jetson-agx-thor-devkit``
 * Jetson AGX Orin: ``jetson-agx-orin-devkit``
 * Jetson Orin Nano/NX: ``jetson-orin-nano-devkit``
 
