@@ -69,7 +69,7 @@ The Ubuntu image brings anything necessary to boot Linux on a Jetson development
     sudo add-apt-repository -y "deb https://repo.download.nvidia.com/jetson/som r38.2 main"
     sudo add-apt-repository ppa:ubuntu-tegra/updates
     # Install Tegra firmwares and necessary Nvidia libraries
-    sudo apt install -y nvidia-l4t-firmware nvidia-l4t-core
+    sudo apt install -y nvidia-l4t-firmware nvidia-l4t-core nvidia-l4t-nvml
     # Adding user to group render allows running GPU related commands as non root
     # video group is necessary to use the camera
     sudo usermod -a -G render,video ubuntu
@@ -84,9 +84,9 @@ NVIDIA provides a few SDKs like CUDA Toolkit and TensorRT that allow building AI
 
     # CUDA
     sudo wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/sbsa/cuda-keyring_1.1-1_all.deb
-    sudo dpkg -i cuda-keyring_1.1-1-all.deb
+    sudo dpkg -i cuda-keyring_1.1-1_all.deb
     sudo apt update
-    sudo apt install -y cuda-toolkit cuda-tools
+    sudo apt install -y nvidia-l4t-cuda cuda-toolkit-13-0
 
     # Tensor RT
     sudo apt install -y libnvinfer-bin libnvinfer-samples
