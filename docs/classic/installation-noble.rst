@@ -67,7 +67,6 @@ The Ubuntu image brings anything necessary to boot Linux on a Jetson development
     sudo apt-key adv --fetch-keys "https://repo.download.nvidia.com/jetson/jetson-ota-public.asc"
     sudo add-apt-repository -y "deb https://repo.download.nvidia.com/jetson/common r38.2 main"
     sudo add-apt-repository -y "deb https://repo.download.nvidia.com/jetson/som r38.2 main"
-    sudo add-apt-repository ppa:ubuntu-tegra/updates
     # Install Tegra firmwares and necessary Nvidia libraries
     sudo apt install -y nvidia-l4t-firmware nvidia-l4t-core nvidia-l4t-nvml
     # Adding user to group render allows running GPU related commands as non root
