@@ -68,7 +68,7 @@ The Ubuntu image brings anything necessary to boot Linux on a Jetson development
     sudo add-apt-repository -y "deb https://repo.download.nvidia.com/jetson/common r38.2 main"
     sudo add-apt-repository -y "deb https://repo.download.nvidia.com/jetson/som r38.2 main"
     # Install Tegra firmwares and necessary Nvidia libraries
-    sudo apt install -y nvidia-l4t-firmware nvidia-l4t-core nvidia-l4t-nvml
+    sudo apt install -y nvidia-l4t-firmware nvidia-l4t-core nvidia-l4t-nvml nvidia-l4t-init
     # Adding user to group render allows running GPU related commands as non root
     # video group is necessary to use the camera
     sudo usermod -a -G render,video ubuntu
