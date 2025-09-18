@@ -45,7 +45,6 @@ Release Highlights
 * Migrating from this Early Access image to a future release will require switching to a different kernel meta-package.
 
 
-
 Known issues
 ------------
 
@@ -57,11 +56,11 @@ Known issues
    * - `2122501 <https://bugs.launchpad.net/riverside/+bug/2122501>`_
      - The Bluetooth controller firmware ``rtl8852cu_fw`` is currently missing during boot, which prevents the Bluetooth service from functioning correctly. This issue will be resolved in an upcoming update to the ``linux-firmware-nvidia-tegra`` package. As a workaround, installing the ``nvidia-l4t-firmware`` package can resolve the issue immediately. Refer to the documentation here: "TODO: add link".
    * - `2121984 <https://bugs.launchpad.net/riverside/+bug/2121984>`_
-     - Connecting to a WPA3 802.11ax access point currently results in a kernel crash. This issue is still under investigation but can be avoided by updating the kernel package.
+     - Connecting to a WPA3 802.11ax access point currently results in a kernel crash. This issue is still under investigation but can be avoided by `Updating the development kernel`_.
    * - `2122572 <https://bugs.launchpad.net/riverside/+bug/2122572>`_
      - The system currently exits suspend mode automatically after a few seconds, instead of waiting for a proper wake-up event (e.g., RTC alarm, keyboard input). This premature wake-up behaviour is a known issue and is expected to be resolved in an upcoming kernel update.
    * - `2122629 <https://bugs.launchpad.net/riverside/+bug/2122629>`_
-     - Some of the stress tests performed are based on `stress-ng <https://github.com/ColinIanKing/stress-ng>`_: ``stress-ng --af-alg 0 --timeout 30 --oom-avoid-bytes 10% --skip-silent --verbose``. This command fails with the following error: ``tegra-se 8188120000.crypto: failed to allocate key slot``. This issue is currently under investigation and is expected to be resolved with a future kernel package update.
+     - Some of the stress tests performed are based on `stress-ng <https://github.com/ColinIanKing/stress-ng>`_: ``stress-ng --af-alg 0 --timeout 30 --oom-avoid-bytes 10% --skip-silent --verbose``. This command fails with the following error: ``tegra-se 8188120000.crypto: failed to allocate key slot``. This issue is currently under investigation but can be avoided by `Updating the development kernel`_.
    * - `2120690 <https://bugs.launchpad.net/riverside/+bug/2120690>`_
      - Resuming the system from suspend mode may lead to a system freeze under specific conditions. This issue has only been observed when running the following command: ``sudo fwts uefirtmisc`` (from the ``fwts`` package). When this occurs, a full system reboot is required to recover.
    * - `2122571 <https://bugs.launchpad.net/riverside/+bug/2122571>`_
@@ -74,6 +73,18 @@ Known issues
      - Automatic power-on of the Jetson AGX Thor development kit may fail if a USB-C cable is connected to another machine. Depending on the automation header configuration, the system is expected to boot automatically upon power-up, but this does not occur in this scenario. Manual intervention is required to start the system. NVIDIA is expected to release a firmware update soon to address this issue.
    * - `2121989 <https://bugs.launchpad.net/riverside/+bug/2121989>`_
      - The message "watchdog0: watchdog did not stop" appears during reboot. This is a known issue and is harmless.
+
+
+Updating the development kernel
+-------------------------------
+
+To update the development kernel, please run the following commands
+
+.. code-block:: bash
+
+  sudo add-apt-repository ppa:ubuntu-tegra/kernel-daily
+  sudo apt update
+  sudo apt install linux-nvidia-tegra-ppadev-jetson
 
 
 Report Bugs
