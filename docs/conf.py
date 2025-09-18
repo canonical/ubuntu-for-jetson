@@ -271,6 +271,7 @@ extensions = [
     "sphinx_last_updated_by_git",
     "sphinx.ext.intersphinx",
     "sphinx_sitemap",
+    "sphinx.ext.autosectionlabel",
 ]
 
 # Excludes files or directories from processing
@@ -347,3 +348,6 @@ if os.path.exists('./reuse/substitutions.yaml'):
 intersphinx_mapping = {
     'starter-pack': ('https://canonical-example-product-documentation.readthedocs-hosted.com/en/latest', None)
 }
+
+# Make sure the target is unique
+autosectionlabel_prefix_document = True
