@@ -1,5 +1,6 @@
 # Leave a blank line at the end of this file to support concatenation
 agx
+ax
 backend
 backends
 backport
@@ -36,11 +37,13 @@ jetson
 lang
 LaTeX
 latexmk
+linux
 Multipass
 nano
 netplan
 networkd
 NFS
+ng
 NVARGUS
 NX
 NXP
@@ -86,6 +89,7 @@ whitespaces
 Wifi
 WLAN
 wordlist
+WPA
 xetex
 xindy
 xml

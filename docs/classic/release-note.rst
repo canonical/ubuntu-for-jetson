@@ -8,3 +8,4 @@ Release Note
    :maxdepth: 1
 
    release-note-jammy
+   release-note-noble-thor-ea
