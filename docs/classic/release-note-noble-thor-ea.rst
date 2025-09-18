@@ -54,7 +54,7 @@ Known issues
    * - Issue
      - Description
    * - `2122501 <https://bugs.launchpad.net/riverside/+bug/2122501>`_
-     - The Bluetooth controller firmware ``rtl8852cu_fw`` is currently missing during boot, which prevents the Bluetooth service from functioning correctly. This issue will be resolved in an upcoming update to the ``linux-firmware-nvidia-tegra`` package. As a workaround, installing the ``nvidia-l4t-firmware`` package can resolve the issue immediately. Refer to the documentation here: "TODO: add link".
+     - The Bluetooth controller firmware ``rtl8852cu_fw`` is currently missing during boot, which prevents the Bluetooth service from functioning correctly. This issue will be resolved in an upcoming update to the ``linux-firmware-nvidia-tegra`` package. As a workaround, :ref:`installing the nvidia-l4t-firmware package <classic/installation-noble:install nvidia proprietary software>` can resolve the issue immediately. Refer to the documentation here: .
    * - `2121984 <https://bugs.launchpad.net/riverside/+bug/2121984>`_
      - Connecting to a WPA3 802.11ax access point currently results in a kernel crash. This issue is still under investigation but can be avoided by `Updating the development kernel`_.
    * - `2122572 <https://bugs.launchpad.net/riverside/+bug/2122572>`_

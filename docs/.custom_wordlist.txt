@@ -45,6 +45,7 @@ networkd
 NFS
 ng
 NVARGUS
+nvidia
 NX
 NXP
 orin
