@@ -40,6 +40,7 @@ Release Highlights
 
 
 * This is an early access release only targeting Jetson AGX Thor, it does not support the Jetson Orin development kits.
+* This release enables :doc:`/classic/installation-noble`.
 * At this early stage, camera testing has been deferred to a later release.
 * The Linux kernel used on the Jetson AGX Thor (`̀ linux-nvidia-tegra-ppadev-jetson``) is under active development and has not yet been added to the official archive. Please note that this kernel is not stable, and future updates may introduce unexpected regressions.
 * Migrating from this Early Access image to a future release will require switching to a different kernel meta-package.
@@ -61,6 +62,8 @@ Known issues
      - The system currently exits suspend mode automatically after a few seconds, instead of waiting for a proper wake-up event (e.g., RTC alarm, keyboard input). This premature wake-up behaviour is a known issue and is expected to be resolved in an upcoming kernel update.
    * - `2122629 <https://bugs.launchpad.net/riverside/+bug/2122629>`_
      - Some of the stress tests performed are based on `stress-ng <https://github.com/ColinIanKing/stress-ng>`_: ``stress-ng --af-alg 0 --timeout 30 --oom-avoid-bytes 10% --skip-silent --verbose``. This command fails with the following error: ``tegra-se 8188120000.crypto: failed to allocate key slot``. This issue is currently under investigation but can be avoided by `Updating the development kernel`_.
+   * - `2121341 <https://bugs.launchpad.net/riverside/+bug/2121341>`_
+     - Running CUDA workloads as a superuser will result with a Kernel crash. This issue is already fixed but requires `Updating the development kernel`_.
    * - `2120690 <https://bugs.launchpad.net/riverside/+bug/2120690>`_
      - Resuming the system from suspend mode may lead to a system freeze under specific conditions. This issue has only been observed when running the following command: ``sudo fwts uefirtmisc`` (from the ``fwts`` package). When this occurs, a full system reboot is required to recover.
    * - `2122571 <https://bugs.launchpad.net/riverside/+bug/2122571>`_
