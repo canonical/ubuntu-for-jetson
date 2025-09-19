@@ -1,7 +1,7 @@
 .. _install_server_noble:
 
 =====================================
-Nvidia runtime on Ubuntu server 24.04
+NVIDIA runtime on Ubuntu Server 24.04
 =====================================
 
 Grub
@@ -27,10 +27,10 @@ You should be able to check the WLAN interface (using ``ip link`` for instance):
     2: wlP1p1s0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
         link/ether 90:e8:68:bc:88:a9 brd ff:ff:ff:ff:ff:ff
 
-Ubuntu server configuration
+Ubuntu Server configuration
 ===========================
 
-Ubuntu server comes with `netplan and systemd-networkd preinstalled`_. The initial netplan configuration in the image should already take care of the Ethernet interface. To setup a WLAN connection, you can perform the following steps to add the related configuration:
+Ubuntu Server comes with `netplan and systemd-networkd preinstalled`_. The initial netplan configuration in the image should already take care of the Ethernet interface. To setup a WLAN connection, you can perform the following steps to add the related configuration:
 
 .. code-block:: bash
 
@@ -66,7 +66,7 @@ The Ubuntu image brings anything necessary to boot Linux on a Jetson development
     sudo apt-key adv --fetch-keys "https://repo.download.nvidia.com/jetson/jetson-ota-public.asc"
     sudo add-apt-repository -y "deb https://repo.download.nvidia.com/jetson/common r38.2 main"
     sudo add-apt-repository -y "deb https://repo.download.nvidia.com/jetson/som r38.2 main"
-    # Install Tegra firmwares and necessary Nvidia libraries
+    # Install Tegra firmwares and necessary NVIDIA libraries
     sudo apt install -y nvidia-l4t-firmware nvidia-l4t-firmware-openrm nvidia-l4t-core nvidia-l4t-nvml nvidia-l4t-init
     # Adding user to group render allows running GPU related commands as non root
     # video group is necessary to use the camera
@@ -76,7 +76,7 @@ The Ubuntu image brings anything necessary to boot Linux on a Jetson development
 Install CUDA and TensorRT
 =========================
 
-NVIDIA provides a few SDKs like CUDA Toolkit and TensorRT that allow building AI applications on Jetson devices. Those ones are maintained outside of Ubuntu but can be installed with the following commands:
+SDKs like CUDA Toolkit and TensorRT that allow building AI applications on Jetson devices are available directly from NVIDIA:
 
 .. code-block:: bash
 
@@ -110,7 +110,7 @@ It’s Ubuntu, you can install a snap!
    :alt: Screenshot of a sample snap installation
 
 
-Nvidia system management interface
+NVIDIA system management interface
 ----------------------------------
 
 ``nvidia-smi`` can be used to display GPU related information.
@@ -221,7 +221,7 @@ Make sure to install the necessary GStreamer packages
 `Transcode using GStreamer <https://docs.nvidia.com/jetson/archives/r38.2/DeveloperGuide/SD/TestPlanValidation.html#transcode-using-gstreamer>`_
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-Using a stream from the `Big Buck Bunny project <https://peach.blender.org/>`_, you can easily test the transcoding pipelines (note that Jetson Orin Nano doesn’t have hardware encoders and won’t be able to run these pipelines):
+Using a stream from the `Big Buck Bunny project <https://peach.blender.org/>`_, you can easily test the transcoding pipelines:
 
 .. code-block:: bash
 
