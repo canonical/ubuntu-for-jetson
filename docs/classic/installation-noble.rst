@@ -276,11 +276,11 @@ Install VPI and its sample applications
 
 .. code-block:: bash
 
-    sudo apt install nvidia-vpi vpi3-samples libopencv cmake libpython3-dev python3-numpy libopencv-python
+    sudo apt install nvidia-vpi vpi4-samples libopencv cmake libpython3-dev python3-numpy libopencv-python
 
 Test
 """"
 
 Execute steps 1 to 6 from the `NVIDIA VPI test plan`_, for each VPI sample application.
 
-.. _NVIDIA VPI test plan: https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/TestPlanValidation.html#vpi
+.. _NVIDIA VPI test plan: https://docs.nvidia.com/jetson/archives/r38.2/DeveloperGuide/SD/TestPlanValidation.html#vpi
