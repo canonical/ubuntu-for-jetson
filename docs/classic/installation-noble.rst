@@ -232,17 +232,10 @@ Using a stream from the `Big Buck Bunny project <https://peach.blender.org/>`_, 
     gst-launch-1.0 filesrc location=bbb_sunflower_1080p_30fps_normal.mp4 ! qtdemux ! queue ! \
         h264parse ! nvv4l2decoder ! nvv4l2h265enc bitrate=8000000 ! h265parse ! \
         qtmux ! filesink location=h265-reenc.mp4 -e
-    echo "H.265 Decode (NVIDIA Accelerated Decode) to AV1 Encode (NVIDIA Accelerated Encode)"
+    echo "H.265 Decode (NVIDIA Accelerated Decode) to H.264 encode"
     gst-launch-1.0 filesrc location=h265-reenc.mp4 ! qtdemux ! queue ! h265parse ! nvv4l2decoder ! \
-        nvv4l2av1enc ! matroskamux name=mux ! filesink location=av1-reenc.mkv -e
-    echo "AV1 Decode (NVIDIA Accelerated Decode) to H.264 encode"
-    gst-launch-1.0 filesrc location=av1-reenc.mkv ! matroskademux ! queue ! nvv4l2decoder ! \
-        nvv4l2h264enc bitrate=20000000 ! h264parse ! queue ! qtmux name=mux ! filesink \
-        location=h264-reenc.mp4 -e
-    echo "H.264 Decode (NVIDIA Accelerated Decode) to AV1"
-    gst-launch-1.0 filesrc location=h264-reenc.mp4 ! qtdemux ! \
-        h264parse ! nvv4l2decoder ! nvv4l2av1enc ! matroskamux name=mux ! \
-        filesink location=av1-reenc.mkv -e
+        nvv4l2h264enc bitrate=20000000 ! h264parse ! queue ! qtmux name=mux ! \
+        filesink location=h264-reenc.mp4 -e
 
 
 
