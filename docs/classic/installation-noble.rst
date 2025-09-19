@@ -266,38 +266,6 @@ Build and run the Converted sample.
 
 You can also try other sample applications.
 
-
-Nvidia Container runtime
-""""""""""""""""""""""""
-
-You can follow the `NVIDIA container test plan`_ to install and configure the `NVIDIA Container Toolkit`_ before running the JetPack container.
-Try to run a previously built CUDA sample application:
-
-.. code-block:: bash
-
-    sudo docker run --rm -it -e DISPLAY --net=host --runtime \
-        nvidia -v /tmp/.X11-unix/:/tmp/.X11-unix  -v \
-        ${HOME}/cuda-samples:/root/cuda-samples \
-        nvcr.io/nvidia/l4t-jetpack:r36.3.0 \
-        /root/cuda-samples/Samples/1_Utilities/deviceQuery/deviceQuery
-
-.. _NVIDIA container test plan: https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/TestPlanValidation.html#nvidia-containers
-.. _NVIDIA container toolkit: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-the-nvidia-container-toolkit
-
-Install the desktop environment
-"""""""""""""""""""""""""""""""
-
-Some use cases might require a desktop environment. To turn your Ubuntu server image into a Desktop one, with hardware accelerated rendering, run the following commands:
-
-.. code-block:: bash
-
-    sudo apt install -y ubuntu-desktop-minimal
-    sudo sed -i 's/allowed_users.*/allowed_users=anybody/' "/etc/X11/Xwrapper.config"
-    echo "needs_root_rights=yes" | sudo tee -a "/etc/X11/Xwrapper.config"
-    sudo sed 's/#WaylandEnable=false/WaylandEnable= false/' -i /etc/gdm3/custom.conf
-    sudo adduser gdm video
-    sudo reboot
-
 VPI
 ^^^
 
