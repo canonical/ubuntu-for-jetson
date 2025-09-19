@@ -27,7 +27,6 @@ You should be able to check the WLAN interface (using ``ip link`` for instance):
     2: wlP1p1s0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
         link/ether 90:e8:68:bc:88:a9 brd ff:ff:ff:ff:ff:ff
 
-XXX TODO check compatibility
 Ubuntu server configuration
 ===========================
 
