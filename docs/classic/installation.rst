@@ -8,3 +8,4 @@ Installation instructions of Nvidia runtime
    :maxdepth: 1
 
    installation-jammy
+   installation-noble

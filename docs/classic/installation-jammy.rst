@@ -1,7 +1,7 @@
 .. _install_server_jammy:
 
 =====================================
-Nvidia runtime on Ubuntu server 22.04
+NVIDIA runtime on Ubuntu Server 22.04
 =====================================
 
 Grub
@@ -28,10 +28,10 @@ You should be able to check the WLAN interface (using ``ip link`` for instance):
         link/ether 90:e8:68:bc:88:a9 brd ff:ff:ff:ff:ff:ff
 
 
-Ubuntu server configuration
+Ubuntu Server configuration
 ===========================
 
-Ubuntu server comes with `netplan and systemd-networkd preinstalled`_. The initial netplan configuration in the image should already take care of the Ethernet interface. To setup a WLAN connection, you can perform the following steps to add the related configuration:
+Ubuntu Server comes with `netplan and systemd-networkd preinstalled`_. The initial netplan configuration in the image should already take care of the Ethernet interface. To setup a WLAN connection, you can perform the following steps to add the related configuration:
 
 .. code-block:: bash
 
@@ -42,14 +42,14 @@ Ubuntu server comes with `netplan and systemd-networkd preinstalled`_. The initi
     # Create a netplan configuration for the WLAN
     cat <<EOF | sudo tee /etc/netplan/51-wireless.yaml
     network:
-    version: 2
-    wifis:
-      wlP1p1s0:
-        dhcp4: yes
-        dhcp6: yes
-        access-points:
-          "$SSID":
-            password: "$PASSWD"
+      version: 2
+      wifis:
+        wlP1p1s0:
+          dhcp4: yes
+          dhcp6: yes
+          access-points:
+            "$SSID":
+              password: "$PASSWD"
     EOF
     sudo netplan apply
 
@@ -65,7 +65,7 @@ The Ubuntu image brings anything necessary to boot Linux on a Jetson development
 .. code-block:: bash
 
     sudo add-apt-repository ppa:ubuntu-tegra/updates
-    # Install Tegra firmwares and necessary Nvidia libraries
+    # Install Tegra firmwares and necessary NVIDIA libraries
     sudo apt install -y nvidia-tegra-drivers-36
     # Adding user to group render allows running GPU related commands as non root
     # video group is necessary to use the camera
@@ -76,7 +76,7 @@ The Ubuntu image brings anything necessary to boot Linux on a Jetson development
 Install CUDA and TensorRT
 =========================
 
-NVIDIA provides a few SDKs like CUDA Toolkit and TensorRT that allow building AI applications on Jetson devices. Those ones are maintained outside of Ubuntu but can be installed with the following commands:
+SDKs like CUDA Toolkit and TensorRT that allow building AI applications on Jetson devices are available directly from NVIDIA:
 
 .. code-block:: bash
 
@@ -112,7 +112,7 @@ It’s Ubuntu, you can install a snap!
 
 
 
-Nvidia system management interface
+NVIDIA system management interface
 ----------------------------------
 
 ``nvidia-smi`` can be used to display GPU related information.
@@ -373,7 +373,7 @@ Build and run the Converted sample.
 You can also try other sample applications.
 
 
-Nvidia Container runtime
+NVIDIA container runtime
 """"""""""""""""""""""""
 
 You can follow the `NVIDIA container test plan`_ to install and configure the `NVIDIA Container Toolkit`_ before running the JetPack container.
@@ -393,7 +393,7 @@ Try to run a previously built CUDA sample application:
 Install the desktop environment
 """""""""""""""""""""""""""""""
 
-Some use cases might require a desktop environment. To turn your Ubuntu server image into a Desktop one, with hardware accelerated rendering, run the following commands:
+Some use cases might require a desktop environment. To turn your Ubuntu Server image into a Desktop one, with hardware accelerated rendering, run the following commands:
 
 .. code-block:: bash
 

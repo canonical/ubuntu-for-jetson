@@ -11,7 +11,7 @@ Ubuntu for Jetson 22.04 Server (Jammy)
 Purpose
 -------
 
-This is the General Availability release of Ubuntu 22.04 for Jetson. All release assets are provided by Canonical.
+This is the General Availability release of Ubuntu 22.04 for Jetson.
 
 Images
 ------

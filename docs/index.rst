@@ -17,7 +17,7 @@ In this documentation
 .. grid:: 1 1 2 2
 
    .. grid-item-card:: How to install Ubuntu on a Jetson Orin or Thor devkit
-      :link: /get-started/index
+      :link: /how-to/flash
       :link-type: doc
 
       **Get started** - Install Ubuntu for Jetson
