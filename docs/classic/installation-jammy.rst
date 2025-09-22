@@ -373,7 +373,7 @@ Build and run the Converted sample.
 You can also try other sample applications.
 
 
-NVIDIA Container runtime
+NVIDIA container runtime
 """"""""""""""""""""""""
 
 You can follow the `NVIDIA container test plan`_ to install and configure the `NVIDIA Container Toolkit`_ before running the JetPack container.
