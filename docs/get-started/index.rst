@@ -9,3 +9,5 @@ The Ubuntu for Jetson images are intended for Jetson Orin or Thor developer kits
 
 * as a LTS alternative to Jetpack
 * to run AI workflows
+
+:doc:`/how-to/flash`
