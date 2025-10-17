@@ -212,7 +212,7 @@ Make sure to install the necessary GStreamer packages
         gstreamer1.0-plugins-base gstreamer1.0-plugins-good \
         gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly \
         gstreamer1.0-libav nvidia-l4t-gstreamer \
-        nvidia-l4t-3d-core nvidia-l4t-gbm nvidia-l4t-multimedia-openrm nvidia-l4t-video-codec-openrm
+        nvidia-l4t-3d-core nvidia-l4t-multimedia-openrm nvidia-l4t-video-codec-openrm
     sudo apt install -y libgstreamer1.0-dev \
         libgstreamer-plugins-base1.0-dev \
         libgstreamer-plugins-good1.0-dev \
@@ -284,3 +284,16 @@ Test
 Execute steps 1 to 6 from the `NVIDIA VPI test plan`_, for each VPI sample application.
 
 .. _NVIDIA VPI test plan: https://docs.nvidia.com/jetson/archives/r38.2/DeveloperGuide/SD/TestPlanValidation.html#vpi
+
+
+Install the desktop environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Some use cases might require a desktop environment. To turn your Ubuntu Server image into a Desktop one, with hardware accelerated rendering, run the following commands:
+
+.. code-block:: bash
+
+    sudo apt install -y ubuntu-desktop-minimal nvidia-l4t-gbm
+    echo 'GRUB_CMDLINE_LINUX_DEFAULT="$GRUB_CMDLINE_LINUX_DEFAULT nouveau.modeset=0 modprobe.blacklist=nouveau"' | sudo tee /etc/default/grub.d/blacklist-nouveau.cfg
+    sudo update-grub
+    sudo reboot
