@@ -374,7 +374,7 @@ You can also try other sample applications.
 
 
 NVIDIA container runtime
-""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can follow the `NVIDIA container test plan`_ to install and configure the `NVIDIA Container Toolkit`_ before running the JetPack container.
 Try to run a previously built CUDA sample application:
@@ -391,7 +391,7 @@ Try to run a previously built CUDA sample application:
 .. _NVIDIA container toolkit: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-the-nvidia-container-toolkit
 
 Install the desktop environment
-"""""""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Some use cases might require a desktop environment. To turn your Ubuntu Server image into a Desktop one, with hardware accelerated rendering, run the following commands:
 
