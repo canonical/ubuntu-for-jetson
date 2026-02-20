@@ -140,9 +140,9 @@ Running this sample code should produce the following output
     ./deviceQuery Starting...
 
     CUDA Device Query (Runtime API) version (CUDART static linking)
-    
+
     Detected 1 CUDA Capable device(s)
-    
+
     Device 0: "NVIDIA Thor"
       CUDA Driver Version / Runtime Version          13.0 / 13.0
       CUDA Capability Major/Minor version number:    11.0
@@ -179,7 +179,7 @@ Running this sample code should produce the following output
       Device PCI Domain ID / Bus ID / location ID:   0 / 1 / 0
       Compute Mode:
          < Default (multiple host threads can use ::cudaSetDevice() with device simultaneously) >
-    
+
     deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 13.0, CUDA Runtime Version = 13.0, NumDevs = 1
     Result = PASS
 
@@ -284,3 +284,66 @@ Test
 Execute steps 1 to 6 from the `NVIDIA VPI test plan`_, for each VPI sample application.
 
 .. _NVIDIA VPI test plan: https://docs.nvidia.com/jetson/archives/r38.2/DeveloperGuide/SD/TestPlanValidation.html#vpi
+
+Camera
+^^^^^^
+
+The *AGX Thor* supports Camera over Ethernet (CoE) cameras like this one from Leopard Imaging: https://leopardimaging.com/product/depth-sensing/stereoscopic-cameras/li-vb1940-stxxx-10gige/li-vb1940-vcl-st80-10gige-120h-poe/.
+
+Prerequisites
+"""""""""""""
+
+Make sure that the necessary packages are installed:
+
+.. code-block:: bash
+    sudo apt install nvidia-l4t-gbm
+    sudo apt install cmake build-essential
+
+Also download the latest nvidia camera driver sources from their `download archive`_.
+
+.. _download archive: https://developer.nvidia.com/embedded/jetson-linux-archive
+
+For example for r38.4:
+
+.. code-block:: bash
+   wget https://developer.nvidia.com/downloads/embedded/L4T/r38_Release_v4.0/release/Jetson_SIPL_API_R38.4.0_aarch64.tbz2
+
+This then needs to be extracted and installed:
+
+.. code-block:: bash
+   mkdir jetson_sipl_api
+   tar xvf Jetson_SIPL_API_R*.tbz2 -C jetson_sipl_api
+   cd jetson_sipl_api/usr/src/jetson_sipl_api/sipl/
+   mkdir build
+   cd build
+   cmake ..
+   make
+   sudo make install
+
+We then need to make sure that the network interface is correctly set up and the camera is reachable. The default IP address of the camera is 192.168.0.2.
+We then need to construct a .csv file with the MAC and IP address of the camera which will be passed to the camera application:
+
+.. code-block:: bash
+   sudo ip addr add 192.168.0.100/24 dev mgbe0_0
+    sudo ip link set mgbe0_0 up
+    # check if camera is reachable
+    ping 192.168.0.100
+    # construct overrides.csv with MAC address of sensor
+    cat > overrides.csv <<EOF
+    # Format: hsb_id,HSB id, Interface name, MAC address, IP address
+    hsb_id,0,mgbe0_0,$(arp -n 192.168.0.2 | awk 'END{print $3}'),192.168.0.2
+    EOF
+
+In order to capture image you can follow the `NvSIPL CoE Camera Application Developer Guide`_.
+
+.. _NvSIPL CoE Camera Application Developer Guide: https://docs.nvidia.com/jetson/archives/r38.4/DeveloperGuide/SD/CameraDevelopment/CoECameraDevelopment/SIPL-for-L4T/SIPL-App-Development-Guide.html
+
+The basic command to capture frames with the different sensors and ISPs is the following:
+
+.. code-block:: bash
+   sudo nvsipl_coe_camera -c VB1940_Camera --coeConfigOverridePath overrides.csv -R -W 10
+
+This will generate 10 frames for each sensor and ISP, as well as ICP(RAW) capture in /tmp. Frames captured from ISP0 and ISP1 can be converted into .png by running the following ffmpeg command:
+
+.. code-block:: bash
+   ffmpeg -y -s 2560x1984 -pix_fmt yuv420p -i _sensor1_ISP0_frame_10.yuv test_capture.png
