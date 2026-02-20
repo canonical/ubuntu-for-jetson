@@ -12,6 +12,7 @@ cryptographically
 CUDA
 cuDNN
 DisplayPort
+devkit
 dvipng
 eMMC
 ethernet
