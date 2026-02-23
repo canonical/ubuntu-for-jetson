@@ -58,6 +58,8 @@ Recent fixes
 
    * - Issue
      - Description
+   * - `2122501 <https://bugs.launchpad.net/riverside/+bug/2122501>`_
+     - The Bluetooth controller firmware `rtl8852cu_fw` `has been packaged <https://bugs.launchpad.net/ubuntu/+source/linux-firmware-nvidia-tegra/+bug/2127473>`_ in the linux-firmware-nvidia-tegra.
 
 
 Known issues
@@ -68,6 +70,8 @@ Known issues
 
    * - Issue
      - Description
+   * - `2139652 <https://bugs.launchpad.net/riverside/+bug/2139652>`_
+     - A temporary issue with the `ubuntu-image tool <https://snapcraft.io/ubuntu-image>`_ used to build the release image caused the `/usr/sbin/start-stop-daemon` utility to be misaligned from its package checksum. Note that it doesn't affect the usage of the tool. This tool being part of the `dpkg` package, upgrading dpkg will fix this temporary issue.
 
 
 Report Bugs

@@ -13,6 +13,7 @@ CUDA
 cuDNN
 DisplayPort
 devkit
+dpkg
 dvipng
 eMMC
 ethernet
