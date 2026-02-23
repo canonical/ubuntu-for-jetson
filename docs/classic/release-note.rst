@@ -9,3 +9,4 @@ Release Note
 
    release-note-jammy
    release-note-noble-thor-ea
+   release-note-noble-thor-ga
