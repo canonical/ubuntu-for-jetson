@@ -55,6 +55,7 @@ otf
 PCIe
 plantuml
 PNG
+procfs
 Pygments
 QEMU
 QSPI
