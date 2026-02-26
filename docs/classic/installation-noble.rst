@@ -64,8 +64,8 @@ The Ubuntu image brings anything necessary to boot Linux on a Jetson development
 .. code-block:: bash
 
     sudo apt-key adv --fetch-keys "https://repo.download.nvidia.com/jetson/jetson-ota-public.asc"
-    sudo add-apt-repository -y "deb https://repo.download.nvidia.com/jetson/common r38.2 main"
-    sudo add-apt-repository -y "deb https://repo.download.nvidia.com/jetson/som r38.2 main"
+    sudo add-apt-repository -y "deb https://repo.download.nvidia.com/jetson/common r38.4 main"
+    sudo add-apt-repository -y "deb https://repo.download.nvidia.com/jetson/som r38.4 main"
     # Install Tegra firmwares and necessary NVIDIA libraries
     sudo apt install -y nvidia-l4t-firmware nvidia-l4t-firmware-openrm nvidia-l4t-core nvidia-l4t-nvml nvidia-l4t-init
     # Adding user to group render allows running GPU related commands as non root
@@ -218,7 +218,7 @@ Make sure to install the necessary GStreamer packages
         libgstreamer-plugins-good1.0-dev \
         libgstreamer-plugins-bad1.0-dev
 
-`Transcode using GStreamer <https://docs.nvidia.com/jetson/archives/r38.2/DeveloperGuide/SD/TestPlanValidation.html#transcode-using-gstreamer>`_
+`Transcode using GStreamer <https://docs.nvidia.com/jetson/archives/r38.4/DeveloperGuide/SD/TestPlanValidation.html#transcode-using-gstreamer>`_
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 Using a stream from the `Big Buck Bunny project <https://peach.blender.org/>`_, you can easily test the transcoding pipelines:
@@ -250,7 +250,7 @@ Prerequisite
     sudo apt install cudnn libcudnn9-samples
 
 
-`Run cuDNN Samples <https://docs.nvidia.com/jetson/archives/r38.2/DeveloperGuide/SD/TestPlanValidation.html#run-cudnn-samples>`_
+`Run cuDNN Samples <https://docs.nvidia.com/jetson/archives/r38.4/DeveloperGuide/SD/TestPlanValidation.html#run-cudnn-samples>`_
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 Build and run the Converted sample.
@@ -283,4 +283,4 @@ Test
 
 Execute steps 1 to 6 from the `NVIDIA VPI test plan`_, for each VPI sample application.
 
-.. _NVIDIA VPI test plan: https://docs.nvidia.com/jetson/archives/r38.2/DeveloperGuide/SD/TestPlanValidation.html#vpi
+.. _NVIDIA VPI test plan: https://docs.nvidia.com/jetson/archives/r38.4/DeveloperGuide/SD/TestPlanValidation.html#vpi
