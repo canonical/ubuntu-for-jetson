@@ -18,8 +18,8 @@ Images
 
 Ubuntu images can be downloaded from `Install Ubuntu on NVIDIA Jetson <https://ubuntu.com/download/nvidia-jetson#jetson-agx-thor>`_:
 
+..  * https://cdimage.ubuntu.com/releases/noble/release/nvidia-tegra/ubuntu-24.04-preinstalled-server-arm64+tegra-jetson.img.xz
 
-..  * https://cdimage.ubuntu.com/releases/jammy/release/nvidia-tegra/ubuntu-24.04-preinstalled-server-arm64+tegra-jetson.img.xz
 * Ubuntu Server 24.04:
 
   * https://cdimage.ubuntu.com/nvidia-tegra/ubuntu-server/noble/daily-preinstalled/manual/noble-preinstalled-server-arm64+tegra-jetson.img.xz (TBR)
@@ -55,10 +55,19 @@ Recent fixes
 
 .. list-table::
    :header-rows: 1
+
    * - Issue
      - Description
+     - Date
    * - `2122501 <https://bugs.launchpad.net/riverside/+bug/2122501>`_
      - The Bluetooth controller firmware `rtl8852cu_fw` `has been packaged <https://bugs.launchpad.net/ubuntu/+source/linux-firmware-nvidia-tegra/+bug/2127473>`_ in the linux-firmware-nvidia-tegra.
+     - 2026-01-28
+   * - `2121984 <https://bugs.launchpad.net/riverside/+bug/2121984>`_
+     - Connecting to a WPA3 802.11ax access point currently was resulting in a kernel crash. That issue was fixed with the `6.8.0-1012-nvidia-tegra` version of the `linux-nvidia-tegra-jetson` package .
+     - 2025-11-13
+   * - `2122629 <https://bugs.launchpad.net/riverside/+bug/2122629>`_
+     - Connecting to a WPA3 802.11ax access point currently was resulting in a kernel crash. That issue was fixed with the `6.8.0-1012-nvidia-tegra` version of the `linux-nvidia-tegra-jetson` package .
+     - 2025-11-13
 
 
 Tests skipped or adapted during the certification
@@ -72,11 +81,11 @@ The following tests have been excluded from the :abbr:`CQA (Compliance Quality A
    * - Issue
      - Description
    * - \-
-     - Jetson AGX Thor development kit don't have a CSI connector, so Camera testing was excluded from the scope of this certification.
+     - Jetson AGX Thor development kit doesn't have a CSI connector, so Camera testing was excluded from the scope of this certification.
    * - \-
-     - Similarly, the development kit include a QSPF connector, but qualifying that generic interface wasn't part of the test scope for this certification.
+     - Similarly, the development kit includes a QSPF connector, but qualifying that generic interface wasn't part of the test scope for this certification.
    * - `2122577 <https://bugs.launchpad.net/riverside/+bug/2122577>`_
-     - USB-C storage tests have been excluded as the 2 USB-C ports of the development kit were already reserved (one for flashing operations, and the other one to connect the power supply).
+     - USB-C storage tests have been excluded as the 2 USB-C ports of the development kit were already reserved (one for flashing operations, and the other one to connect the power supply). Please refer to `NVIDIA's documentation <https://docs.nvidia.com/jetson/agx-thor-devkit/user-guide/latest/hardware_layout.html#io-side-layout>`_ for details.
 
 
 Known issues
@@ -88,19 +97,19 @@ Known issues
    * - Issue
      - Description
    * - `2142589 <https://bugs.launchpad.net/ubuntu-image/+bug/2142589>`_
-     - A temporary issue with the `ubuntu-image tool <https://snapcraft.io/ubuntu-image>`_ used to build the release image caused the `/usr/sbin/start-stop-daemon` utility to be misaligned from its package checksum. Note that it doesn't impact the usage of the tool. This tool being part of the `dpkg` package, upgrading `dpkg` will fix this temporary issue.
+     - A temporary issue with the `ubuntu-image tool <https://snapcraft.io/ubuntu-image>`_ used to build the release image caused the `/usr/sbin/start-stop-daemon` utility to be misaligned from its package checksum. Note that it doesn't impact the usage of the utility. This utility being part of the `dpkg` package, upgrading `dpkg` will fix this temporary issue.
    * - `2142602 <https://bugs.launchpad.net/ubuntu/+source/linux-nvidia-tegra-modules-signed/+bug/2142602>`_
-     - The `stress-ng procfs <https://github.com/ColinIanKing/stress-ng>`_ stressor highlight an issue with the `rtl8852ce` wireless driver, leading to spurious kernel traces and a reboot of the device. This issue is currently under investigation and should be fixed soon via a kernel package update.
+     - The `stress-ng procfs <https://github.com/ColinIanKing/stress-ng>`_ stressor highlight an issue with the `rtl8852ce` wireless driver, leading to spurious kernel traces and a reboot of the device. This issue is currently under investigation and should be fixed soon via a kernel package update. This issue has not been observed other than during stress-ng tests.
    * - `2140170 <https://bugs.launchpad.net/riverside/+bug/2140170>`_
-     - By the time this image was tested, :ref:`the TensorRT installation instructions <classic/installation-noble:install cuda and tensorrt>` couldn't apply properly, leading to broken packages. That was due to a package dependency issue in NVIDIA's archive, which can be fixed using the `TensorRT workaround`_.
+     - At the time this image was tested, :ref:`the TensorRT installation instructions <classic/installation-noble:install cuda and tensorrt>` couldn't apply properly, leading to broken packages. That was due to a package dependency issue in NVIDIA's archive, which can be fixed using the `TensorRT workaround`_.
    * - `2140523 <https://bugs.launchpad.net/riverside/+bug/2140523>`_
      - A similar issue was observed with the `latest TensorRT NGC docker container <https://catalog.ngc.nvidia.com/orgs/nvidia/containers/tensorrt?version=26.01-py3>`_, preinstalled with an incompatible TensorRT version.
    * - `2140293 <https://bugs.launchpad.net/riverside/+bug/2140293>`_
-     - The VPI sample applications `run-sample-cpp-pva` and `run-sample-py-pva` didn't run successfully on the test image. PVA support wasn't fully enabled in v1013 of the `linux-nvidia-tegra-jetson` kernel preinstalled in the image, but this has been fixed in v1016. Please run `apt update; apt upgrade; reboot` as root to upgrade the kernel.
+     - The VPI sample applications `run-sample-cpp-pva` and `run-sample-py-pva` didn't run successfully on the test image. PVA support wasn't fully enabled in v1013 of the `linux-nvidia-tegra-jetson` kernel preinstalled in the image, but this has been fixed in v1016. Please run ``apt update; apt upgrade; reboot`` as root to upgrade the kernel.
 
 
 TensorRT workaround
-------------------
+-------------------
 
 This Ubuntu image was tested with NVIDIA's Jetson Linux 38.4, which comes with CUDA runtime 13.0. However, the TensorRT runtime and sample application packages have a dependency on CUDA runtime 13.1.
 In order to fix that temporary issue with :ref:`the TensorRT installation instructions <classic/installation-noble:install cuda and tensorrt>`, please use the following workaround
