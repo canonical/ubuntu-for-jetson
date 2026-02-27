@@ -60,14 +60,23 @@ Recent fixes
      - Description
      - Date
    * - `2122501 <https://bugs.launchpad.net/riverside/+bug/2122501>`_
-     - The Bluetooth controller firmware `rtl8852cu_fw` `has been packaged <https://bugs.launchpad.net/ubuntu/+source/linux-firmware-nvidia-tegra/+bug/2127473>`_ in the linux-firmware-nvidia-tegra.
+     - The Bluetooth controller firmware `rtl8852cu_fw` `has been packaged <https://bugs.launchpad.net/ubuntu/+source/linux-firmware-nvidia-tegra/+bug/2127473>`_ in `linux-firmware-nvidia-tegra`.
      - 2026-01-28
    * - `2121984 <https://bugs.launchpad.net/riverside/+bug/2121984>`_
-     - Connecting to a WPA3 802.11ax access point currently was resulting in a kernel crash. That issue was fixed with the `6.8.0-1012-nvidia-tegra` version of the `linux-nvidia-tegra-jetson` package .
+     - Connecting to a WPA3 802.11ax access point currently was resulting in a kernel crash. That issue was fixed with the `6.8.0-1012-nvidia-tegra` version of the `linux-nvidia-tegra-jetson` package.
      - 2025-11-13
    * - `2122629 <https://bugs.launchpad.net/riverside/+bug/2122629>`_
-     - Connecting to a WPA3 802.11ax access point currently was resulting in a kernel crash. That issue was fixed with the `6.8.0-1012-nvidia-tegra` version of the `linux-nvidia-tegra-jetson` package .
+     - The following `stress-ng test command was failing <https://github.com/ColinIanKing/stress-ng>`_: ``stress-ng --af-alg 0 --timeout 30 --oom-avoid-bytes 10% --skip-silent --verbose``. That issue was fixed with the `6.8.0-1012-nvidia-tegra` version of the `linux-nvidia-tegra-jetson` package.
      - 2025-11-13
+   * - `2120690 <https://bugs.launchpad.net/riverside/+bug/2120690>`_
+     - Resuming the system from suspend mode was leading to a system freeze under specific conditions. This issue had only been observed when running the following command: ``sudo fwts uefirtmisc`` (from the ``fwts`` package). The 38.4 boot firmware fixes the issue.
+     - 2026-01-06
+   * - `2122571 <https://bugs.launchpad.net/riverside/+bug/2122571>`_
+     - Resuming the system from suspend mode was resulting in a black screen when connected to a 4K monitor. This issue was fixed while updating the `linux-firmware-nvidia-tegra` package.
+     - 2026-01-28
+   * - `2122571 <https://bugs.launchpad.net/riverside/+bug/2122571>`_
+     - Audio output is limited to the first connected monitor via DisplayPort or HDMI.  The 38.4 boot firmware fixes the issue.
+     - 2026-01-06
 
 
 Tests skipped or adapted during the certification
