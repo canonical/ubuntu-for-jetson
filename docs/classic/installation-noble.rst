@@ -276,7 +276,7 @@ Install VPI and its sample applications
 
 .. code-block:: bash
 
-    sudo apt install nvidia-vpi vpi4-samples libopencv cmake libpython3-dev python3-numpy libopencv-python
+    sudo apt install nvidia-l4t-pva nvidia-vpi vpi4-samples libopencv cmake libpython3-dev python3-numpy libopencv-python python3-pil
 
 Test
 """"
