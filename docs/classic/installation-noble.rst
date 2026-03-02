@@ -73,6 +73,15 @@ The Ubuntu image brings anything necessary to boot Linux on a Jetson development
     sudo usermod -a -G render,video ubuntu
     sudo reboot
 
+Upgrade the system (optional)
+=============================
+
+Upgrade the system to install the kernel updates
+
+.. code-block:: bash
+
+    sudo apt update; sudo apt upgrade
+
 Install CUDA and TensorRT
 =========================
 
