@@ -32,10 +32,9 @@ Hardware Platforms Tested
 -------------------------
 
 
-* `Jetson AGX Thor Developer Kit`_ (TBR)
+* `Jetson AGX Thor Developer Kit`_
 
-.. _Jetson AGX Thor Developer Kit: https://certification.canonical.com/hardware/202508-37859
-.. https://ubuntu.com/certified/202508-37859
+.. _Jetson AGX Thor Developer Kit: https://ubuntu.com/certified/202508-37859
 
 Release Highlights
 ------------------
