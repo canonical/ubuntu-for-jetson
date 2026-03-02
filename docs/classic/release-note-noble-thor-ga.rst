@@ -18,11 +18,9 @@ Images
 
 Ubuntu images can be downloaded from `Install Ubuntu on NVIDIA Jetson <https://ubuntu.com/download/nvidia-jetson#jetson-agx-thor>`_:
 
-..  * https://cdimage.ubuntu.com/releases/noble/release/nvidia-tegra/ubuntu-24.04-preinstalled-server-arm64+tegra-jetson.img.xz
-
 * Ubuntu Server 24.04:
 
-  * https://cdimage.ubuntu.com/nvidia-tegra/ubuntu-server/noble/daily-preinstalled/manual/noble-preinstalled-server-arm64+tegra-jetson.img.xz (TBR)
+  * https://cdimage.ubuntu.com/releases/noble/release/nvidia-tegra/ubuntu-24.04-preinstalled-server-arm64+tegra-jetson.img.xz
   * Image SHA256SUM: ``cbb71942162adb0cf02ea0b80fac67930fb5c3a0845d26cb741d742a279d91fd``
 
 * Boot firmware 38.4:
