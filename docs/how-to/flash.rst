@@ -247,6 +247,6 @@ At every boot, you will get a chance to enter the UEFI menu by pressing Escape o
 
 This menu will eventually allow you to select a different boot option. If you don’t press a key, UEFI will automatically launch the default option.
 
-NVIDIA runtime
---------------
+NVIDIA JetPack
+==============
 :doc:`/classic/installation`

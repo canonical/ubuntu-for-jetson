@@ -1,7 +1,7 @@
 .. _install_server_noble:
 
 =====================================
-NVIDIA runtime on Ubuntu Server 24.04
+NVIDIA JetPack on Ubuntu Server 24.04
 =====================================
 
 Grub

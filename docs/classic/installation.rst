@@ -1,7 +1,7 @@
 .. _install_classic:
 
 ===========================================
-Installation instructions of Nvidia runtime
+Installation instructions of NVIDIA JetPack
 ===========================================
 
 .. toctree::

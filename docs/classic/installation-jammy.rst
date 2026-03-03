@@ -1,7 +1,7 @@
 .. _install_server_jammy:
 
 =====================================
-NVIDIA runtime on Ubuntu Server 22.04
+NVIDIA JetPack on Ubuntu Server 22.04
 =====================================
 
 Grub
