@@ -328,20 +328,6 @@ Try to run a previously built CUDA sample application:
 .. _NVIDIA container test plan: https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/TestPlanValidation.html#nvidia-containers
 .. _NVIDIA container toolkit: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-the-nvidia-container-toolkit
 
-Install the desktop environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Some use cases might require a desktop environment. To turn your Ubuntu Server image into a Desktop one, with hardware accelerated rendering, run the following commands:
-
-.. code-block:: bash
-
-    sudo apt install -y ubuntu-desktop-minimal
-    sudo sed -i 's/allowed_users.*/allowed_users=anybody/' "/etc/X11/Xwrapper.config"
-    echo "needs_root_rights=yes" | sudo tee -a "/etc/X11/Xwrapper.config"
-    sudo sed 's/#WaylandEnable=false/WaylandEnable= false/' -i /etc/gdm3/custom.conf
-    sudo adduser gdm video
-    sudo reboot
-
 VPI
 ^^^
 
@@ -360,3 +346,18 @@ Test
 Execute steps 1 to 6 from the `NVIDIA VPI test plan`_, for each VPI sample application.
 
 .. _NVIDIA VPI test plan: https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/TestPlanValidation.html#vpi
+
+
+Install the desktop environment
+===============================
+
+Some use cases might require a desktop environment. To turn your Ubuntu Server image into a Desktop one, with hardware accelerated rendering, run the following commands:
+
+.. code-block:: bash
+
+    sudo apt install -y ubuntu-desktop-minimal
+    sudo sed -i 's/allowed_users.*/allowed_users=anybody/' "/etc/X11/Xwrapper.config"
+    echo "needs_root_rights=yes" | sudo tee -a "/etc/X11/Xwrapper.config"
+    sudo sed 's/#WaylandEnable=false/WaylandEnable= false/' -i /etc/gdm3/custom.conf
+    sudo adduser gdm video
+    sudo reboot
