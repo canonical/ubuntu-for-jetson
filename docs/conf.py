@@ -238,6 +238,9 @@ redirects = {
     'classic/release-note-noble-thor-ea': '../../reference/release-notes/server-noble-thor-ga/',
     'core/release-note': '../../reference/release-notes/',
     'core/release-note-jammy': '../../reference/release-notes/core-jammy/',
+    'classic/installation': '../jp-installation/',
+    'classic/installation-jammy': '../jp-installation/',
+    'classic/installation-noble': '../jp-installation/',
 }
 
 
