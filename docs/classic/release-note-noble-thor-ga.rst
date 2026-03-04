@@ -41,7 +41,7 @@ Release Highlights
 
 
 * This release only targets Jetson AGX Thor, it does not support the Jetson Orin development kits.
-* This release enables :doc:`/classic/installation-noble`.
+* This release enables :doc:`/classic/jp-installation`.
 * Canonical QA team has been running intensive testing of this release in order to qualify it as Ubuntu certified on the hardware platform referenced below:
 
   * `Jetson AGX Thor Developer Kit`_
@@ -107,7 +107,7 @@ Known issues
    * - `2142602 <https://bugs.launchpad.net/ubuntu/+source/linux-nvidia-tegra-modules-signed/+bug/2142602>`_
      - The `stress-ng procfs <https://github.com/ColinIanKing/stress-ng>`_ stressor highlight an issue with the `rtl8852ce` wireless driver, leading to spurious kernel traces and a reboot of the device. This issue is currently under investigation and should be fixed soon via a kernel package update. This issue has not been observed other than during stress-ng tests.
    * - `2140170 <https://bugs.launchpad.net/riverside/+bug/2140170>`_
-     - At the time this image was tested, :ref:`the TensorRT installation instructions <classic/installation-noble:install cuda and tensorrt>` couldn't apply properly, leading to broken packages. That was due to a package dependency issue in NVIDIA's archive, which can be fixed using the `TensorRT workaround`_.
+     - At the time this image was tested, :ref:`the TensorRT installation instructions <classic/jp-installation:install cuda and tensorrt>` couldn't apply properly, leading to broken packages. That was due to a package dependency issue in NVIDIA's archive, which can be fixed using the `TensorRT workaround`_.
    * - `2140523 <https://bugs.launchpad.net/riverside/+bug/2140523>`_
      - A similar issue was observed with the `latest TensorRT NGC docker container <https://catalog.ngc.nvidia.com/orgs/nvidia/containers/tensorrt?version=26.01-py3>`_, preinstalled with an incompatible TensorRT version.
    * - `2140293 <https://bugs.launchpad.net/riverside/+bug/2140293>`_
@@ -118,7 +118,7 @@ TensorRT workaround
 -------------------
 
 This Ubuntu image was tested with NVIDIA's Jetson Linux 38.4, which comes with CUDA runtime 13.0. However, the TensorRT runtime and sample application packages have a dependency on CUDA runtime 13.1.
-In order to fix that temporary issue with :ref:`the TensorRT installation instructions <classic/installation-noble:install cuda and tensorrt>`, please use the following workaround
+In order to fix that temporary issue with :ref:`the TensorRT installation instructions <classic/jp-installation:install cuda and tensorrt>`, please use the following workaround
 to install a version compatible with NVIDIA's Jetson Linux 38.4:
 
 .. code-block:: bash
