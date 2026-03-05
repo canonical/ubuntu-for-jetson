@@ -9,7 +9,7 @@ This documentation explains how to install and use an Ubuntu image on a Jetson O
 
    Get started </get-started/index>
    How-to guides </how-to/index>
-   Ubuntu Classic (Server, Desktop) </classic/index>
+   Ubuntu Server </classic/index>
 
 In this documentation
 ---------------------
@@ -22,8 +22,8 @@ In this documentation
 
       **Get started** - Install Ubuntu for Jetson
 
-   .. grid-item-card:: Server or Desktop image
+   .. grid-item-card:: Server image
       :link: /classic/index
       :link-type: doc
 
-      **Ubuntu Classic on Jetson** - Ubuntu Server or Desktop on Jetson
+      **Ubuntu Classic on Jetson** - Ubuntu Server on Jetson

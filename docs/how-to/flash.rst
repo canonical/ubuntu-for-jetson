@@ -248,12 +248,12 @@ At every boot, you will get a chance to enter the UEFI menu by pressing Escape o
 This menu will eventually allow you to select a different boot option. If you don’t press a key, UEFI will automatically launch the default option.
 
 Grub
-====
+----
 
 The UEFI boot loader will automatically launch GRUB, which then will launch Ubuntu.
 
-Ubuntu, first boot
-==================
+Ubuntu login
+------------
 
 You will be required on first boot to change your password, as the pre-installed image comes with a predefined user ``ubuntu`` (password ``ubuntu``).
 
@@ -277,10 +277,6 @@ You should be able to check the WLAN interface (using ``ip link`` for instance):
         link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     2: wlP1p1s0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
         link/ether 90:e8:68:bc:88:a9 brd ff:ff:ff:ff:ff:ff
-
-
-Ubuntu Server configuration
-===========================
 
 Ubuntu Server comes with `netplan and systemd-networkd preinstalled`_. The initial netplan configuration in the image should already take care of the Ethernet interface. To setup a WLAN connection, you can perform the following steps to add the related configuration:
 
