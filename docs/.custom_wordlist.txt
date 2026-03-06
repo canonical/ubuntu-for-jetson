@@ -13,6 +13,7 @@ CUDA
 cuDNN
 DisplayPort
 devkit
+dpkg
 dvipng
 eMMC
 ethernet
@@ -54,6 +55,7 @@ otf
 PCIe
 plantuml
 PNG
+procfs
 Pygments
 QEMU
 QSPI

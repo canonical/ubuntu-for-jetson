@@ -231,7 +231,9 @@ sitemap_excludes = [
 # NOTE: If undefined, set to None, or empty,
 #       the sphinx_reredirects extension will be disabled.
 
-redirects = {}
+redirects = {
+    'classic/release-note-noble-thor-ea': '../release-note-noble-thor-ga',
+}
 
 
 ###########################

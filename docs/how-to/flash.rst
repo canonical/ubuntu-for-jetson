@@ -247,6 +247,63 @@ At every boot, you will get a chance to enter the UEFI menu by pressing Escape o
 
 This menu will eventually allow you to select a different boot option. If you don’t press a key, UEFI will automatically launch the default option.
 
-NVIDIA runtime
---------------
+Grub
+----
+
+The UEFI boot loader will automatically launch GRUB, which then will launch Ubuntu.
+
+Ubuntu login
+------------
+
+You will be required on first boot to change your password, as the pre-installed image comes with a predefined user ``ubuntu`` (password ``ubuntu``).
+
+Snap
+====
+
+It’s Ubuntu, you can install a snap!
+
+.. image:: snap-hello.png
+   :alt: Screenshot of a sample snap installation
+
+WLAN
+====
+
+You should be able to check the WLAN interface (using ``ip link`` for instance):
+
+.. code-block:: bash
+
+    $ ip link show
+    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    2: wlP1p1s0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+        link/ether 90:e8:68:bc:88:a9 brd ff:ff:ff:ff:ff:ff
+
+Ubuntu Server comes with `netplan and systemd-networkd preinstalled`_. The initial netplan configuration in the image should already take care of the Ethernet interface. To setup a WLAN connection, you can perform the following steps to add the related configuration:
+
+.. code-block:: bash
+
+    # Replace <SSID> with your SSID
+    SSID='<SSID>'
+    # Replace <PASSWD> with your password
+    PASSWD='<PASSWD>'
+    # Create a netplan configuration for the WLAN
+    cat <<EOF | sudo tee /etc/netplan/51-wireless.yaml
+    network:
+      version: 2
+      wifis:
+        wlP1p1s0:
+          dhcp4: yes
+          dhcp6: yes
+          access-points:
+            "$SSID":
+              password: "$PASSWD"
+    EOF
+    sudo netplan apply
+
+Once applied, your network interface should get up and running after a few seconds, which you can confirm using the ``ip address`` command.
+
+.. _netplan and systemd-networkd preinstalled: https://ubuntu.com/blog/a-declarative-approach-to-linux-networking-with-netplan
+
+NVIDIA JetPack
+==============
 :doc:`/classic/installation`

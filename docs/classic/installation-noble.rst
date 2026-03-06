@@ -1,77 +1,34 @@
 .. _install_server_noble:
 
 =====================================
-NVIDIA runtime on Ubuntu Server 24.04
+NVIDIA JetPack on Ubuntu Server 24.04
 =====================================
-
-Grub
-====
-
-The UEFI boot loader will automatically launch GRUB, which then will launch Ubuntu.
-
-Ubuntu, first boot
-==================
-
-You will be required on first boot to change your password, as the pre-installed image comes with a predefined user ``ubuntu`` (password ``ubuntu``).
-
-WLAN
-====
-
-You should be able to check the WLAN interface (using ``ip link`` for instance):
-
-.. code-block:: bash
-
-    $ ip link show
-    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
-        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-    2: wlP1p1s0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
-        link/ether 90:e8:68:bc:88:a9 brd ff:ff:ff:ff:ff:ff
-
-Ubuntu Server configuration
-===========================
-
-Ubuntu Server comes with `netplan and systemd-networkd preinstalled`_. The initial netplan configuration in the image should already take care of the Ethernet interface. To setup a WLAN connection, you can perform the following steps to add the related configuration:
-
-.. code-block:: bash
-
-    # Replace <SSID> with your SSID
-    SSID='<SSID>'
-    # Replace <PASSWD> with your password
-    PASSWD='<PASSWD>'
-    # Create a netplan configuration for the WLAN
-    cat <<EOF | sudo tee /etc/netplan/51-wireless.yaml
-    network:
-      version: 2
-      wifis:
-        wlP1p1s0:
-          dhcp4: yes
-          dhcp6: yes
-          access-points:
-            "$SSID":
-              password: "$PASSWD"
-    EOF
-    sudo netplan apply
-
-Once applied, your network interface should get up and running after a few seconds, which you can confirm using the ``ip address`` command.
-
-.. _netplan and systemd-networkd preinstalled: https://ubuntu.com/blog/a-declarative-approach-to-linux-networking-with-netplan
 
 Install NVIDIA proprietary software
 ===================================
 
-The Ubuntu image brings anything necessary to boot Linux on a Jetson development kit. However, to unlock the features of the Tegra SoC (wireless network, bluetooth, GPU, …) you can install additional NVIDIA proprietary drivers and libraries using a Launchpad PPA and NVIDIA packages repository :
+The Ubuntu image brings anything necessary to boot Linux on a Jetson development kit. However, to unlock the features of the Tegra SoC (wireless network, bluetooth, GPU, …) you can install additional NVIDIA proprietary drivers and libraries using NVIDIA packages repository :
 
 .. code-block:: bash
 
     sudo apt-key adv --fetch-keys "https://repo.download.nvidia.com/jetson/jetson-ota-public.asc"
-    sudo add-apt-repository -y "deb https://repo.download.nvidia.com/jetson/common r38.2 main"
-    sudo add-apt-repository -y "deb https://repo.download.nvidia.com/jetson/som r38.2 main"
+    sudo add-apt-repository -y "deb https://repo.download.nvidia.com/jetson/common r38.4 main"
+    sudo add-apt-repository -y "deb https://repo.download.nvidia.com/jetson/som r38.4 main"
     # Install Tegra firmwares and necessary NVIDIA libraries
     sudo apt install -y nvidia-l4t-firmware nvidia-l4t-firmware-openrm nvidia-l4t-core nvidia-l4t-nvml nvidia-l4t-init
     # Adding user to group render allows running GPU related commands as non root
     # video group is necessary to use the camera
     sudo usermod -a -G render,video ubuntu
     sudo reboot
+
+Upgrade the system (optional)
+=============================
+
+Upgrade the system to install the kernel updates
+
+.. code-block:: bash
+
+    sudo apt update; sudo apt upgrade
 
 Install CUDA and TensorRT
 =========================
@@ -100,15 +57,6 @@ SDKs like CUDA Toolkit and TensorRT that allow building AI applications on Jetso
 
 Test your system
 ================
-
-Snap
-----
-
-It’s Ubuntu, you can install a snap!
-
-.. image:: snap-hello.png
-   :alt: Screenshot of a sample snap installation
-
 
 NVIDIA system management interface
 ----------------------------------
@@ -218,7 +166,7 @@ Make sure to install the necessary GStreamer packages
         libgstreamer-plugins-good1.0-dev \
         libgstreamer-plugins-bad1.0-dev
 
-`Transcode using GStreamer <https://docs.nvidia.com/jetson/archives/r38.2/DeveloperGuide/SD/TestPlanValidation.html#transcode-using-gstreamer>`_
+`Transcode using GStreamer <https://docs.nvidia.com/jetson/archives/r38.4/DeveloperGuide/SD/TestPlanValidation.html#transcode-using-gstreamer>`_
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 Using a stream from the `Big Buck Bunny project <https://peach.blender.org/>`_, you can easily test the transcoding pipelines:
@@ -250,7 +198,7 @@ Prerequisite
     sudo apt install cudnn libcudnn9-samples
 
 
-`Run cuDNN Samples <https://docs.nvidia.com/jetson/archives/r38.2/DeveloperGuide/SD/TestPlanValidation.html#run-cudnn-samples>`_
+`Run cuDNN Samples <https://docs.nvidia.com/jetson/archives/r38.4/DeveloperGuide/SD/TestPlanValidation.html#run-cudnn-samples>`_
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 Build and run the Converted sample.
@@ -276,11 +224,11 @@ Install VPI and its sample applications
 
 .. code-block:: bash
 
-    sudo apt install nvidia-vpi vpi4-samples libopencv cmake libpython3-dev python3-numpy libopencv-python
+    sudo apt install nvidia-l4t-pva nvidia-vpi vpi4-samples libopencv cmake libpython3-dev python3-numpy libopencv-python python3-pil
 
 Test
 """"
 
 Execute steps 1 to 6 from the `NVIDIA VPI test plan`_, for each VPI sample application.
 
-.. _NVIDIA VPI test plan: https://docs.nvidia.com/jetson/archives/r38.2/DeveloperGuide/SD/TestPlanValidation.html#vpi
+.. _NVIDIA VPI test plan: https://docs.nvidia.com/jetson/archives/r38.4/DeveloperGuide/SD/TestPlanValidation.html#vpi
