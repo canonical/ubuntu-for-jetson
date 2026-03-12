@@ -20,7 +20,7 @@ Create an image definition file
 
 An image definition YAML file is required to build a custom Ubuntu Server image. This file specifies the required configurations, such as the ones listed below.
 
-* **class**: Type of image cloud, installer, or preinstalled.
+* **class**: Type of image: cloud, installer or preinstalled.
 * **kernel**: By default there is just one kernel and defaults to "linux", but through this field there can be specified an alternative kernel to install in the image.
 * **gadget**: Boot assets of an image.
 * **customization**: Features such as particular snaps and packages that will come installed in the image.
