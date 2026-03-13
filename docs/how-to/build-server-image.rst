@@ -1,7 +1,7 @@
 .. _build-server-image:
 
-Create a custom Ubuntu Server image
-===================================
+Create a custom Ubuntu Server preinstalled image
+================================================
 
 
 Prerequisites
