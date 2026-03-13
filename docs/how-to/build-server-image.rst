@@ -1,4 +1,4 @@
-.. _build-image:
+.. _build-server-image:
 
 Create a custom Ubuntu Server image
 ===================================

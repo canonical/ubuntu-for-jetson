@@ -6,4 +6,4 @@ How-to guides
 
    flash
    secure-boot
-   build-image
+   build-server-image
