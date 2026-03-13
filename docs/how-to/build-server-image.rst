@@ -18,7 +18,7 @@ Prerequisites
 Create an image definition file
 -------------------------------
 
-An image definition YAML file is required to build a custom Ubuntu Server image. This file specifies the required configurations, such as the ones listed below.
+An image definition file, in YAML format, defines the various configurations required to build a custom Ubuntu image:
 
 * **class**: Defines the type of image, such as `cloud`, `installer` or `preinstalled` (Canonical's certified Server images are preinstalled).
 * **kernel**: Specifies the preinstalled kernel in the image. The official Ubuntu kernel for Jetson is "linux-nvidia-tegra-jetson", but it can be replaced with an alternative custom kernel, for instance hosted in a PPA for development purpose.
