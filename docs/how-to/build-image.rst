@@ -55,7 +55,7 @@ The following command allows to check the definition files used to generate the 
 Build the Classic Server image
 ------------------------------
 
-Once having the corresponding image definition file, the server image can be built through the following command.
+Once the corresponding image definition file is defined, the server image can be built through the following command.
 
 .. code-block:: bash
 
