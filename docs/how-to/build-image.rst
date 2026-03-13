@@ -20,7 +20,7 @@ Create an image definition file
 
 An image definition YAML file is required to build a custom Ubuntu Server image. This file specifies the required configurations, such as the ones listed below.
 
-* **class**: Type of image: cloud, installer or preinstalled.
+* **class**: Defines the type of image, such as `cloud`, `installer` or `preinstalled` (Canonical's certified Server images are preinstalled).
 * **kernel**: This field specifies the kernel for installation in the image. While "linux-nvidia-tegra-jetson" is the standard publicly available version for Tegra platforms, it can be replaced with an alternative kernel, such as one from a PPA, if required.
 * **gadget**: Boot assets of an image.
 * **customization**: Features such as particular snaps and packages that will come installed in the image.
