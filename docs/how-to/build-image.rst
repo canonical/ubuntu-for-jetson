@@ -26,7 +26,7 @@ An image definition YAML file is required to build a custom Ubuntu Server image.
 * **customization**: Features such as particular snaps and packages that will come installed in the image.
 * **artifacts**: Artifacts to create, including (but not limited to) the actual images, and manifest files.
 
-For more details about each field, the `image definition`_ documentation can be consulted.
+For more details about each field, refer to the `image definition`_ documentation.
 
 .. _image definition: https://github.com/canonical/ubuntu-image/blob/main/internal/imagedefinition/README.rst
 
