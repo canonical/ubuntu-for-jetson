@@ -37,7 +37,7 @@ The `ubuntu-images`_ repository serves as the official source for Canonical’s 
 Ubuntu certified Image definition files
 ---------------------------------------
 
-Provided below are the image definition files utilized in the generation of Ubuntu Server images certified by Canonical.
+The following command allows to check the definition files used to generate the Ubuntu Server image certified by Canonical:
 
 .. _Certified Ubuntu Server Jammy image definition: https://git.launchpad.net/ubuntu-images/tree/ubuntu-server-tegra-jetson.yaml?h=jammy
 .. _Certified Ubuntu Server Noble image definition: https://git.launchpad.net/ubuntu-images/tree/ubuntu-server-tegra-jetson.yaml?h=noble
