@@ -39,18 +39,23 @@ Ubuntu certified Image definition files
 
 The following command allows to check the definition files used to generate the Ubuntu Server image certified by Canonical:
 
-.. _Certified Ubuntu Server Jammy image definition: https://git.launchpad.net/ubuntu-images/tree/ubuntu-server-tegra-jetson.yaml?h=jammy
-.. _Certified Ubuntu Server Noble image definition: https://git.launchpad.net/ubuntu-images/tree/ubuntu-server-tegra-jetson.yaml?h=noble
-
 .. tabs::
 
    .. group-tab:: Jammy
 
-      `Certified Ubuntu Server Jammy image definition`_
+      .. code-block:: bash
+
+         git clone -b jammy https://git.launchpad.net/ubuntu-images
+         cd ubuntu-images
+         cat ubuntu-server-tegra-jetson.yaml
 
    .. group-tab:: Noble
 
-      `Certified Ubuntu Server Noble image definition`_
+      .. code-block:: bash
+
+         git clone -b noble https://git.launchpad.net/ubuntu-images
+         cd ubuntu-images
+         cat ubuntu-server-tegra-jetson.yaml
 
 Build the Classic Server image
 ------------------------------
