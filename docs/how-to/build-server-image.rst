@@ -64,4 +64,4 @@ Once the corresponding image definition file is created, the server image can be
 
     sudo ubuntu-image classic <image_definition>.yaml --debug
 
-On the example above, the `--debug`  flag prints additional information about each step executed as part of the image build process, useful to troubleshoot any issues while running the command.
+In the example above, the `--debug` flag prints additional information about each step executed as part of the image build process, coming in handy to troubleshoot any issues.
