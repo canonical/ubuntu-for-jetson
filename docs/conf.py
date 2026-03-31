@@ -184,7 +184,7 @@ html_theme_options = {
 
 # Base URL of RTD hosted project
 
-html_baseurl = 'https://canonical-ubuntu-for-jetson.readthedocs-hosted.com/en/latest/'
+html_baseurl = 'https://canonical-ubuntu-for-jetson.readthedocs-hosted.com/'
 
 # URL scheme. Add language and version scheme elements.
 # When configured with RTD variables, check for RTD environment so manual runs succeed:
