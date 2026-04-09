@@ -273,7 +273,7 @@ Using a stream from the `Big Buck Bunny project <https://peach.blender.org/>`_, 
     gst-launch-1.0 filesrc location=h265-reenc.mp4 ! qtdemux ! queue ! h265parse ! nvv4l2decoder ! \
         nvv4l2av1enc ! matroskamux name=mux ! filesink location=av1-reenc.mkv -e
     echo "AV1 Decode (NVIDIA Accelerated Decode) to H.264 encode"
-    gst-launch-1.0 filesrc location=av1-reenc.mkv ! matroskademux ! queue ! nvv4l2decoder ! \
+    gst-launch-1.0 filesrc location=av1-reenc.mkv ! matroskademux ! queue ! av1parse ! nvv4l2decoder ! \
         nvv4l2h264enc bitrate=20000000 ! h264parse ! queue ! qtmux name=mux ! filesink \
         location=h264-reenc.mp4 -e
     echo "H.264 Decode (NVIDIA Accelerated Decode) to AV1"
