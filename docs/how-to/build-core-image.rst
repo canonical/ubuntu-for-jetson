@@ -37,7 +37,7 @@ The model assertions can be fetched and saved with the following command:
 
    snap known --remote model authority-id=canonical series=16 brand-id=canonical model=<model-name> > ubuntu-core-jetson.model
 
-Alternatively, the model assertions can be downloaded in json format from the `official model repository`_. However, they need to be converted into ``.model`` files by `signing them`_ before they can be passed to the ``ubuntu-image`` command.
+Alternatively, the model assertions can be downloaded in JSON format from the `official model repository`_. However, they need to be converted into ``.model`` files by `signing them`_ before they can be passed to the ``ubuntu-image`` command.
 
 .. _official model repository: https://github.com/canonical/models/tree/master/devices/nvidia/jetson
 .. _signing them: https://documentation.ubuntu.com/core/tutorials/build-your-first-image/sign-the-model/#ref-sign-the-model-sign-the-model
