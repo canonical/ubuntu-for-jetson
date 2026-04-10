@@ -7,3 +7,4 @@ How-to guides
    flash
    secure-boot
    build-server-image
+   build-core-image

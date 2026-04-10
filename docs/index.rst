@@ -10,6 +10,7 @@ This documentation explains how to install and use an Ubuntu image on a Jetson O
    Get started </get-started/index>
    How-to guides </how-to/index>
    Ubuntu Server </classic/index>
+   Ubuntu Core </core/index>
 
 In this documentation
 ---------------------
@@ -27,3 +28,9 @@ In this documentation
       :link-type: doc
 
       **Ubuntu Classic on Jetson** - Ubuntu Server on Jetson
+
+   .. grid-item-card:: Core image
+      :link: /core/index
+      :link-type: doc
+
+      **Ubuntu Core on Jetson** - Ubuntu Core on Jetson
