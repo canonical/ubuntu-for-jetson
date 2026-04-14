@@ -45,13 +45,13 @@ Alternatively, the model assertions can be downloaded in JSON format from the `o
 Build the image
 ---------------
 
-In order to build the image, we simply pass the model file to ``ubuntu-image``.
+In order to build the image, the model file simply needs to be passed to the ``ubuntu-image snap`` command.
 
 .. code-block:: bash
 
    ubuntu-image snap ubuntu-core-jetson.model
 
-The resulting image will be named ``pc.img`` and can be installed by following :doc:`documentation on how to program an ubuntu image <flash>`
+The resulting image will be named ``pc.img`` and can be installed by following the steps described in :doc:`How to program an Ubuntu image <flash>`.
 
 Further steps
 -------------
