@@ -1,19 +1,8 @@
 .. _build-core-image:
 
-Create a custom Ubuntu Core image
+Ubuntu Core image
 ================================================
 
-
-Prerequisites
--------------
-
-* `Ubuntu-image`_ is the tool used by Canonical to build official Ubuntu images. It must be installed on a build environment running Ubuntu 22.04 (Jammy Jellyfish) or newer. It is recommended to use Ubuntu 24.04 (Noble Numbat).
-
-.. _Ubuntu-image: https://github.com/canonical/ubuntu-image
-
-.. code-block:: bash
-
-    sudo snap install --classic --channel latest/stable ubuntu-image
 
 Download official model assertion file
 --------------------------------------
