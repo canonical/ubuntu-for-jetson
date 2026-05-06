@@ -48,6 +48,7 @@ NFS
 ng
 NVARGUS
 nvidia
+nvpmodel
 NX
 NXP
 orin
