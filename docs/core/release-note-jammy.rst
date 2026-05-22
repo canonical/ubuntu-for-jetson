@@ -61,32 +61,6 @@ Release Highlights
 .. _Jetson Orin Nano Developer kit: https://ubuntu.com/certified/202406-34152
 .. _Jetson Orin NX SOM on Jetson Orin Nano Developer kit: https://ubuntu.com/certified/202407-34213
 
-Recent fixes
-------------
-
-.. list-table::
-   :header-rows: 1
-
-   * - Issue
-     - Description
-   * - `2071409 <https://bugs.launchpad.net/riverside/+bug/2071409>`_
-     - No video output after resuming from suspend
-   * - `2081141 <https://bugs.launchpad.net/riverside/+bug/2081141>`_
-     - 3 Failures during v4l2 compliance test execution
-   * - `2081801 <https://bugs.launchpad.net/riverside/+bug/2081801>`_
-     - No wireless device detected: fixed as wireless/bluetooth firmware files are now installed by default with ``linux-firmware-nvidia-tegra`` package in the Ubuntu image
-   * - `2082057 <https://bugs.launchpad.net/riverside/+bug/2082057>`_
-     - bluetooth no default controller available
-   * - `2081802 <https://bugs.launchpad.net/riverside/+bug/2081802>`_
-     - bluetooth beacon test failed
-   * - `2081822 <https://bugs.launchpad.net/riverside/+bug/2081822>`_
-     - Failed to connect to any Wifi access points: ``wpa_supplicant`` is now installed by default in the Ubuntu image
-   * - `2089043 <https://bugs.launchpad.net/riverside/+bug/2089043>`_
-     - Audio over DisplayPort only works when loading ``snd_hda_tegra`` and ``snd_hda_codec_hdmi`` in initramfs
-   * - `2071428 <https://bugs.launchpad.net/riverside/+bug/2071428>`_
-     - On AGX, ``eth0`` (ethernet interface) has been renamed to ``eno1`` in order to have a predictable name
-
-
 
 Features not supported in this release
 --------------------------------------
