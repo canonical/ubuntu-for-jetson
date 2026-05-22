@@ -47,6 +47,7 @@ networkd
 NFS
 ng
 NVARGUS
+nvarguscamerasrc
 nvidia
 nvpmodel
 NX
