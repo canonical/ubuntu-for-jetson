@@ -140,6 +140,8 @@ Known issues
      - On AGX, after installing the ``nvpmodel`` snap, all CPU governor tests on policy 8 failed. That’s because the snap will install and apply the default related model.
    * - `2083009 <https://bugs.launchpad.net/riverside/+bug/2083009>`_
      - Similarly, on NX, after installing the ``nvpmodel`` snap, all CPU governor tests on policy 4 failed
+   * - `2091684 <https://bugs.launchpad.net/riverside/+bug/2091684>_`
+     - When a monitor is connected to the device, the gstreamer transcoding might be considerably slower than without.
    * - `2150448 <https://bugs.launchpad.net/riverside/+bug/2150448>`_
      - While running the gstreamer image capture pipelines described in the `tegra snap samples repository`_, the pipeline can return an error code of 1 even though the image gets captured correctly. This is due to a bug in the nvarguscamerasrc plugin that will fail to clean up the pipeline correctly.
    * - NA
