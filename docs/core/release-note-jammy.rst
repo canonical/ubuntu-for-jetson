@@ -140,10 +140,12 @@ Known issues
      - On AGX, after installing the ``nvpmodel`` snap, all CPU governor tests on policy 8 failed. That’s because the snap will install and apply the default related model.
    * - `2083009 <https://bugs.launchpad.net/riverside/+bug/2083009>`_
      - Similarly, on NX, after installing the ``nvpmodel`` snap, all CPU governor tests on policy 4 failed
-   * - `2097636 <https://bugs.launchpad.net/riverside/+bug/2097636>`_
-     - While running the transcoding test pipelines described in :doc:`the installation instructions <installation>`: ``gst-launch-1.0 filesrc location=h264-reenc.mp4 ! qtdemux !   h264parse ! nvv4l2decoder ! nvv4l2av1enc ! matroskamux name=mux !   filesink location=av1-reenc.mkv -e`` thousands of error traces ``ParseObuFrameHeader: 2367: Invalid buf_idx = -1 or  offset`` are displayed. While this is looking suspicious, this trace isn’t actually preventing the command to finish properly and successfully.
+   * - `2150448 <https://bugs.launchpad.net/riverside/+bug/2150448>`_
+     - While running the gstreamer image capture pipelines described in the `tegra snap samples repository`_, the pipeline can return an error code of 1 even though the image gets captured correctly. This is due to a bug in the nvarguscamerasrc plugin that will fail to clean up the pipeline correctly.
    * - NA
      - Running LXD and Docker on the same host can cause `connectivity issues <https://documentation.ubuntu.com/lxd/en/latest/howto/network_bridge_firewalld/#prevent-connectivity-issues-with-lxd-and-docker>`_. This is something to keep in mind after installing Nvidia Container runtime.
+
+.. _tegra snap samples repository: https://github.com/canonical/tegra-snap-samples/tree/main/multimedia#camera-capture-using-gstreamer
 
 
 Report Bugs
