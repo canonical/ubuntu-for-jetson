@@ -137,9 +137,9 @@ Known issues
    * - `2091684 <https://bugs.launchpad.net/riverside/+bug/2091684>`_
      - During tests, GStreamer pipelines involving hardware encoding (``nvv4l2h265enc``) had slower performance than expected (3x time slower). This issue isn’t easily reproducible and still under investigation.
    * - `2083007 <https://bugs.launchpad.net/riverside/+bug/2083007>`_
-     - On AGX, after installing the ``nvidia-tegra-drivers-36`` packages, all CPU governor tests on policy 8 failed. That’s because the packages are installing ``nvpmodel`` and applying the default related model.
+     - On AGX, after installing the ``nvpmodel`` snap, all CPU governor tests on policy 8 failed. That’s because the snap will install and apply the default related model.
    * - `2083009 <https://bugs.launchpad.net/riverside/+bug/2083009>`_
-     - Similarly, on NX, after installing the ``nvidia-tegra-drivers-36`` packages, all CPU governor tests on policy 4 failed
+     - Similarly, on NX, after installing the ``nvpmodel`` snap, all CPU governor tests on policy 4 failed
    * - `2097636 <https://bugs.launchpad.net/riverside/+bug/2097636>`_
      - While running the transcoding test pipelines described in :doc:`the installation instructions <installation>`: ``gst-launch-1.0 filesrc location=h264-reenc.mp4 ! qtdemux !   h264parse ! nvv4l2decoder ! nvv4l2av1enc ! matroskamux name=mux !   filesink location=av1-reenc.mkv -e`` thousands of error traces ``ParseObuFrameHeader: 2367: Invalid buf_idx = -1 or  offset`` are displayed. While this is looking suspicious, this trace isn’t actually preventing the command to finish properly and successfully.
    * - NA
