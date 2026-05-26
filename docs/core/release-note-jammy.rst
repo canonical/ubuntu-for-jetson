@@ -5,7 +5,7 @@ Ubuntu Core 22 for Jetson (Jammy)
 ======================================
 
 
-*2026-04 Release Notes*
+*2026-05 Release Notes*
 
 
 Purpose
