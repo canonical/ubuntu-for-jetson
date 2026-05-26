@@ -45,7 +45,6 @@ Release Highlights
 * Full Disk Encryption and secure boot support. Full Disk Encryption will be automatically enabled when hardware support is detected. For enabling secure boot, refer to :doc:`the secure boot instructions </how-to/secure-boot>`
 * Strictly confined applications
 * OTA updates
-* Nvidia introduced Nano Super power mode with Jetpack 6.2. To enable this power mode, as described in `the Jetson Linux Developer Guide`_, requires both `flashing JetPack`_ with a specific configuration (the ubuntu image must be reinstalled afterwards), and switching to a specific power mode using nvpmodel command (refer to the `snap samples`_)
 * Canonical QA team has been running intensive testing of this release in order to qualify it as Ubuntu certified on the three hardware platforms referenced below:
 
   * `Jetson AGX Orin Developer kit`_
