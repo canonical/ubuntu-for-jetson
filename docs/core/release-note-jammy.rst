@@ -21,7 +21,7 @@ Ubuntu images can be downloaded from https://ubuntu.com/download/nvidia-jetson:
 
 * Ubuntu Core 22:
 
-  * https://cdimage.ubuntu.com/nvidia-tegra/ubuntu-core/22/stable/manual/ubuntu-core-22-arm64+tegra-jetson.img.xz
+  * https://cdimage.ubuntu.com/releases/jammy/release/nvidia-tegra/ubuntu-core-22-arm64+tegra-jetson.img.xz
   * Image SHA256SUM: ``a051ca3667e6410ec6dd4b4bf048dcfac0c4b3bd8b49552530f455a7e052b881``
 
 * Boot firmware 36.5:
