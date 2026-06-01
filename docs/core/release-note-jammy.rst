@@ -1,17 +1,17 @@
-.. _rn_classic_jammy:
+.. _rn_core_jammy:
 
 ======================================
-Ubuntu for Jetson 22.04 Server (Jammy)
+Ubuntu Core 22 for Jetson (Jammy)
 ======================================
 
 
-*2025-02 Release Notes*
+*2026-05 Release Notes*
 
- 
+
 Purpose
 -------
 
-This is the General Availability release of Ubuntu 22.04 for Jetson Orin.
+This is the General Availability release of Ubuntu Core 22 for Jetson. All release assets are provided by Canonical.
 
 Images
 ------
@@ -19,15 +19,15 @@ Images
 Ubuntu images can be downloaded from https://ubuntu.com/download/nvidia-jetson:
 
 
-* Ubuntu Server 22.04:
+* Ubuntu Core 22:
 
-  * https://cdimage.ubuntu.com/releases/jammy/release/nvidia-tegra/ubuntu-22.04-preinstalled-server-arm64+tegra-jetson.img.xz
-  * Image SHA256SUM: ``27c54b9f3a23b4c8a6a8490cc41281061b359fea031c44ebdf7932316331f68a``
+  * https://cdimage.ubuntu.com/releases/jammy/release/nvidia-tegra/ubuntu-core-22-arm64+tegra-jetson.img.xz
+  * Image SHA256SUM: ``a051ca3667e6410ec6dd4b4bf048dcfac0c4b3bd8b49552530f455a7e052b881``
 
-* Boot firmware 36.4.3:
+* Boot firmware 36.5:
 
-  * https://developer.nvidia.com/downloads/embedded/l4t/r36_release_v4.3/release/Jetson_Linux_r36.4.3_aarch64.tbz2
-  * Image SHA256SUM: ``949a44049c4ce6a8efdf572ea0820c874f6ee5d41ca3e4935b9f0e38d11873d2``
+  * https://developer.nvidia.com/downloads/embedded/l4t/r36_release_v5.0/release/Jetson_Linux_r36.5.0_aarch64.tbz2
+  * Image SHA256SUM: ``414e58d97ac4b84fb02cbca621d46598f0bc8b811b6b9c3ad778b04e8d321ca7``
 
 Hardware Platforms Tested
 -------------------------
@@ -41,43 +41,24 @@ Release Highlights
 ------------------
 
 
-* The kernel meta-package for Jetson devices is now changed to ``linux-nvidia-tegra-jetson`` (instead of ``linux-nvidia-tegra-igx`` ). Further details (\ `LP#2069179 <https://bugs.launchpad.net/riverside/+bug/2069179>`_\ ) : https://discourse.ubuntu.com/t/changes-to-ubuntu-for-tegra-kernel-metapackages-on-jetson-and-igx/48807
-* Nvidia introduced Nano Super power mode with Jetpack 6.2. To enable this power mode, as described in https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/PlatformPowerAndPerformance/JetsonOrinNanoSeriesJetsonOrinNxSeriesAndJetsonAgxOrinSeries.html#supported-modes-and-power-efficiency, it requires both `flashing JetPack <https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/IN/QuickStart.html#to-flash-the-jetson-developer-kit-operating-software>`_ with a specific configuration (the Ubuntu image must be reinstalled afterwards), and switching to a specific power mode using the ``nvpmodel`` command (installed by the ``nvidia-tegra-drivers-36`` packages, please refer to :doc:`the installation instructions <installation-jammy>`).
+* First Ubuntu Core image release for Tegra platforms
+* Full Disk Encryption and secure boot support. Full Disk Encryption will be automatically enabled when hardware support is detected. For enabling secure boot, refer to :doc:`the secure boot instructions </how-to/secure-boot>`
+* Strictly confined applications
+* OTA updates
 * Canonical QA team has been running intensive testing of this release in order to qualify it as Ubuntu certified on the three hardware platforms referenced below:
 
   * `Jetson AGX Orin Developer kit`_
   * `Jetson Orin Nano Developer kit`_
   * `Jetson Orin NX SOM on Jetson Orin Nano Developer kit`_
 
+.. _flashing Jetpack: https://docs.nvidia.com/jetson/archives/r36.5/DeveloperGuide/IN/QuickStart.html#to-flash-the-jetson-developer-kit-operating-software
+.. _snap samples: https://github.com/canonical/tegra-snap-samples/tree/main/nvpmodel
+.. _the Jetson Linux Developer Guide: https://docs.nvidia.com/jetson/archives/r36.5/DeveloperGuide/SD/PlatformPowerAndPerformance/JetsonOrinNanoSeriesJetsonOrinNxSeriesAndJetsonAgxOrinSeries.html#supported-modes-and-power-efficiency
+
+
 .. _Jetson AGX Orin Developer kit: https://ubuntu.com/certified/202406-34151
 .. _Jetson Orin Nano Developer kit: https://ubuntu.com/certified/202406-34152
 .. _Jetson Orin NX SOM on Jetson Orin Nano Developer kit: https://ubuntu.com/certified/202407-34213
-
-Recent fixes
-------------
-
-.. list-table::
-   :header-rows: 1
-
-   * - Issue
-     - Description
-   * - `2071409 <https://bugs.launchpad.net/riverside/+bug/2071409>`_
-     - No video output after resuming from suspend
-   * - `2081141 <https://bugs.launchpad.net/riverside/+bug/2081141>`_
-     - 3 Failures during v4l2 compliance test execution
-   * - `2081801 <https://bugs.launchpad.net/riverside/+bug/2081801>`_
-     - No wireless device detected: fixed as wireless/bluetooth firmware files are now installed by default with ``linux-firmware-nvidia-tegra`` package in the Ubuntu image
-   * - `2082057 <https://bugs.launchpad.net/riverside/+bug/2082057>`_
-     - bluetooth no default controller available
-   * - `2081802 <https://bugs.launchpad.net/riverside/+bug/2081802>`_
-     - bluetooth beacon test failed
-   * - `2081822 <https://bugs.launchpad.net/riverside/+bug/2081822>`_
-     - Failed to connect to any Wifi access points: ``wpa_supplicant`` is now installed by default in the Ubuntu image
-   * - `2089043 <https://bugs.launchpad.net/riverside/+bug/2089043>`_
-     - Audio over DisplayPort only works when loading ``snd_hda_tegra`` and ``snd_hda_codec_hdmi`` in initramfs
-   * - `2071428 <https://bugs.launchpad.net/riverside/+bug/2071428>`_
-     - On AGX, ``eth0`` (ethernet interface) has been renamed to ``eno1`` in order to have a predictable name
-
 
 
 Features not supported in this release
@@ -144,8 +125,6 @@ Known issues
      - Description
    * - `2061598 <https://bugs.launchpad.net/riverside/+bug/2061598>`_
      - On an Orin NX development kit, the very first flash of the :abbr:`QSPI` boot firmware might fail due to a write protection bit being set. In this case you need to perform an initrd flash of the :abbr:`QSPI` firmware (only necessary once to fix this issue) by following these instructions: https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/IN/QuickStart.html#to-flash-the-jetson-developer-kit-operating-software. After this operation, every subsequent flash of the :abbr:`QSPI` firmware will work the usual way.
-   * - `2071321 <https://bugs.launchpad.net/riverside/+bug/2071321>`_
-     - Part of the stress tests executed during the certification tests are based on https://github.com/ColinIanKing/stress-ng. The following command failed to run successfully on the AGX development kit: ``stress-ng --af-alg 0 --timeout 30 --skip-silent --verbose``. This issue is currently under investigation and should be fixed soon via a kernel package update. It does not affect the Nano/NX development kit because the related cryptography engines are not enabled with the current boot firmware version (a future release will also enable them).
    * - `2071414 <https://bugs.launchpad.net/riverside/+bug/2071414>`_
      - Netplan.io package doesn’t support ``WPA2-PSK-SHA256`` in its current Jammy version. While the corrective patch is already available on the latest Ubuntu version (1.1.2), the Jammy backport should get released later on this year.
    * - `2039983 <https://bugs.launchpad.net/riverside/+bug/2039983>`_
@@ -155,18 +134,20 @@ Known issues
    * - `2081139 <https://bugs.launchpad.net/riverside/+bug/2081139>`_
      - Similarly, the command ``gst-device-monitor-1.0`` will output a few “GStreamer-CRITICAL” when a camera is connected to the devkit. This is because the tool will send a ``VIDIOC_QUERYCAP`` instead of a ``VIDIOC_SUBDEV_QUERYCAP`` for a sub device. This needs to be fixed first in ``gst-plugins-good1.0`` before getting released in Ubuntu.
    * - `2091684 <https://bugs.launchpad.net/riverside/+bug/2091684>`_
-     - During tests, GStreamer pipelines involving hardware encoding (``nvv4l2h265enc``) had slower performance than expected (3x time slower). This issue isn’t easily reproducible and still under investigation.
+     - When a monitor is connected to the device, the gstreamer transcoding might be considerably slower than without.
    * - `2083007 <https://bugs.launchpad.net/riverside/+bug/2083007>`_
-     - On AGX, after installing the ``nvidia-tegra-drivers-36`` packages, all CPU governor tests on policy 8 failed. That’s because the packages are installing ``nvpmodel`` and applying the default related model.
+     - On AGX, after installing the ``nvpmodel`` snap, all CPU governor tests on policy 8 failed. That’s because the snap will install and apply the default related model.
    * - `2083009 <https://bugs.launchpad.net/riverside/+bug/2083009>`_
-     - Similarly, on NX, after installing the ``nvidia-tegra-drivers-36`` packages, all CPU governor tests on policy 4 failed
-   * - `2097636 <https://bugs.launchpad.net/riverside/+bug/2097636>`_
-     - While running the transcoding test pipelines described in :doc:`the installation instructions <installation-jammy>`: ``gst-launch-1.0 filesrc location=h264-reenc.mp4 ! qtdemux !   h264parse ! nvv4l2decoder ! nvv4l2av1enc ! matroskamux name=mux !   filesink location=av1-reenc.mkv -e`` thousands of error traces ``ParseObuFrameHeader: 2367: Invalid buf_idx = -1 or  offset`` are displayed. While this is looking suspicious, this trace isn’t actually preventing the command to finish properly and successfully.
+     - Similarly, on NX, after installing the ``nvpmodel`` snap, all CPU governor tests on policy 4 failed
+   * - `2150448 <https://bugs.launchpad.net/riverside/+bug/2150448>`_
+     - While running the gstreamer image capture pipelines described in the `tegra snap samples repository`_, the pipeline can return an error code of 1 even though the image gets captured correctly. This is due to a bug in the nvarguscamerasrc plugin that will fail to clean up the pipeline correctly.
    * - NA
      - Running LXD and Docker on the same host can cause `connectivity issues <https://documentation.ubuntu.com/lxd/en/latest/howto/network_bridge_firewalld/#prevent-connectivity-issues-with-lxd-and-docker>`_. This is something to keep in mind after installing Nvidia Container runtime.
+
+.. _tegra snap samples repository: https://github.com/canonical/tegra-snap-samples/tree/main/multimedia#camera-capture-using-gstreamer
 
 
 Report Bugs
 -----------
 
-To report a bug, identify the related package in https://launchpad.net/ubuntu , create a bug, then subscribe the team ``ubuntu-tegra`` to it. For firmware related issues, report a bug `in the launchpad project <https://launchpad.net/ubuntu/+source/linux-firmware-nvidia-tegra>`_.
+If a bug is found in a specific snap, bugs should be reported against that specific snap using the contact on that snap's page on https://snapcraft.io. If a generic Ubuntu Core system bug is discovered, please report it to snapd under https://bugs.launchpad.net/snapd/+filebug. For firmware related issues, report a bug `in the launchpad project <https://launchpad.net/ubuntu/+source/linux-firmware-nvidia-tegra>`_.
