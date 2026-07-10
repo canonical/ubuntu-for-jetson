@@ -362,11 +362,11 @@ Verify the camera is detected
 
    .. group-tab:: Jammy
 
-     Please also refer to the `NVIDIA test plan camera setup <https://docs.nvidia.com/jetson/archives/r36.5/DeveloperGuide/SD/TestPlanValidation.html#camera>`_
+     Please also refer to the `r36.5 NVIDIA test plan camera setup <https://docs.nvidia.com/jetson/archives/r36.5/DeveloperGuide/SD/TestPlanValidation.html#camera>`_
 
    .. group-tab:: Noble
 
-     Please also refer to the `NVIDIA test plan camera setup <https://docs.nvidia.com/jetson/archives/r39.2/DeveloperGuide/SD/TestPlanValidation.html#camera>`_
+     Please also refer to the `r39.2 NVIDIA test plan camera setup <https://docs.nvidia.com/jetson/archives/r39.2/DeveloperGuide/SD/TestPlanValidation.html#camera>`_
 
 .. code-block:: bash
 
@@ -622,12 +622,12 @@ NVIDIA container runtime
 
    .. group-tab:: Jammy
 
-      You can follow the `NVIDIA container test plan <https://docs.nvidia.com/jetson/archives/r36.5/DeveloperGuide/SD/TestPlanValidation.html#nvidia-containers>`_ to install and configure the `NVIDIA Container Toolkit <https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-the-nvidia-container-toolkit>`_ before running the JetPack container.
+      You can follow the `r36.5 NVIDIA container test plan <https://docs.nvidia.com/jetson/archives/r36.5/DeveloperGuide/SD/TestPlanValidation.html#nvidia-containers>`_ to install and configure the `NVIDIA Container Toolkit <https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-the-nvidia-container-toolkit>`_ before running the JetPack container.
       Try to run a previously built CUDA sample application:
 
    .. group-tab:: Noble
 
-      You can follow the `NVIDIA container test plan <https://docs.nvidia.com/jetson/archives/r39.2/DeveloperGuide/SD/TestPlanValidation.html#nvidia-containers>`_ to install and configure the `NVIDIA Container Toolkit <https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-the-nvidia-container-toolkit>`_ before running the JetPack container.
+      You can follow the `r39.2 NVIDIA container test plan <https://docs.nvidia.com/jetson/archives/r39.2/DeveloperGuide/SD/TestPlanValidation.html#nvidia-containers>`_ to install and configure the `NVIDIA Container Toolkit <https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-the-nvidia-container-toolkit>`_ before running the JetPack container.
       Try to run a previously built CUDA sample application:
 
 .. tabs::
@@ -683,10 +683,10 @@ Test
 
    .. group-tab:: Jammy
 
-     Execute steps 1 to 6 from the `NVIDIA VPI test plan <https://docs.nvidia.com/jetson/archives/r36.5/DeveloperGuide/SD/TestPlanValidation.html#vpi>`_, for each VPI sample application.
+     Execute steps 1 to 6 from the `r36.5 NVIDIA VPI test plan <https://docs.nvidia.com/jetson/archives/r36.5/DeveloperGuide/SD/TestPlanValidation.html#vpi>`_, for each VPI sample application.
 
    .. group-tab:: Noble
 
-     Execute steps 1 to 6 from the `NVIDIA VPI test plan <https://docs.nvidia.com/jetson/archives/r39.2/DeveloperGuide/SD/TestPlanValidation.html#vpi>`_, for each VPI sample application.
+     Execute steps 1 to 6 from the `r39.2 NVIDIA VPI test plan <https://docs.nvidia.com/jetson/archives/r39.2/DeveloperGuide/SD/TestPlanValidation.html#vpi>`_, for each VPI sample application.
 
 
