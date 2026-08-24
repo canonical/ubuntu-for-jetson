@@ -76,7 +76,7 @@ Recent fixes
    * - `2089043 <https://bugs.launchpad.net/riverside/+bug/2089043>`_
      - Audio over DisplayPort only works when loading ``snd_hda_tegra`` and ``snd_hda_codec_hdmi`` in initramfs
    * - `2071428 <https://bugs.launchpad.net/riverside/+bug/2071428>`_
-     - On AGX, ``eth0`` (ethernet interface) has been renamed to ``eno1`` in order to have a predictable name
+     - On AGX, ``eth0`` (Ethernet interface) has been renamed to ``eno1`` in order to have a predictable name
 
 
 
