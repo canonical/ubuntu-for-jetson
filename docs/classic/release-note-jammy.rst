@@ -66,11 +66,11 @@ Recent fixes
    * - `2081141 <https://bugs.launchpad.net/riverside/+bug/2081141>`_
      - 3 Failures during v4l2 compliance test execution
    * - `2081801 <https://bugs.launchpad.net/riverside/+bug/2081801>`_
-     - No wireless device detected: fixed as wireless/bluetooth firmware files are now installed by default with ``linux-firmware-nvidia-tegra`` package in the Ubuntu image
+     - No wireless device detected: fixed as wireless/Bluetooth firmware files are now installed by default with ``linux-firmware-nvidia-tegra`` package in the Ubuntu image
    * - `2082057 <https://bugs.launchpad.net/riverside/+bug/2082057>`_
-     - bluetooth no default controller available
+     - Bluetooth no default controller available
    * - `2081802 <https://bugs.launchpad.net/riverside/+bug/2081802>`_
-     - bluetooth beacon test failed
+     - Bluetooth beacon test failed
    * - `2081822 <https://bugs.launchpad.net/riverside/+bug/2081822>`_
      - Failed to connect to any Wifi access points: ``wpa_supplicant`` is now installed by default in the Ubuntu image
    * - `2089043 <https://bugs.launchpad.net/riverside/+bug/2089043>`_

@@ -7,7 +7,7 @@ NVIDIA JetPack on Ubuntu Server 22.04
 Install NVIDIA proprietary software
 ===================================
 
-The Ubuntu image brings everything necessary to boot Linux on a Jetson developer kit. However, to unlock the features of the Orin’s SoC (wireless network, bluetooth, GPU, …) you can install additional NVIDIA proprietary drivers and libraries using a Launchpad PPA:
+The Ubuntu image brings everything necessary to boot Linux on a Jetson developer kit. However, to unlock the features of the Orin’s SoC (wireless network, Bluetooth, GPU, …) you can install additional NVIDIA proprietary drivers and libraries using a Launchpad PPA:
 
 .. code-block:: bash
 
