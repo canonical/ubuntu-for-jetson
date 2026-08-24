@@ -9,7 +9,7 @@ Prerequisites
 
 * Ubuntu image and boot firmware downloaded
 * A laptop or PC (host: x86 architecture) running Ubuntu (following instructions have been tested with 22.04 and 24.04, but should be compatible with later versions as well)
-* A monitor with a DP port and a USB keyboard
+* A monitor with a DisplayPort input and a USB keyboard
 * A USB-C (device side) cable connecting the host to the device
 * A 2-pin jumper cap connector (only necessary for Nano/NX)
 * A boot media to program your image on:
