@@ -18,11 +18,41 @@ defensible: every changed line must be wrong, not merely improvable.
 
 ## Rule of engagement
 
-One test for every edit: **could a reviewer say "that was grammatically
-incorrect"?** If the only defence is "this reads better", do not change it —
-record it under `SKIPPED` instead. If the text looks factually or technically
-wrong rather than grammatically wrong, never edit it; record it under `SUSPECT`
-and report it to the user.
+One test for every edit: **could a reviewer say "that was objectively
+incorrect"?** There are exactly two grounds:
+
+1. It is grammatically, semantically, or mechanically wrong.
+2. It violates an established convention in the documentation.
+
+The convention's *initial choice* can be subjective; after the repo owner,
+product vendor, or an established local pattern has made that choice, deviation
+is an objective defect. For example, choosing `DisplayPort` over `DP` is a
+style decision; leaving `DP port` after `DisplayPort` is established is
+incorrect. Do not invoke "style" to preserve a known inconsistency.
+
+If the only defence is "this reads better", do not change it — record it under
+`SKIPPED` instead. If the text looks factually or technically wrong rather than
+grammatically wrong, never edit it; record it under `SUSPECT` and report it to
+the user.
+
+## Consistency doctrine
+
+Before normalising a variant, establish the pattern rather than inventing one.
+Use this evidence hierarchy, in order:
+
+1. **Explicit repo-owner ruling in this skill or the current request.**
+2. **Official product/vendor spelling** for a product or trademark.
+3. **An established local pattern** — the same document or closely related
+   sibling documents use one form consistently for the same meaning.
+4. **An established repo-wide documentation pattern.**
+5. **An existing project check** (Vale, spelling, or Sphinx) that requires a
+   form and does not conflict with higher-priority evidence.
+
+Same spelling does not imply the same meaning. Do not count identifiers, URLs,
+commands, package names, filenames, generated output, or official product
+names as prose precedent. A `#` comment in a code block is prose. If evidence
+is mixed or no pattern is established, leave the text alone and report the
+candidate under `SKIPPED`; do not create a convention by copy-edit.
 
 ## Allowed categories
 
@@ -52,8 +82,9 @@ Numbered so change logs can cite them.
 9. **Typos, doubled words, doubled spaces mid-sentence** — `by  running` ->
    `by running`.
 10. **Ungrammatical word order** — `You can connect to your developer kit a
-    USB keyboard and a monitor using a DP cable` -> `You can connect a USB
-    keyboard and a monitor to your developer kit using a DP cable`.
+    USB keyboard and a monitor using a DisplayPort cable` -> `You can connect a
+    USB keyboard and a monitor to your developer kit using a DisplayPort
+    cable`.
 11. **Indisputably wrong preposition/pronoun** — `insert it on the kit` -> `into
     the kit`; `instructions of NVIDIA JetPack` -> `instructions for`;
     `generate the signature lists and save it` -> `save them`;
@@ -68,7 +99,14 @@ Numbered so change logs can cite them.
     two kits (each has its own camera), and the setup described from the wrong
     end. Flag other instances under `SUSPECT` rather than rewriting them —
     this category was ruled on case by case, and restructuring a sentence is
-    otherwise forbidden by [Style](#forbidden--leave-alone-even-if-you-would-write-it-differently).
+    otherwise forbidden under the Style rule below.
+13. **Established-convention violation** — normalise a prose variant when the
+    [consistency doctrine](#consistency-doctrine) establishes the required form.
+    This includes spelling, capitalisation, terminology, and approved
+    abbreviation expansion. Record the evidence in the change log, for example:
+    `Display-Port` -> `DisplayPort` — VESA spelling, custom wordlist entry, and
+    existing release-note usage. Never use raw frequency as proof; first
+    exclude identifiers and cases where the terms mean different things.
 
 ## Forbidden — leave alone even if you would write it differently
 
@@ -76,21 +114,27 @@ Numbered so change logs can cite them.
   ellipsis characters, em/en dashes. This tree uses curly quotes in prose; a
   copy-edit pass must not flip them, and this is the mistake automated agents
   make most often. Grep the finished diff for it.
-- **Terminology normalisation** is *not* forbidden — the house-style rulings in
-  [Branding](#branding) and [Terminology](#terminology) are binding. Generic
+- **Terminology normalisation** is required when the [consistency
+  doctrine](#consistency-doctrine) establishes a form. The house-style rulings
+  in [Branding](#branding) and [Terminology](#terminology) are binding. Generic
   prose uses lowercase `developer kit`; named products use title case, for
   example `Jetson AGX Thor Developer Kit`.
-- **Variant spellings.** `customisation` and other UK spellings in README.
+- **Unruled variant spellings.** Do not switch `customisation` or other UK
+  spellings to US English, or vice versa, merely because you prefer one. If a
+  documented convention establishes one form for the same prose meaning,
+  category 13 applies instead.
 - **Style.** Rewording for tone/concision, sentence restructuring beyond
   category 10, Oxford commas, heading capitalisation, list-item trailing
   periods, comma splices, `in order to`, line rewrapping. Docs use one long line
-  per paragraph — keep it.
+  per paragraph — keep it. This does not protect a deviation from an established
+  convention.
 - **Everything non-prose.** `.. code-block::` bodies and literal blocks,
   command output, file paths, ``inline literals``, URLs, RST link *targets*,
   `.. _anchor:` labels, `:ref:` targets, substitution names, toctree entries,
   directive/option names. Also `docs/.custom_wordlist.txt` and
-  `docs/.sphinx/.wordlist.txt`. The one carve-out is brand names — including
-  inside `#` comments in code blocks — see [Branding](#branding).
+  `docs/.sphinx/.wordlist.txt`. `#` comments in code blocks are prose; apply
+  established prose conventions to them. Never alter an identifier to make it
+  look consistent with prose.
 - **Whitespace-only issues** such as trailing whitespace (README.md:34).
 - Adding or removing sentences, notes, or admonitions.
 
@@ -243,9 +287,14 @@ parent runs the suite once), and require this output shape:
 
 ```
 path:line | category N | "before" -> "after"
+EVIDENCE: <required only for category 13; ruling, official spelling, or local pattern>
 SKIPPED:  <thing left alone> — <why>
 SUSPECT:  <possible factual/technical error, untouched>
 ```
+
+Category 13 without evidence is not an accepted edit. “More common” is not
+evidence until the agent shows that the competing uses are the same prose
+meaning rather than identifiers, quoted output, or proper names.
 
 Zero changes is a valid result for a file; say so explicitly.
 
