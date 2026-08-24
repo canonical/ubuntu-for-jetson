@@ -227,7 +227,7 @@ Device:
 Connect a monitor
 -----------------
 
-You can connect a USB keyboard/mouse and a monitor to your development kit using a Display-Port cable. You can follow the boot and kernel execution on the display, then get a console prompt once Ubuntu is started.
+You can connect a USB keyboard/mouse and a monitor to your development kit using a DisplayPort cable. You can follow the boot and kernel execution on the display, then get a console prompt once Ubuntu is started.
 
 .. _UEFI-menu:
 
