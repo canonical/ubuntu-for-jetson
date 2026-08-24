@@ -14,7 +14,7 @@ UEFI Secure Boot will validate all binaries loaded by the UEFI boot firmware but
 Generating and downloading the keys
 -----------------------------------
 
-We need to manually generate a ``PK`` (Platform Key), ``KEK`` (Key Exchange Key) and a ``DB`` (Database Key). In addition to that, we need to provision a Microsoft ``KEK`` and ``DB`` since these will be needed to validate shim. During the boot process, shim will introduce Canonical certificates which will be used to validate grub and the kernel.
+We need to manually generate a ``PK`` (Platform Key), ``KEK`` (Key Exchange Key) and a ``DB`` (Database Key). In addition to that, we need to provision a Microsoft ``KEK`` and ``DB`` since these will be needed to validate shim. During the boot process, shim will introduce Canonical certificates which will be used to validate GRUB and the kernel.
 
 Download the 2023 Microsoft ``DB`` and ``KEK``:
 

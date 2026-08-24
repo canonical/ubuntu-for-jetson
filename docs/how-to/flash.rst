@@ -48,10 +48,10 @@ Install missing dependencies and fix file permissions
 
 .. _devkit-recovery-mode:
 
-Put the devkit into recovery mode
----------------------------------
+Put the developer kit into recovery mode
+----------------------------------------
 
-While the operation is quite similar, the procedure to enable the recovery mode differs with every kit. First connect the USB cable between the host (should be type A) and the kit (type C, on AGX devkit it is the one located close to the 40-pin connector). Once the recovery mode is enabled, the host should detect a USB device ``0955:7X23 NVIDIA Corp. APX``, with X being one of {0,2,3,4,5,6} (see the `NVIDIA Jetson Quick Start reference`_).
+While the operation is quite similar, the procedure to enable the recovery mode differs with every kit. First connect the USB cable between the host (should be type A) and the kit (type C, on AGX developer kit it is the one located close to the 40-pin connector). Once the recovery mode is enabled, the host should detect a USB device ``0955:7X23 NVIDIA Corp. APX``, with X being one of {0,2,3,4,5,6} (see the `NVIDIA Jetson Quick Start reference`_).
 
 Note that once an image is up and running on the device, alternative ways could also be used:
 
@@ -150,18 +150,18 @@ QSPI for Jetson Orin Nano/NX
 (Optional) Program a device tree overlay with the boot firmware (camera support)
 --------------------------------------------------------------------------------
 
-While JetPack relies on ``ExtLinux`` to boot, Ubuntu is launched by GRUB, which currently doesn't support device tree overlay. As a consequence, in order to use a camera connected to a Jetson development kit, the related overlay must be programmed along with the boot firmware.
+While JetPack relies on ``ExtLinux`` to boot, Ubuntu is launched by GRUB, which currently doesn't support device tree overlay. As a consequence, in order to use a camera connected to a Jetson developer kit, the related overlay must be programmed along with the boot firmware.
 First, locate the appropriate ``.dtbo`` file for your camera in the ``Linux_for_Tegra/kernel/dtb`` directory, then append a ``ADDITIONAL_DTB_OVERLAY=<DTBO file name>`` argument to the command line. For instance:
 
 .. code-block:: bash
 
-    # AGX devkit with LI Dual IMX274 camera module
+    # AGX developer kit with LI Dual IMX274 camera module
     sudo ADDITIONAL_DTB_OVERLAY=tegra234-p3737-camera-dual-imx274-overlay.dtbo ./flash.sh p3737-0000-p3701-0000-qspi internal
 
-    # Nano or NX devkit with an IMX219 camera on CSI slot 0
+    # Nano or NX developer kit with an IMX219 camera on CSI slot 0
     sudo ADDITIONAL_DTB_OVERLAY=tegra234-p3767-camera-p3768-imx219-A.dtbo ./flash.sh p3768-0000-p3767-0000-a0-qspi internal
 
-    # Nano or NX devkit with an IMX219 camera on CSI slot 0 and IMX477 camera on slot 1
+    # Nano or NX developer kit with an IMX219 camera on CSI slot 0 and IMX477 camera on slot 1
     sudo ADDITIONAL_DTB_OVERLAY=tegra234-p3767-camera-p3768-imx219-imx477.dtbo ./flash.sh p3768-0000-p3767-0000-a0-qspi internal
 
 
@@ -184,9 +184,9 @@ Program the Ubuntu image on your external boot media
 (Alternatively) Program the Ubuntu image using the NVIDIA L4T restore script
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This method is the easiest way to program an internal disk, such as eMMC or pre-installed NVMe disk. It also allows you to program the image with limited human interaction (such as programming an external boot media with a side computer, then plugging it to the development kit).
+This method is the easiest way to program an internal disk, such as eMMC or pre-installed NVMe disk. It also allows you to program the image with limited human interaction (such as programming an external boot media with a side computer, then plugging it to the developer kit).
 
-As a prerequisite for this method, you need to put the board into :ref:`recovery mode<devkit-recovery-mode>`. You can then use the `backup-restore tool from NVIDIA`_ to install a raw disk image on any installed media. The tool loads an initrd flash image via the USB-C cable and boots it, enabling an IPv6 network connection over USB. It relies on the ``nfs-kernel-server`` service to host the raw image, allowing an NFS mount on the development kit, connected to the host machine (which runs the script). The script will use SSH to connect to the initrd image, mount the NFS volume, and perform the raw image copy using dd. Therefore, the boot media must be connected to the development kit, and a root file system must be available on the host for the development kit to boot from. For this purpose, you should download and extract the Sample Root Filesystem provided by NVIDIA with the version of Linux for Tegra you are using (downloaded from the `Jetson Linux archive`_), running similar commands in the Linux\_for\_Tegra directory:
+As a prerequisite for this method, you need to put the board into :ref:`recovery mode<devkit-recovery-mode>`. You can then use the `backup-restore tool from NVIDIA`_ to install a raw disk image on any installed media. The tool loads an initrd flash image via the USB-C cable and boots it, enabling an IPv6 network connection over USB. It relies on the ``nfs-kernel-server`` service to host the raw image, allowing an NFS mount on the developer kit, connected to the host machine (which runs the script). The script will use SSH to connect to the initrd image, mount the NFS volume, and perform the raw image copy using dd. Therefore, the boot media must be connected to the developer kit, and a root file system must be available on the host for the developer kit to boot from. For this purpose, you should download and extract the Sample Root Filesystem provided by NVIDIA with the version of Linux for Tegra you are using (downloaded from the `Jetson Linux archive`_), running similar commands in the Linux\_for\_Tegra directory:
 
 
 .. code-block:: bash
@@ -227,7 +227,7 @@ Device:
 Connect a monitor
 -----------------
 
-You can connect a USB keyboard/mouse and a monitor to your development kit using a DisplayPort cable. You can follow the boot and kernel execution on the display, then get a console prompt once Ubuntu is started.
+You can connect a USB keyboard/mouse and a monitor to your developer kit using a DisplayPort cable. You can follow the boot and kernel execution on the display, then get a console prompt once Ubuntu is started.
 
 .. _UEFI-menu:
 
@@ -247,7 +247,7 @@ At every boot, you will get a chance to enter the UEFI menu by pressing the Esca
 
 This menu will eventually allow you to select a different boot option. If you don’t press a key, UEFI will automatically launch the default option.
 
-Grub
+GRUB
 ----
 
 The UEFI boot loader will automatically launch GRUB, which then will launch Ubuntu. On Ubuntu Classic you will get the option to select the boot entry manually, whereas on Ubuntu Core  you will not be prompted unless the kernel fails to boot, in which case you get the chance to select a recovery option.

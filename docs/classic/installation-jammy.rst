@@ -7,7 +7,7 @@ NVIDIA JetPack on Ubuntu Server 22.04
 Install NVIDIA proprietary software
 ===================================
 
-The Ubuntu image brings everything necessary to boot Linux on a Jetson development kit. However, to unlock the features of the Orin’s SoC (wireless network, bluetooth, GPU, …) you can install additional NVIDIA proprietary drivers and libraries using a Launchpad PPA:
+The Ubuntu image brings everything necessary to boot Linux on a Jetson developer kit. However, to unlock the features of the Orin’s SoC (wireless network, bluetooth, GPU, …) you can install additional NVIDIA proprietary drivers and libraries using a Launchpad PPA:
 
 .. code-block:: bash
 
@@ -145,7 +145,7 @@ Camera
 Prerequisites
 """""""""""""
 
-The following commands were tested on an IMX219 camera module connected to a Nano and NX devkit.
+The following commands were tested on an IMX219 camera module connected to a Nano and NX developer kit.
 
 .. code-block:: bash
 
@@ -218,8 +218,8 @@ Still with the same ``sensor-id``
 GStreamer
 ^^^^^^^^^
 
-Pre-requisites
-""""""""""""""
+Prerequisites for GStreamer
+"""""""""""""""""""""""""""
 
 Make sure to install the necessary GStreamer packages
 

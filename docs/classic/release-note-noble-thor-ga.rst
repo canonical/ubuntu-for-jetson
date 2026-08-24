@@ -40,7 +40,7 @@ Release Highlights
 ------------------
 
 
-* This release only targets Jetson AGX Thor, it does not support the Jetson Orin development kits.
+* This release only targets Jetson AGX Thor, it does not support the Jetson Orin Developer Kits.
 * This release enables :doc:`/classic/installation-noble`.
 * Canonical QA team has been running intensive testing of this release in order to qualify it as Ubuntu certified on the hardware platform referenced below:
 
@@ -87,11 +87,11 @@ The following tests have been excluded from the :abbr:`CQA (Compliance Quality A
    * - Issue
      - Description
    * - \-
-     - Jetson AGX Thor development kit doesn't have a CSI connector, so Camera testing was excluded from the scope of this certification.
+     - Jetson AGX Thor Developer Kit doesn't have a CSI connector, so Camera testing was excluded from the scope of this certification.
    * - \-
-     - Similarly, the development kit includes a QSPF connector, but qualifying that generic interface wasn't part of the test scope for this certification.
+     - Similarly, the developer kit includes a QSPF connector, but qualifying that generic interface wasn't part of the test scope for this certification.
    * - `2122577 <https://bugs.launchpad.net/riverside/+bug/2122577>`_
-     - USB-C storage tests have been excluded as the 2 USB-C ports of the development kit were already reserved (one for flashing operations, and the other one to connect the power supply). Please refer to `NVIDIA's documentation <https://docs.nvidia.com/jetson/agx-thor-devkit/user-guide/latest/hardware_layout.html#io-side-layout>`_ for details.
+     - USB-C storage tests have been excluded as the 2 USB-C ports of the developer kit were already reserved (one for flashing operations, and the other one to connect the power supply). Please refer to `NVIDIA's documentation <https://docs.nvidia.com/jetson/agx-thor-devkit/user-guide/latest/hardware_layout.html#io-side-layout>`_ for details.
 
 
 Known issues
