@@ -134,13 +134,13 @@ Known issues
    * - `2081139 <https://bugs.launchpad.net/riverside/+bug/2081139>`_
      - Similarly, the command ``gst-device-monitor-1.0`` will output a few “GStreamer-CRITICAL” when a camera is connected to the developer kit. This is because the tool will send a ``VIDIOC_QUERYCAP`` instead of a ``VIDIOC_SUBDEV_QUERYCAP`` for a sub device. This needs to be fixed first in ``gst-plugins-good1.0`` before getting released in Ubuntu.
    * - `2091684 <https://bugs.launchpad.net/riverside/+bug/2091684>`_
-     - When a monitor is connected to the device, the gstreamer transcoding might be considerably slower than without.
+     - When a monitor is connected to the device, the GStreamer transcoding might be considerably slower than without.
    * - `2083007 <https://bugs.launchpad.net/riverside/+bug/2083007>`_
      - On AGX, after installing the ``nvpmodel`` snap, all CPU governor tests on policy 8 failed. That’s because the snap will install and apply the default related model.
    * - `2083009 <https://bugs.launchpad.net/riverside/+bug/2083009>`_
      - Similarly, on NX, after installing the ``nvpmodel`` snap, all CPU governor tests on policy 4 failed
    * - `2150448 <https://bugs.launchpad.net/riverside/+bug/2150448>`_
-     - While running the gstreamer image capture pipelines described in the `tegra snap samples repository`_, the pipeline can return an error code of 1 even though the image gets captured correctly. This is due to a bug in the nvarguscamerasrc plugin that will fail to clean up the pipeline correctly.
+     - While running the GStreamer image capture pipelines described in the `tegra snap samples repository`_, the pipeline can return an error code of 1 even though the image gets captured correctly. This is due to a bug in the nvarguscamerasrc plugin that will fail to clean up the pipeline correctly.
    * - NA
      - Running LXD and Docker on the same host can cause `connectivity issues <https://documentation.ubuntu.com/lxd/en/latest/howto/network_bridge_firewalld/#prevent-connectivity-issues-with-lxd-and-docker>`_. This is something to keep in mind after installing NVIDIA Container runtime.
 
