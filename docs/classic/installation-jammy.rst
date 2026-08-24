@@ -326,7 +326,7 @@ Try to run a previously built CUDA sample application:
         /root/cuda-samples/Samples/1_Utilities/deviceQuery/deviceQuery
 
 .. _NVIDIA container test plan: https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/TestPlanValidation.html#nvidia-containers
-.. _NVIDIA container toolkit: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-the-nvidia-container-toolkit
+.. _NVIDIA Container Toolkit: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-the-nvidia-container-toolkit
 
 VPI
 ^^^
