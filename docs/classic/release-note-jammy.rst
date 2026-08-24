@@ -72,7 +72,7 @@ Recent fixes
    * - `2081802 <https://bugs.launchpad.net/riverside/+bug/2081802>`_
      - Bluetooth beacon test failed
    * - `2081822 <https://bugs.launchpad.net/riverside/+bug/2081822>`_
-     - Failed to connect to any Wifi access points: ``wpa_supplicant`` is now installed by default in the Ubuntu image
+     - Failed to connect to any Wi-Fi access points: ``wpa_supplicant`` is now installed by default in the Ubuntu image
    * - `2089043 <https://bugs.launchpad.net/riverside/+bug/2089043>`_
      - Audio over DisplayPort only works when loading ``snd_hda_tegra`` and ``snd_hda_codec_hdmi`` in initramfs
    * - `2071428 <https://bugs.launchpad.net/riverside/+bug/2071428>`_
