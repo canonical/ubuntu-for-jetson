@@ -145,7 +145,7 @@ Camera
 Prerequisites
 """""""""""""
 
-The following commands were tested on an IMX219 camera module connected to a Nano and NX developer kit.
+The following commands were tested on Orin Nano and NX developer kits with IMX219 camera modules connected.
 
 .. code-block:: bash
 
