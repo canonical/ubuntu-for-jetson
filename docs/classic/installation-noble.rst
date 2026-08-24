@@ -7,7 +7,7 @@ NVIDIA JetPack on Ubuntu Server 24.04
 Install NVIDIA proprietary software
 ===================================
 
-The Ubuntu image brings everything necessary to boot Linux on a Jetson development kit. However, to unlock the features of the Tegra SoC (wireless network, bluetooth, GPU, …) you can install additional NVIDIA proprietary drivers and libraries using NVIDIA packages repository:
+The Ubuntu image brings everything necessary to boot Linux on a Jetson development kit. However, to unlock the features of the Tegra SoC (wireless network, bluetooth, GPU, …) you can install additional NVIDIA proprietary drivers and libraries using the NVIDIA package repository:
 
 .. code-block:: bash
 
