@@ -41,7 +41,7 @@ Release Highlights
 ------------------
 
 
-* The kernel meta-package for Jetson devices is now changed to ``linux-nvidia-tegra-jetson`` (instead of ``linux-nvidia-tegra-igx`` ). Further details (\ `LP#2069179 <https://bugs.launchpad.net/riverside/+bug/2069179>`_\ ) : https://discourse.ubuntu.com/t/changes-to-ubuntu-for-tegra-kernel-metapackages-on-jetson-and-igx/48807
+* The kernel meta-package for Jetson devices is now changed to ``linux-nvidia-tegra-jetson`` (instead of ``linux-nvidia-tegra-igx`` ). Further details (\ `LP#2069179 <https://bugs.launchpad.net/riverside/+bug/2069179>`_\ ): https://discourse.ubuntu.com/t/changes-to-ubuntu-for-tegra-kernel-metapackages-on-jetson-and-igx/48807
 * Nvidia introduced Nano Super power mode with Jetpack 6.2. To enable this power mode, as described in https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/PlatformPowerAndPerformance/JetsonOrinNanoSeriesJetsonOrinNxSeriesAndJetsonAgxOrinSeries.html#supported-modes-and-power-efficiency, it requires both `flashing JetPack <https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/IN/QuickStart.html#to-flash-the-jetson-developer-kit-operating-software>`_ with a specific configuration (the Ubuntu image must be reinstalled afterwards), and switching to a specific power mode using the ``nvpmodel`` command (installed by the ``nvidia-tegra-drivers-36`` packages, please refer to :doc:`the installation instructions <installation-jammy>`).
 * Canonical QA team has been running intensive testing of this release in order to qualify it as Ubuntu certified on the three hardware platforms referenced below:
 
@@ -107,9 +107,9 @@ The following tests have been excluded from the :abbr:`CQA (Compliance Quality A
    * - Issue
      - Description
    * - `2071401 <https://bugs.launchpad.net/riverside/+bug/2071401>`_ skipped
-     - RTC clock 1 (skipped) : the development kits don’t have an external battery included
+     - RTC clock 1 (skipped): the development kits don’t have an external battery included
    * - `2071402 <https://bugs.launchpad.net/riverside/+bug/2071402>`_ adapted
-     - Thermal zones : Some of them aren’t readable on Nano and require a specific workaround on AGX
+     - Thermal zones: Some of them aren’t readable on Nano and require a specific workaround on AGX
    * - `2071403 <https://bugs.launchpad.net/riverside/+bug/2071403>`_ skipped
      - ``CAAM`` cryptography tests are only applicable to NXP devices
    * - `2071404 <https://bugs.launchpad.net/riverside/+bug/2071404>`_ skipped
@@ -169,4 +169,4 @@ Known issues
 Report Bugs
 -----------
 
-To report a bug, identify the related package in https://launchpad.net/ubuntu , create a bug, then subscribe the team ``ubuntu-tegra`` to it. For firmware related issues, report a bug `in the launchpad project <https://launchpad.net/ubuntu/+source/linux-firmware-nvidia-tegra>`_.
+To report a bug, identify the related package in https://launchpad.net/ubuntu, create a bug, then subscribe the team ``ubuntu-tegra`` to it. For firmware related issues, report a bug `in the launchpad project <https://launchpad.net/ubuntu/+source/linux-firmware-nvidia-tegra>`_.

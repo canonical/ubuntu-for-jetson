@@ -1,7 +1,7 @@
 .. _secure-boot:
 
-Setup secure boot
-=================
+Set up secure boot
+==================
 
 The NVIDIA Tegra boards come with full support for the Secure Boot specification, but do not come with any pre-loaded certificate in the firmware.
 
@@ -55,7 +55,7 @@ Inside the BSP, we need to create a new directory for the UEFI keys. Then we nee
     # move microsoft certificates
     mv ~/Downloads/{msft_db_2011.der, msft_KEK_2011.der, msft_db_2023.der, msft_KEK_2023.der} ./
 
-For all keys and certificates, we also want to generate the corresponding EFI signature lists and save it in UEFI variables.  For the Microsoft certificates, we first need to convert the Microsoft certificates from :abbr:`DER (Distinguished Encoding Rules)` to :abbr:`PEM (Privacy Enhanced Mail)` and then to EFI signature list. You can do this by running the following commands:
+For all keys and certificates, we also want to generate the corresponding EFI signature lists and save them in UEFI variables.  For the Microsoft certificates, we first need to convert the Microsoft certificates from :abbr:`DER (Distinguished Encoding Rules)` to :abbr:`PEM (Privacy Enhanced Mail)` and then to EFI signature list. You can do this by running the following commands:
 
 .. code-block:: bash
 
@@ -121,7 +121,7 @@ And it will output the file ``uefi_keys/UefiDefaultSecurityKeys.dtbo``.
 Provisioning the Keys
 ---------------------
 
-We provision the keys by  running the ``$BSP_DIR/tools/kernel_flash/l4t_initrd_flash.sh`` script after booting the device into recovery. We copy the ``UefiDefaultSecurityKeys.dtbo`` into the ``$BSP_DIR/bootloader`` directory and then run the script:
+We provision the keys by running the ``$BSP_DIR/tools/kernel_flash/l4t_initrd_flash.sh`` script after booting the device into recovery. We copy the ``UefiDefaultSecurityKeys.dtbo`` into the ``$BSP_DIR/bootloader`` directory and then run the script:
 
 .. code-block:: bash
 

@@ -7,7 +7,7 @@ NVIDIA JetPack on Ubuntu Server 22.04
 Install NVIDIA proprietary software
 ===================================
 
-The Ubuntu image brings anything necessary to boot Linux on a Jetson development kit. However, to unlock the features of the Orin’s SoC (wireless network, bluetooth, GPU, …) you can install additional NVIDIA proprietary drivers and libraries using a Launchpad PPA :
+The Ubuntu image brings everything necessary to boot Linux on a Jetson development kit. However, to unlock the features of the Orin’s SoC (wireless network, bluetooth, GPU, …) you can install additional NVIDIA proprietary drivers and libraries using a Launchpad PPA:
 
 .. code-block:: bash
 
@@ -258,7 +258,7 @@ Make sure to install the necessary GStreamer packages
 `Transcode using GStreamer <https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/TestPlanValidation.html#transcode-using-gstreamer>`_
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-Using a stream from the `Big Buck Bunny project <https://peach.blender.org/>`_, you can easily test the transcoding pipelines (note that Jetson Orin Nano don’t have hardware encoders and won’t be able to run these pipelines):
+Using a stream from the `Big Buck Bunny project <https://peach.blender.org/>`_, you can easily test the transcoding pipelines (note that Jetson Orin Nano doesn’t have hardware encoders and won’t be able to run these pipelines):
 
 .. code-block:: bash
 

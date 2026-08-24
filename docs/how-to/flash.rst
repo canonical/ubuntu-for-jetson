@@ -9,13 +9,13 @@ Prerequisites
 
 * Ubuntu image and boot firmware downloaded
 * A laptop or PC (host: x86 architecture) running Ubuntu (following instructions have been tested with 22.04 and 24.04, but should be compatible with later versions as well)
-* A monitor with DP port and an USB keyboard
-* An USB-C (device side) cable connecting the host to the device
-* A 2 pin jumper cap connector (only necessary for Nano/NX)
+* A monitor with a DP port and a USB keyboard
+* A USB-C (device side) cable connecting the host to the device
+* A 2-pin jumper cap connector (only necessary for Nano/NX)
 * A boot media to program your image on:
 
   * SD card: cheap but don’t expect great performance
-  * USB: for the same reasons than above, prefer a real disk than a stick
+  * USB: for the same reasons as above, prefer a real disk over a stick
   * NVMe disk: must be installed to the dedicated PCIe slot
 
 All the following commands are intended to be run as a normal user (no root).
@@ -23,7 +23,7 @@ All the following commands are intended to be run as a normal user (no root).
 Preparation
 -----------
 
-The Linux for Tegra tools installed with the boot firmware tarball contain scripts used to flash the software of a Jetson board, both firmware and operating system. Ubuntu image has been tested using the boot firmware linked on the `Ubuntu download page for NVIDIA Jetson`_ (note: all versions are published by Nvidia on the `Linux Tegra download page`_ and can be retrieved by clicking “Driver Package (BSP)”). In order to use the tools, first install the following packages
+The Linux for Tegra tools installed with the boot firmware tarball contain scripts used to flash the software of a Jetson board, both firmware and operating system. The Ubuntu image has been tested using the boot firmware linked on the `Ubuntu download page for NVIDIA Jetson`_ (note: all versions are published by Nvidia on the `Linux Tegra download page`_ and can be retrieved by clicking “Driver Package (BSP)”). In order to use the tools, first install the following packages
 
 
 .. code-block:: bash
@@ -51,7 +51,7 @@ Install missing dependencies and fix file permissions
 Put the devkit into recovery mode
 ---------------------------------
 
-While the operation is quite similar, the procedure to enable the recovery mode differs with every kit. First connect the USB cable between the host (should be type A) and the kit (type C, on AGX devkit it is the one located close to the 40-pin connector). Once the recovery mode is enabled, the host should detect an USB device ``0955:7X23 NVIDIA Corp. APX``, with X being one of {0,2,3,4,5,6} (see the `NVIDIA Jetson Quick Start reference`_).
+While the operation is quite similar, the procedure to enable the recovery mode differs with every kit. First connect the USB cable between the host (should be type A) and the kit (type C, on AGX devkit it is the one located close to the 40-pin connector). Once the recovery mode is enabled, the host should detect a USB device ``0955:7X23 NVIDIA Corp. APX``, with X being one of {0,2,3,4,5,6} (see the `NVIDIA Jetson Quick Start reference`_).
 
 Note that once an image is up and running on the device, alternative ways could also be used:
 
@@ -113,7 +113,7 @@ The simplest way is to use the buttons on the front panel of the kit (see `NVIDI
 Recovery on Jetson Orin Nano/NX
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. With the kit powered off, connect pins 9 (``GND``) and 10 (``FC REC``) of the 12 pins Button Header (using a 2 pins jumper cap connector, for details, check the `carrier board specification`_)
+1. With the kit powered off, connect pins 9 (``GND``) and 10 (``FC REC``) of the 12-pin Button Header (using a 2-pin jumper cap connector, for details, check the `carrier board specification`_)
 2. Power-on the kit
 3. Program the boot firmware or Ubuntu image
 4. (Optionally) Power-off the kit and remove the jumper cap connector, otherwise the next hard reboot of the kit will enable the recovery mode once again
@@ -179,14 +179,14 @@ Program the Ubuntu image on your external boot media
     sudo sync
 
 
-3. Remove the boot media from the host, insert it on the kit
+3. Remove the boot media from the host, insert it into the kit
 
 (Alternatively) Program the Ubuntu image using the Nvidia L4T restore script
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This method is the easiest way to program an internal disk, such as eMMC or pre-installed NVMe disk. It also allows you to program the image with limited human interaction (such as programming an external boot media with a side computer, then plugging it to the development kit).
 
-As a prerequisite for this method, you need to put the board into :ref:`recovery mode<devkit-recovery-mode>`. You can then use the `backup-restore tool from Nvidia`_ to install a raw disk image on any installed media. The tool loads an initrd flash image via the USB-C cable and boots it, enabling an IPv6 network connection over USB. It relies on the ``nfs-kernel-server`` service to host the raw image, allowing a NFS mount on the development kit, connected to the host machine (which runs the script). The script will use SSH to connect to the initrd image, mount the NFS volume, and perform the raw image copy using dd. Therefore, the boot media must be connected to the development kit, and a root file system must be available on the host for the development kit to boot from. For this purpose, you should download and extract the Sample Root Filesystem provided by NVIDIA with the version of Linux for Tegra you are using (downloaded from the `Jetson Linux archive`_), running similar commands in the Linux\_for\_Tegra directory:
+As a prerequisite for this method, you need to put the board into :ref:`recovery mode<devkit-recovery-mode>`. You can then use the `backup-restore tool from Nvidia`_ to install a raw disk image on any installed media. The tool loads an initrd flash image via the USB-C cable and boots it, enabling an IPv6 network connection over USB. It relies on the ``nfs-kernel-server`` service to host the raw image, allowing an NFS mount on the development kit, connected to the host machine (which runs the script). The script will use SSH to connect to the initrd image, mount the NFS volume, and perform the raw image copy using dd. Therefore, the boot media must be connected to the development kit, and a root file system must be available on the host for the development kit to boot from. For this purpose, you should download and extract the Sample Root Filesystem provided by NVIDIA with the version of Linux for Tegra you are using (downloaded from the `Jetson Linux archive`_), running similar commands in the Linux\_for\_Tegra directory:
 
 
 .. code-block:: bash
@@ -195,7 +195,7 @@ As a prerequisite for this method, you need to put the board into :ref:`recovery
     sudo ./apply_binaries.sh
 
 
-You can now use the backup\_restore tools to flash your device. From the Linux\_for\_Tegra directory, enter the following command :
+You can now use the backup\_restore tools to flash your device. From the Linux\_for\_Tegra directory, enter the following command:
 
 
 .. code-block:: bash
@@ -227,14 +227,14 @@ Device:
 Connect a monitor
 -----------------
 
-You can connect to your development kit a USB keyboard/mouse and a monitor using a Display-Port cable. You can follow the boot and kernel execution on display, then get a console prompt once Ubuntu is started.
+You can connect a USB keyboard/mouse and a monitor to your development kit using a Display-Port cable. You can follow the boot and kernel execution on the display, then get a console prompt once Ubuntu is started.
 
 .. _UEFI-menu:
 
 UEFI menu
 ---------
 
-At every boot, you will get a chance to enter the UEFI menu by pressing Escape or F11 key.
+At every boot, you will get a chance to enter the UEFI menu by pressing the Escape or F11 key.
 
 .. code-block::
 
@@ -278,7 +278,7 @@ You should be able to check the WLAN interface (using ``ip link`` for instance):
     2: wlP1p1s0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
         link/ether 90:e8:68:bc:88:a9 brd ff:ff:ff:ff:ff:ff
 
-Ubuntu Server comes with `netplan and systemd-networkd preinstalled`_. The initial netplan configuration in the image should already take care of the Ethernet interface. To setup a WLAN connection, you can perform the following steps to add the related configuration:
+Ubuntu Server comes with `netplan and systemd-networkd preinstalled`_. The initial netplan configuration in the image should already take care of the Ethernet interface. To set up a WLAN connection, you can perform the following steps to add the related configuration:
 
 .. code-block:: bash
 

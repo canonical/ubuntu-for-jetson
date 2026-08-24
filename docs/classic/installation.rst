@@ -1,8 +1,8 @@
 .. _install_classic:
 
-===========================================
-Installation instructions of NVIDIA JetPack
-===========================================
+============================================
+Installation instructions for NVIDIA JetPack
+============================================
 
 .. toctree::
    :maxdepth: 1

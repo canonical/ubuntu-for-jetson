@@ -88,9 +88,9 @@ The following tests have been excluded from the :abbr:`CQA (Compliance Quality A
    * - Issue
      - Description
    * - `2071401 <https://bugs.launchpad.net/riverside/+bug/2071401>`_ skipped
-     - RTC clock 1 (skipped) : the development kits don’t have an external battery included
+     - RTC clock 1 (skipped): the development kits don’t have an external battery included
    * - `2071402 <https://bugs.launchpad.net/riverside/+bug/2071402>`_ adapted
-     - Thermal zones : Some of them aren’t readable on Nano and require a specific workaround on AGX
+     - Thermal zones: Some of them aren’t readable on Nano and require a specific workaround on AGX
    * - `2071403 <https://bugs.launchpad.net/riverside/+bug/2071403>`_ skipped
      - ``CAAM`` cryptography tests are only applicable to NXP devices
    * - `2071404 <https://bugs.launchpad.net/riverside/+bug/2071404>`_ skipped
