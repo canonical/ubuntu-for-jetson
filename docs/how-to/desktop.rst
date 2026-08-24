@@ -18,7 +18,7 @@ Some use cases might require a desktop environment. To turn your Ubuntu Server i
          sudo apt install -y ubuntu-desktop-minimal
          sudo sed -i 's/allowed_users.*/allowed_users=anybody/' "/etc/X11/Xwrapper.config"
          echo "needs_root_rights=yes" | sudo tee -a "/etc/X11/Xwrapper.config"
-         sudo sed 's/#WaylandEnable=false/WaylandEnable= false/' -i /etc/gdm3/custom.conf
+         sudo sed 's/#WaylandEnable=false/WaylandEnable=false/' -i /etc/gdm3/custom.conf
          sudo adduser gdm video
          sudo reboot
 
