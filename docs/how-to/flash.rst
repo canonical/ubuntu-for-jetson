@@ -184,7 +184,7 @@ Program the Ubuntu image on your external boot media
 (Alternatively) Program the Ubuntu image using the NVIDIA L4T restore script
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This method is the easiest way to program an internal disk, such as eMMC or pre-installed NVMe disk. It also allows you to program the image with limited human interaction (such as programming an external boot media with a side computer, then plugging it to the developer kit).
+This method is the easiest way to program an internal disk, such as eMMC or preinstalled NVMe disk. It also allows you to program the image with limited human interaction (such as programming an external boot media with a side computer, then plugging it to the developer kit).
 
 As a prerequisite for this method, you need to put the board into :ref:`recovery mode<devkit-recovery-mode>`. You can then use the `backup-restore tool from NVIDIA`_ to install a raw disk image on any installed media. The tool loads an initrd flash image via the USB-C cable and boots it, enabling an IPv6 network connection over USB. It relies on the ``nfs-kernel-server`` service to host the raw image, allowing an NFS mount on the developer kit, connected to the host machine (which runs the script). The script will use SSH to connect to the initrd image, mount the NFS volume, and perform the raw image copy using dd. Therefore, the boot media must be connected to the developer kit, and a root file system must be available on the host for the developer kit to boot from. For this purpose, you should download and extract the Sample Root Filesystem provided by NVIDIA with the version of Linux for Tegra you are using (downloaded from the `Jetson Linux archive`_), running similar commands in the Linux\_for\_Tegra directory:
 
@@ -255,7 +255,7 @@ The UEFI boot loader will automatically launch GRUB, which then will launch Ubun
 Ubuntu login
 ------------
 
-On Ubuntu Classic, you will be required on first boot to change your password, as the pre-installed image comes with a predefined user ``ubuntu`` (password ``ubuntu``). On Ubuntu Core, you will be prompted to set up the image using a console-conf prompt. At the end of this prompt, you will enter an email address associated with your Launchpad account, after which you can connect to the device via SSH.
+On Ubuntu Classic, you will be required on first boot to change your password, as the preinstalled image comes with a predefined user ``ubuntu`` (password ``ubuntu``). On Ubuntu Core, you will be prompted to set up the image using a console-conf prompt. At the end of this prompt, you will enter an email address associated with your Launchpad account, after which you can connect to the device via SSH.
 
 Snap
 ====

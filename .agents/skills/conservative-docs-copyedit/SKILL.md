@@ -189,9 +189,10 @@ the standalone word: `(?i)(?<![\w./-])nvidia(?![\w./-])`.
 
 ## Terminology
 
-House style, ruled on by the repo owner. Same identifier carve-out as
-[Branding](#branding): never rewrite a command, package, URL, anchor label, or
-``inline literal``; `#` comments in code blocks *are* prose and do get fixed.
+House style, ruled on by the repo owner. Same identifier and file-name carve-out as
+[Branding](#branding): never rewrite a command, package, URL, anchor label,
+filename, or ``inline literal``; `#` comments in code blocks *are* prose and
+do get fixed.
 
 - **GRUB** — always `GRUB`, never `Grub` or `grub`, including where it names the
   binary shim validates (`secure-boot.rst`: "used to validate GRUB and the
@@ -216,13 +217,18 @@ House style, ruled on by the repo owner. Same identifier carve-out as
   `docs.nvidia.com/jetson/agx-thor-devkit/...` URLs. The heading expansion from
   `devkit` to `developer kit` changes its underline from 33 -> 40.
 
-Audit; must come back empty (`rc=1`). The lookarounds skip identifiers, so
-`jetson-orin-nano-devkit`, `grub-install` and `grub.cfg` do not match:
+- **preinstalled** — prose uses `preinstalled`, never `pre-installed`: `flash.rst`
+  uses “preinstalled NVMe disk” and “preinstalled image”. Never alter
+  `preinstalled` or `pre-installed` in identifiers or filenames.
+
+Audit; must come back empty (`rc=1`). The lookarounds skip identifiers and
+filenames, so `jetson-orin-nano-devkit`, `grub-install` and `grub.cfg` do not
+match:
 
 ```bash
 grep -rnP --include=*.rst --include=*.md \
   --exclude-dir=.sphinx --exclude-dir=_build \
-  '(?<![\w-])devkits?\b(?!-)|(?<![\w-])development kits?\b|\bGrub\b|(?<![\w./-])grub(?![\w./-])|\bPre-requisites\b' \
+  '(?<![\w-])devkits?\b(?!-)|(?<![\w-])development kits?\b|\bGrub\b|(?<![\w./-])grub(?![\w./-])|\bPre-requisites\b|(?<![\w./-])pre-installed(?![\w./-])' \
   docs README.md
 ```
 
