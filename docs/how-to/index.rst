@@ -7,3 +7,7 @@ How-to guides
    flash
    secure-boot
    build-image
+   build-kernel
+   customize-device-tree
+   build-boot-firmware
+   cross-build

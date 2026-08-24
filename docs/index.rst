@@ -11,6 +11,8 @@ This documentation explains how to install and use an Ubuntu image on a Jetson O
    How-to guides </how-to/index>
    Ubuntu Server </classic/index>
    Ubuntu Core </core/index>
+   Explanation </explanation/index>
+   Reference </reference/index>
 
 In this documentation
 ---------------------
@@ -34,3 +36,15 @@ In this documentation
       :link-type: doc
 
       **Ubuntu Core on Jetson** - Ubuntu Core on Jetson
+
+   .. grid-item-card:: Build custom images
+      :link: /how-to/index
+      :link-type: doc
+
+      **How-to guides** - Customize and build Ubuntu images for Jetson
+
+   .. grid-item-card:: Boot chain background
+      :link: /explanation/boot-chain
+      :link-type: doc
+
+      **Explanation** - Understand the Jetson boot chain

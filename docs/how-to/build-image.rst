@@ -15,6 +15,10 @@ Prerequisites
 
     sudo snap install --classic --channel latest/stable ubuntu-image
 
+To build a custom kernel for inclusion in the image, see :doc:`build-kernel`. To modify or
+overlay the device tree before flashing, see :doc:`customize-device-tree`. To produce arm64
+artifacts — including the image itself — on an amd64 host, see :doc:`cross-build`.
+
 
 .. toctree::
    :maxdepth: 1

@@ -387,7 +387,10 @@ if os.path.exists('./reuse/substitutions.yaml'):
 
 intersphinx_mapping = {
     'starter-pack': ('https://canonical-example-product-documentation.readthedocs-hosted.com/en/latest', None),
-    'sphinxcontrib-mermaid': ('https://sphinxcontrib-mermaid-demo.readthedocs.io/en/latest', None)
+    'sphinxcontrib-mermaid': ('https://sphinxcontrib-mermaid-demo.readthedocs.io/en/latest', None),
+    'kernel': ('https://documentation.ubuntu.com/kernel/', None),
+    'snapcraft': ('https://documentation.ubuntu.com/snapcraft/stable/', None),
+    'core': ('https://documentation.ubuntu.com/core/', None),
 }
 
 # Make sure the target is unique
