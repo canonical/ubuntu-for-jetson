@@ -51,7 +51,7 @@ Release Highlights
   * `Jetson Orin Nano Developer kit`_
   * `Jetson Orin NX SOM on Jetson Orin Nano Developer kit`_
 
-.. _flashing Jetpack: https://docs.nvidia.com/jetson/archives/r36.5/DeveloperGuide/IN/QuickStart.html#to-flash-the-jetson-developer-kit-operating-software
+.. _flashing JetPack: https://docs.nvidia.com/jetson/archives/r36.5/DeveloperGuide/IN/QuickStart.html#to-flash-the-jetson-developer-kit-operating-software
 .. _snap samples: https://github.com/canonical/tegra-snap-samples/tree/main/nvpmodel
 .. _the Jetson Linux Developer Guide: https://docs.nvidia.com/jetson/archives/r36.5/DeveloperGuide/SD/PlatformPowerAndPerformance/JetsonOrinNanoSeriesJetsonOrinNxSeriesAndJetsonAgxOrinSeries.html#supported-modes-and-power-efficiency
 
@@ -142,7 +142,7 @@ Known issues
    * - `2150448 <https://bugs.launchpad.net/riverside/+bug/2150448>`_
      - While running the gstreamer image capture pipelines described in the `tegra snap samples repository`_, the pipeline can return an error code of 1 even though the image gets captured correctly. This is due to a bug in the nvarguscamerasrc plugin that will fail to clean up the pipeline correctly.
    * - NA
-     - Running LXD and Docker on the same host can cause `connectivity issues <https://documentation.ubuntu.com/lxd/en/latest/howto/network_bridge_firewalld/#prevent-connectivity-issues-with-lxd-and-docker>`_. This is something to keep in mind after installing Nvidia Container runtime.
+     - Running LXD and Docker on the same host can cause `connectivity issues <https://documentation.ubuntu.com/lxd/en/latest/howto/network_bridge_firewalld/#prevent-connectivity-issues-with-lxd-and-docker>`_. This is something to keep in mind after installing NVIDIA Container runtime.
 
 .. _tegra snap samples repository: https://github.com/canonical/tegra-snap-samples/tree/main/multimedia#camera-capture-using-gstreamer
 

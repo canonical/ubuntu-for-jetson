@@ -9,7 +9,7 @@ This document is intended to serve as a step-by-step guide for setting up Secure
 
 UEFI Secure Boot will validate all binaries loaded by the UEFI boot firmware but no boot codes running before that.
 
-.. _nvidia documentation: https://docs.nvidia.com/jetson/archives/r36.4/DeveloperGuide/SD/Security/SecureBoot.html#
+.. _NVIDIA documentation: https://docs.nvidia.com/jetson/archives/r36.4/DeveloperGuide/SD/Security/SecureBoot.html#
 
 Generating and downloading the keys
 -----------------------------------

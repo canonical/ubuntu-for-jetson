@@ -23,7 +23,7 @@ All the following commands are intended to be run as a normal user (no root).
 Preparation
 -----------
 
-The Linux for Tegra tools installed with the boot firmware tarball contain scripts used to flash the software of a Jetson board, both firmware and operating system. The Ubuntu image has been tested using the boot firmware linked on the `Ubuntu download page for NVIDIA Jetson`_ (note: all versions are published by Nvidia on the `Linux Tegra download page`_ and can be retrieved by clicking “Driver Package (BSP)”). In order to use the tools, first install the following packages
+The Linux for Tegra tools installed with the boot firmware tarball contain scripts used to flash the software of a Jetson board, both firmware and operating system. The Ubuntu image has been tested using the boot firmware linked on the `Ubuntu download page for NVIDIA Jetson`_ (note: all versions are published by NVIDIA on the `Linux Tegra download page`_ and can be retrieved by clicking “Driver Package (BSP)”). In order to use the tools, first install the following packages
 
 
 .. code-block:: bash
@@ -43,7 +43,7 @@ Install missing dependencies and fix file permissions
     sudo ./tools/l4t_flash_prerequisites.sh
 
 
-.. _Ubuntu download page for Nvidia Jetson: https://ubuntu.com/download/nvidia-jetson
+.. _Ubuntu download page for NVIDIA Jetson: https://ubuntu.com/download/nvidia-jetson
 .. _Linux Tegra download page: https://developer.nvidia.com/linux-tegra
 
 .. _devkit-recovery-mode:
@@ -150,7 +150,7 @@ QSPI for Jetson Orin Nano/NX
 (Optional) Program a device tree overlay with the boot firmware (camera support)
 --------------------------------------------------------------------------------
 
-While Jetpack relies on ``ExtLinux`` to boot, Ubuntu is launched by GRUB, which currently doesn't support device tree overlay. As a consequence, in order to use a camera connected to a Jetson development kit, the related overlay must be programmed along with the boot firmware.
+While JetPack relies on ``ExtLinux`` to boot, Ubuntu is launched by GRUB, which currently doesn't support device tree overlay. As a consequence, in order to use a camera connected to a Jetson development kit, the related overlay must be programmed along with the boot firmware.
 First, locate the appropriate ``.dtbo`` file for your camera in the ``Linux_for_Tegra/kernel/dtb`` directory, then append a ``ADDITIONAL_DTB_OVERLAY=<DTBO file name>`` argument to the command line. For instance:
 
 .. code-block:: bash
@@ -181,12 +181,12 @@ Program the Ubuntu image on your external boot media
 
 3. Remove the boot media from the host, insert it into the kit
 
-(Alternatively) Program the Ubuntu image using the Nvidia L4T restore script
+(Alternatively) Program the Ubuntu image using the NVIDIA L4T restore script
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This method is the easiest way to program an internal disk, such as eMMC or pre-installed NVMe disk. It also allows you to program the image with limited human interaction (such as programming an external boot media with a side computer, then plugging it to the development kit).
 
-As a prerequisite for this method, you need to put the board into :ref:`recovery mode<devkit-recovery-mode>`. You can then use the `backup-restore tool from Nvidia`_ to install a raw disk image on any installed media. The tool loads an initrd flash image via the USB-C cable and boots it, enabling an IPv6 network connection over USB. It relies on the ``nfs-kernel-server`` service to host the raw image, allowing an NFS mount on the development kit, connected to the host machine (which runs the script). The script will use SSH to connect to the initrd image, mount the NFS volume, and perform the raw image copy using dd. Therefore, the boot media must be connected to the development kit, and a root file system must be available on the host for the development kit to boot from. For this purpose, you should download and extract the Sample Root Filesystem provided by NVIDIA with the version of Linux for Tegra you are using (downloaded from the `Jetson Linux archive`_), running similar commands in the Linux\_for\_Tegra directory:
+As a prerequisite for this method, you need to put the board into :ref:`recovery mode<devkit-recovery-mode>`. You can then use the `backup-restore tool from NVIDIA`_ to install a raw disk image on any installed media. The tool loads an initrd flash image via the USB-C cable and boots it, enabling an IPv6 network connection over USB. It relies on the ``nfs-kernel-server`` service to host the raw image, allowing an NFS mount on the development kit, connected to the host machine (which runs the script). The script will use SSH to connect to the initrd image, mount the NFS volume, and perform the raw image copy using dd. Therefore, the boot media must be connected to the development kit, and a root file system must be available on the host for the development kit to boot from. For this purpose, you should download and extract the Sample Root Filesystem provided by NVIDIA with the version of Linux for Tegra you are using (downloaded from the `Jetson Linux archive`_), running similar commands in the Linux\_for\_Tegra directory:
 
 
 .. code-block:: bash
@@ -221,7 +221,7 @@ Device:
 * USB media: ``sda``
 * NVMe disk: ``nvme0n1``
 
-.. _backup-restore tool from Nvidia: https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/FlashingSupport.html?highlight=backup#backing-up-and-restoring-a-jetson-device
+.. _backup-restore tool from NVIDIA: https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/FlashingSupport.html?highlight=backup#backing-up-and-restoring-a-jetson-device
 .. _jetson linux archive: https://developer.nvidia.com/embedded/jetson-linux-archive
 
 Connect a monitor
