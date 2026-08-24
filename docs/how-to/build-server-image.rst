@@ -22,7 +22,7 @@ For more details about each field, refer to the `image definition`_ documentatio
 Ubuntu certified Image definition files
 ---------------------------------------
 
-The ubuntu-images repository serves as the official source for Canonical image definitions and scripts. It is used to build various Ubuntu versions and flavors. This includes optimized versions for Jetson Tegra hardware, currently supporting Ubuntu 22.04 (Jammy Jellyfish) for Jetson Orin platforms and 24.04 (Noble Numbat) for Jetson Thor devices.
+The ubuntu-images repository serves as the official source for Canonical image definitions and scripts. It is used to build various Ubuntu versions and flavors. This includes optimized versions for Jetson Tegra hardware, currently supporting Ubuntu 22.04 LTS (Jammy Jellyfish) for Jetson Orin platforms and Ubuntu 24.04 LTS (Noble Numbat) for Jetson Thor devices.
 
 The following commands allow you to check the definition files used to generate the Ubuntu Server image certified by Canonical:
 

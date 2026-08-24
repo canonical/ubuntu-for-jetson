@@ -255,7 +255,7 @@ The UEFI boot loader will automatically launch GRUB, which then will launch Ubun
 Ubuntu login
 ------------
 
-On Ubuntu Classic, you will be required on first boot to change your password, as the pre-installed image comes with a predefined user ``ubuntu`` (password ``ubuntu``). On Ubuntu Core, you will be prompted to set up the image using a console-conf prompt. At the end of this prompt, you will enter an email address associated with your launchpad account, after which you can connect to the device via SSH.
+On Ubuntu Classic, you will be required on first boot to change your password, as the pre-installed image comes with a predefined user ``ubuntu`` (password ``ubuntu``). On Ubuntu Core, you will be prompted to set up the image using a console-conf prompt. At the end of this prompt, you will enter an email address associated with your Launchpad account, after which you can connect to the device via SSH.
 
 Snap
 ====

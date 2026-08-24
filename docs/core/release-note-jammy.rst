@@ -150,4 +150,4 @@ Known issues
 Report Bugs
 -----------
 
-If a bug is found in a specific snap, bugs should be reported against that specific snap using the contact on that snap's page on https://snapcraft.io. If a generic Ubuntu Core system bug is discovered, please report it to snapd under https://bugs.launchpad.net/snapd/+filebug. For firmware related issues, report a bug `in the launchpad project <https://launchpad.net/ubuntu/+source/linux-firmware-nvidia-tegra>`_.
+If a bug is found in a specific snap, bugs should be reported against that specific snap using the contact on that snap's page on https://snapcraft.io. If a generic Ubuntu Core system bug is discovered, please report it to snapd under https://bugs.launchpad.net/snapd/+filebug. For firmware related issues, report a bug `in the Launchpad project <https://launchpad.net/ubuntu/+source/linux-firmware-nvidia-tegra>`_.

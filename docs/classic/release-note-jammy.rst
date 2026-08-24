@@ -11,7 +11,7 @@ Ubuntu for Jetson 22.04 Server (Jammy)
 Purpose
 -------
 
-This is the General Availability release of Ubuntu 22.04 for Jetson Orin.
+This is the General Availability release of Ubuntu 22.04 LTS for Jetson Orin.
 
 Images
 ------
@@ -169,4 +169,4 @@ Known issues
 Report Bugs
 -----------
 
-To report a bug, identify the related package in https://launchpad.net/ubuntu, create a bug, then subscribe the team ``ubuntu-tegra`` to it. For firmware related issues, report a bug `in the launchpad project <https://launchpad.net/ubuntu/+source/linux-firmware-nvidia-tegra>`_.
+To report a bug, identify the related package in https://launchpad.net/ubuntu, create a bug, then subscribe the team ``ubuntu-tegra`` to it. For firmware related issues, report a bug `in the Launchpad project <https://launchpad.net/ubuntu/+source/linux-firmware-nvidia-tegra>`_.
