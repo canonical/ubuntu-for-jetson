@@ -42,7 +42,7 @@ Release Highlights
 
 
 * First Ubuntu Core image release for Tegra platforms
-* Full Disk Encryption and secure boot support. Full Disk Encryption will be automatically enabled when hardware support is detected. For enabling secure boot, refer to :doc:`the secure boot instructions </how-to/secure-boot>`
+* Full Disk Encryption and Secure Boot support. Full Disk Encryption will be automatically enabled when hardware support is detected. For enabling Secure Boot, refer to :doc:`the secure boot instructions </how-to/secure-boot>`
 * Strictly confined applications
 * OTA updates
 * Canonical QA team has been running intensive testing of this release in order to qualify it as Ubuntu certified on the three hardware platforms referenced below:

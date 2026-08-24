@@ -1,6 +1,6 @@
 .. _secure-boot:
 
-Set up secure boot
+Set up Secure Boot
 ==================
 
 The NVIDIA Tegra boards come with full support for the Secure Boot specification, but do not come with any pre-loaded certificate in the firmware.
@@ -143,14 +143,14 @@ The ``$DEVICE`` variable can be either ``jetson-agx-orin-devkit`` or ``jetson-or
 Check if Secure Boot is Enabled
 -------------------------------
 
-You can check if secure boot is enabled or not by either going through the UEFI boot manager, or checking it once the image is booted.
+You can check if Secure Boot is enabled or not by either going through the UEFI boot manager, or checking it once the image is booted.
 
 Once you enter the UEFI boot manager, you can enter “Device Manager” \-\> “Secure Boot Configuration” and check if the box next to “Attempt Secure Boot” is checked or not.
 
 .. image:: firmware_secureboot.png
    :alt: Screenshot of the firmware Secure Boot Configuration menu
 
-Once the image is booted, you can simply run ``bootctl`` which will tell you if secure boot is enabled or not on the fourth line:
+Once the image is booted, you can simply run ``bootctl`` which will tell you if Secure Boot is enabled or not on the fourth line:
 
 .. code-block::
 
