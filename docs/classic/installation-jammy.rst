@@ -33,7 +33,7 @@ SDKs like CUDA Toolkit and TensorRT that allow building AI applications on Jetso
     sudo add-apt-repository -y "deb https://repo.download.nvidia.com/jetson/common r36.4 main"
     sudo apt install -y cuda
 
-    # Tensor RT
+    # TensorRT
     sudo apt install -y libnvinfer-bin libnvinfer-samples
 
     # cuda-samples dependencies
