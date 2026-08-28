@@ -1,12 +1,10 @@
 Ubuntu Classic images
 =====================
 
-
-Release Note.
-
+Ubuntu Server images for Jetson developer kits.
+For the release notes, see :doc:`/reference/release-notes/index`.
 
 .. toctree::
    :maxdepth: 1
 
-   release-note
    installation

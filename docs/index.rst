@@ -9,6 +9,7 @@ This documentation explains how to install and use an Ubuntu image on a Jetson O
 
    Get started </get-started/index>
    How-to guides </how-to/index>
+   Reference </reference/index>
    Ubuntu Server </classic/index>
    Ubuntu Core </core/index>
 
@@ -34,3 +35,9 @@ In this documentation
       :link-type: doc
 
       **Ubuntu Core on Jetson** - Ubuntu Core on Jetson
+
+   .. grid-item-card:: Release notes
+      :link: /reference/release-notes/index
+      :link-type: doc
+
+      **Reference** - Release notes for the Server and Core images
