@@ -33,9 +33,9 @@ Hardware Platforms Tested
 -------------------------
 
 
-* `Jetson AGX Orin Developer kit`_
-* `Jetson Orin Nano Developer kit`_
-* `Jetson Orin NX SOM on Jetson Orin Nano Developer kit`_
+* `Jetson AGX Orin Developer Kit`_
+* `Jetson Orin Nano Developer Kit`_
+* `Jetson Orin NX SOM on Jetson Orin Nano Developer Kit`_
 
 Release Highlights
 ------------------
@@ -47,18 +47,18 @@ Release Highlights
 * OTA updates
 * Canonical QA team has been running intensive testing of this release in order to qualify it as Ubuntu certified on the three hardware platforms referenced below:
 
-  * `Jetson AGX Orin Developer kit`_
-  * `Jetson Orin Nano Developer kit`_
-  * `Jetson Orin NX SOM on Jetson Orin Nano Developer kit`_
+  * `Jetson AGX Orin Developer Kit`_
+  * `Jetson Orin Nano Developer Kit`_
+  * `Jetson Orin NX SOM on Jetson Orin Nano Developer Kit`_
 
 .. _flashing JetPack: https://docs.nvidia.com/jetson/archives/r36.5/DeveloperGuide/IN/QuickStart.html#to-flash-the-jetson-developer-kit-operating-software
 .. _snap samples: https://github.com/canonical/tegra-snap-samples/tree/main/nvpmodel
 .. _the Jetson Linux Developer Guide: https://docs.nvidia.com/jetson/archives/r36.5/DeveloperGuide/SD/PlatformPowerAndPerformance/JetsonOrinNanoSeriesJetsonOrinNxSeriesAndJetsonAgxOrinSeries.html#supported-modes-and-power-efficiency
 
 
-.. _Jetson AGX Orin Developer kit: https://ubuntu.com/certified/202406-34151
-.. _Jetson Orin Nano Developer kit: https://ubuntu.com/certified/202406-34152
-.. _Jetson Orin NX SOM on Jetson Orin Nano Developer kit: https://ubuntu.com/certified/202407-34213
+.. _Jetson AGX Orin Developer Kit: https://ubuntu.com/certified/202406-34151
+.. _Jetson Orin Nano Developer Kit: https://ubuntu.com/certified/202406-34152
+.. _Jetson Orin NX SOM on Jetson Orin Nano Developer Kit: https://ubuntu.com/certified/202407-34213
 
 
 Features not supported in this release
@@ -124,7 +124,7 @@ Known issues
    * - Issue
      - Description
    * - `2061598 <https://bugs.launchpad.net/riverside/+bug/2061598>`_
-     - On an Orin NX Developer Kit, the very first flash of the :abbr:`QSPI` boot firmware might fail due to a write protection bit being set. In this case you need to perform an initrd flash of the :abbr:`QSPI` firmware (only necessary once to fix this issue) by following these instructions: https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/IN/QuickStart.html#to-flash-the-jetson-developer-kit-operating-software. After this operation, every subsequent flash of the :abbr:`QSPI` firmware will work the usual way.
+     - On an Orin NX developer kit, the very first flash of the :abbr:`QSPI` boot firmware might fail due to a write protection bit being set. In this case you need to perform an initrd flash of the :abbr:`QSPI` firmware (only necessary once to fix this issue) by following these instructions: https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/IN/QuickStart.html#to-flash-the-jetson-developer-kit-operating-software. After this operation, every subsequent flash of the :abbr:`QSPI` firmware will work the usual way.
    * - `2071414 <https://bugs.launchpad.net/riverside/+bug/2071414>`_
      - Netplan.io package doesn’t support ``WPA2-PSK-SHA256`` in its current Jammy version. While the corrective patch is already available on the latest Ubuntu version (1.1.2), the Jammy backport should get released later on this year.
    * - `2039983 <https://bugs.launchpad.net/riverside/+bug/2039983>`_

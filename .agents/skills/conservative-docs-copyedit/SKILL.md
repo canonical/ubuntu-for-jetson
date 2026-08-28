@@ -210,9 +210,12 @@ do get fixed.
   target title and grep the tree for `:ref:` uses of the old label.
 - **developer kit** — use lowercase `developer kit` / `developer kits` in
   generic prose, headings, and comments. Use title case only for an explicit
-  named product, for example `Jetson AGX Thor Developer Kit` or `Orin NX
-  Developer Kit`. Keep `devkit` only inside identifiers and the strings that
-  contain them: `jetson-agx-orin-devkit`, `jetson-orin-nano-devkit`,
+  named product, for example `Jetson AGX Thor Developer Kit` or `Jetson Orin
+  Nano Developer Kit`. `Orin NX Developer Kit` is not a product name; bare
+  model shorthand in prose, such as "on an Orin NX developer kit" or "on the
+  AGX developer kit", takes lowercase. `Developer kit` (capital D, lowercase
+  k) is always wrong. Keep `devkit` only inside identifiers and the strings
+  that contain them: `jetson-agx-orin-devkit`, `jetson-orin-nano-devkit`,
   `jetson-agx-thor-devkit`, the `.. _devkit-recovery-mode:` anchor, and
   `docs.nvidia.com/jetson/agx-thor-devkit/...` URLs. The heading expansion from
   `devkit` to `developer kit` changes its underline from 33 -> 40.
@@ -228,7 +231,7 @@ match:
 ```bash
 grep -rnP --include=*.rst --include=*.md \
   --exclude-dir=.sphinx --exclude-dir=_build \
-  '(?<![\w-])devkits?\b(?!-)|(?<![\w-])development kits?\b|\bGrub\b|(?<![\w./-])grub(?![\w./-])|\bPre-requisites\b|(?<![\w./-])pre-installed(?![\w./-])' \
+  '(?<![\w-])devkits?\b(?!-)|(?<![\w-])development kits?\b|(?<![\w-])Developer kits?\b|\bGrub\b|(?<![\w./-])grub(?![\w./-])|\bPre-requisites\b|(?<![\w./-])pre-installed(?![\w./-])' \
   docs README.md
 ```
 
@@ -237,6 +240,11 @@ this pattern degrades to `grep: warning: ? at start of expression` and exits
 `1`, i.e. it reports a clean tree no matter what is in the files. A false pass
 is worse than no check. Both audit commands here were verified against a probe
 file containing every wrong form plus identifier lookalikes.
+
+The regex can catch only the mixed `Developer kit` form. Whether a
+correctly-cased occurrence is title case or lowercase depends on whether it is
+a formal product name, which no regex can determine; that call stays with the
+reviewer.
 
 ## reStructuredText mechanics
 

@@ -33,9 +33,9 @@ Hardware Platforms Tested
 -------------------------
 
 
-* `Jetson AGX Orin Developer kit`_
-* `Jetson Orin Nano Developer kit`_
-* `Jetson Orin NX SOM on Jetson Orin Nano Developer kit`_
+* `Jetson AGX Orin Developer Kit`_
+* `Jetson Orin Nano Developer Kit`_
+* `Jetson Orin NX SOM on Jetson Orin Nano Developer Kit`_
 
 Release Highlights
 ------------------
@@ -45,13 +45,13 @@ Release Highlights
 * NVIDIA introduced Nano Super power mode with JetPack 6.2. To enable this power mode, as described in https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/PlatformPowerAndPerformance/JetsonOrinNanoSeriesJetsonOrinNxSeriesAndJetsonAgxOrinSeries.html#supported-modes-and-power-efficiency, it requires both `flashing JetPack <https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/IN/QuickStart.html#to-flash-the-jetson-developer-kit-operating-software>`_ with a specific configuration (the Ubuntu image must be reinstalled afterwards), and switching to a specific power mode using the ``nvpmodel`` command (installed by the ``nvidia-tegra-drivers-36`` packages, please refer to :doc:`the installation instructions <installation-jammy>`).
 * Canonical QA team has been running intensive testing of this release in order to qualify it as Ubuntu certified on the three hardware platforms referenced below:
 
-  * `Jetson AGX Orin Developer kit`_
-  * `Jetson Orin Nano Developer kit`_
-  * `Jetson Orin NX SOM on Jetson Orin Nano Developer kit`_
+  * `Jetson AGX Orin Developer Kit`_
+  * `Jetson Orin Nano Developer Kit`_
+  * `Jetson Orin NX SOM on Jetson Orin Nano Developer Kit`_
 
-.. _Jetson AGX Orin Developer kit: https://ubuntu.com/certified/202406-34151
-.. _Jetson Orin Nano Developer kit: https://ubuntu.com/certified/202406-34152
-.. _Jetson Orin NX SOM on Jetson Orin Nano Developer kit: https://ubuntu.com/certified/202407-34213
+.. _Jetson AGX Orin Developer Kit: https://ubuntu.com/certified/202406-34151
+.. _Jetson Orin Nano Developer Kit: https://ubuntu.com/certified/202406-34152
+.. _Jetson Orin NX SOM on Jetson Orin Nano Developer Kit: https://ubuntu.com/certified/202407-34213
 
 Recent fixes
 ------------
@@ -143,7 +143,7 @@ Known issues
    * - Issue
      - Description
    * - `2061598 <https://bugs.launchpad.net/riverside/+bug/2061598>`_
-     - On an Orin NX Developer Kit, the very first flash of the :abbr:`QSPI` boot firmware might fail due to a write protection bit being set. In this case you need to perform an initrd flash of the :abbr:`QSPI` firmware (only necessary once to fix this issue) by following these instructions: https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/IN/QuickStart.html#to-flash-the-jetson-developer-kit-operating-software. After this operation, every subsequent flash of the :abbr:`QSPI` firmware will work the usual way.
+     - On an Orin NX developer kit, the very first flash of the :abbr:`QSPI` boot firmware might fail due to a write protection bit being set. In this case you need to perform an initrd flash of the :abbr:`QSPI` firmware (only necessary once to fix this issue) by following these instructions: https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/IN/QuickStart.html#to-flash-the-jetson-developer-kit-operating-software. After this operation, every subsequent flash of the :abbr:`QSPI` firmware will work the usual way.
    * - `2071321 <https://bugs.launchpad.net/riverside/+bug/2071321>`_
      - Part of the stress tests executed during the certification tests are based on https://github.com/ColinIanKing/stress-ng. The following command failed to run successfully on the AGX developer kit: ``stress-ng --af-alg 0 --timeout 30 --skip-silent --verbose``. This issue is currently under investigation and should be fixed soon via a kernel package update. It does not affect the Nano/NX developer kit because the related cryptography engines are not enabled with the current boot firmware version (a future release will also enable them).
    * - `2071414 <https://bugs.launchpad.net/riverside/+bug/2071414>`_
