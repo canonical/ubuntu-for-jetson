@@ -61,6 +61,14 @@ Numbered so change logs can cite them.
 1. **Article agreement (pronunciation-based)** — `an USB` -> `a USB`,
    `an USB-C` -> `a USB-C`, `a NFS mount` -> `an NFS mount`, `a LTS` -> `an LTS`,
    `a SD card` -> `an SD card`. Note `a UEFI` but `an EFI`, `an SBAT`.
+   Also missing determiners in a device noun phrase: `on AGX developer kit` ->
+   `on the AGX developer kit`. A model name is a modifier, not the noun, so the
+   singular noun phrase needs an article. Ruled by the repo owner: this is
+   "almost always" `a` or `the`; pick the form the same file already uses.
+   Exempt: plural generics (`tested on Orin Nano and NX developer kits`), and
+   label-style code-block comments that name a configuration rather than
+   forming a sentence (`# AGX developer kit with LI Dual IMX274 camera
+   module`) — see the audit in [Terminology](#terminology).
 2. **Noun vs verb compounds** — `to setup X` -> `to set up X`; `the set up` ->
    `the setup`. Same for log in/login, back up/backup, boot up/bootup.
 3. **Subject-verb agreement** — `Jetson Orin Nano don't have` -> `doesn't have`.
@@ -235,11 +243,29 @@ grep -rnP --include=*.rst --include=*.md \
   docs README.md
 ```
 
-`-P` is required, not `-E`. GNU grep's ERE engine has no lookbehind: with `-E`
-this pattern degrades to `grep: warning: ? at start of expression` and exits
-`1`, i.e. it reports a clean tree no matter what is in the files. A false pass
-is worse than no check. Both audit commands here were verified against a probe
-file containing every wrong form plus identifier lookalikes.
+A second audit catches a determiner-less device noun phrase (category 1). It
+matches only a preposition followed directly by a model name, so plural
+generics (`on Orin Nano and NX developer kits`), article-bearing phrases
+(`on an Orin NX developer kit`), and label-style code comments
+(`# AGX developer kit with ...`) are exempt by construction:
+
+```bash
+grep -rnP --include=*.rst --include=*.md \
+  --exclude-dir=.sphinx --exclude-dir=_build \
+  '(?<![\w-])(?i:on|to|in|for|with)\s+(?:Jetson\s+)?(?:AGX|Thor|Orin|Nano|NX)(?:[ /](?:AGX|Thor|Orin|Nano|NX|or|and))*\s+developer kit\b' \
+  docs README.md
+```
+
+The leading `(?<![\w-])` is load-bearing: without it, `in` matches inside
+`Orin` and the audit reports `On an Orin NX developer kit` as a defect.
+
+`-P` is required, not `-E`, for every audit in this skill. GNU grep's ERE
+engine has no lookbehind: with `-E` these patterns degrade to
+`grep: warning: ? at start of expression` and exit `1`, i.e. they report a
+clean tree no matter what is in the files. A false pass is worse than no
+check. All three audit commands in this skill were verified against a probe
+file containing every wrong form plus identifier and article-bearing
+lookalikes.
 
 The regex can catch only the mixed `Developer kit` form. Whether a
 correctly-cased occurrence is title case or lowercase depends on whether it is

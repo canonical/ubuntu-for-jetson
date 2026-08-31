@@ -128,7 +128,7 @@ Known issues
    * - `2071414 <https://bugs.launchpad.net/riverside/+bug/2071414>`_
      - Netplan.io package doesn’t support ``WPA2-PSK-SHA256`` in its current Jammy version. While the corrective patch is already available on the latest Ubuntu version (1.1.2), the Jammy backport should get released later on this year.
    * - `2039983 <https://bugs.launchpad.net/riverside/+bug/2039983>`_
-     - On AGX developer kit, power cycling the device using an external power switch introduces a noise in the serial input buffer that can, depending on the nature of the power switch, pause the GRUB menu, or directly launch the default entry (action \= ‘Enter’).
+     - On the AGX developer kit, power cycling the device using an external power switch introduces a noise in the serial input buffer that can, depending on the nature of the power switch, pause the GRUB menu, or directly launch the default entry (action \= ‘Enter’).
    * - `2081138 <https://bugs.launchpad.net/riverside/+bug/2081138>`_
      - As part of the compliance tests for camera, we figured out that running  ``gst-device-monitor-1.0 Video/Source`` would not list any device. This is because ``gst-plugins-good1.0`` is released as v1.20 in Jammy, while this issue was resolved with a patch available with 1.24.
    * - `2081139 <https://bugs.launchpad.net/riverside/+bug/2081139>`_

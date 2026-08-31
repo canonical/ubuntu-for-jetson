@@ -51,7 +51,7 @@ Install missing dependencies and fix file permissions
 Put the developer kit into recovery mode
 ----------------------------------------
 
-While the operation is quite similar, the procedure to enable the recovery mode differs with every kit. First connect the USB cable between the host (should be type A) and the kit (type C, on AGX developer kit it is the one located close to the 40-pin connector). Once the recovery mode is enabled, the host should detect a USB device ``0955:7X23 NVIDIA Corp. APX``, with X being one of {0,2,3,4,5,6} (see the `NVIDIA Jetson Quick Start reference`_).
+While the operation is quite similar, the procedure to enable the recovery mode differs with every kit. First connect the USB cable between the host (should be type A) and the kit (type C, on the AGX developer kit it is the one located close to the 40-pin connector). Once the recovery mode is enabled, the host should detect a USB device ``0955:7X23 NVIDIA Corp. APX``, with X being one of {0,2,3,4,5,6} (see the `NVIDIA Jetson Quick Start reference`_).
 
 Note that once an image is up and running on the device, alternative ways could also be used:
 
