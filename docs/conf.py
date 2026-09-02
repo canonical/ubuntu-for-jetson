@@ -232,7 +232,12 @@ templates_path = ["_templates"]
 #       the sphinx_reredirects extension will be disabled.
 
 redirects = {
-    'classic/release-note-noble-thor-ea': '../release-note-noble-thor-ga',
+    'classic/release-note': '../../reference/release-notes/',
+    'classic/release-note-jammy': '../../reference/release-notes/server-jammy/',
+    'classic/release-note-noble-thor-ga': '../../reference/release-notes/server-noble-thor-ga/',
+    'classic/release-note-noble-thor-ea': '../../reference/release-notes/server-noble-thor-ga/',
+    'core/release-note': '../../reference/release-notes/',
+    'core/release-note-jammy': '../../reference/release-notes/core-jammy/',
 }
 
 
