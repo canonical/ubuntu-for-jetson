@@ -33,32 +33,32 @@ Hardware Platforms Tested
 -------------------------
 
 
-* `Jetson AGX Orin Developer kit`_
-* `Jetson Orin Nano Developer kit`_
-* `Jetson Orin NX SOM on Jetson Orin Nano Developer kit`_
+* `Jetson AGX Orin Developer Kit`_
+* `Jetson Orin Nano Developer Kit`_
+* `Jetson Orin NX SOM on Jetson Orin Nano Developer Kit`_
 
 Release Highlights
 ------------------
 
 
 * First Ubuntu Core image release for Tegra platforms
-* Full Disk Encryption and secure boot support. Full Disk Encryption will be automatically enabled when hardware support is detected. For enabling secure boot, refer to :doc:`the secure boot instructions </how-to/secure-boot>`
+* Full Disk Encryption and Secure Boot support. Full Disk Encryption will be automatically enabled when hardware support is detected. For enabling Secure Boot, refer to :doc:`the secure boot instructions </how-to/secure-boot>`
 * Strictly confined applications
 * OTA updates
 * Canonical QA team has been running intensive testing of this release in order to qualify it as Ubuntu certified on the three hardware platforms referenced below:
 
-  * `Jetson AGX Orin Developer kit`_
-  * `Jetson Orin Nano Developer kit`_
-  * `Jetson Orin NX SOM on Jetson Orin Nano Developer kit`_
+  * `Jetson AGX Orin Developer Kit`_
+  * `Jetson Orin Nano Developer Kit`_
+  * `Jetson Orin NX SOM on Jetson Orin Nano Developer Kit`_
 
-.. _flashing Jetpack: https://docs.nvidia.com/jetson/archives/r36.5/DeveloperGuide/IN/QuickStart.html#to-flash-the-jetson-developer-kit-operating-software
+.. _flashing JetPack: https://docs.nvidia.com/jetson/archives/r36.5/DeveloperGuide/IN/QuickStart.html#to-flash-the-jetson-developer-kit-operating-software
 .. _snap samples: https://github.com/canonical/tegra-snap-samples/tree/main/nvpmodel
 .. _the Jetson Linux Developer Guide: https://docs.nvidia.com/jetson/archives/r36.5/DeveloperGuide/SD/PlatformPowerAndPerformance/JetsonOrinNanoSeriesJetsonOrinNxSeriesAndJetsonAgxOrinSeries.html#supported-modes-and-power-efficiency
 
 
-.. _Jetson AGX Orin Developer kit: https://ubuntu.com/certified/202406-34151
-.. _Jetson Orin Nano Developer kit: https://ubuntu.com/certified/202406-34152
-.. _Jetson Orin NX SOM on Jetson Orin Nano Developer kit: https://ubuntu.com/certified/202407-34213
+.. _Jetson AGX Orin Developer Kit: https://ubuntu.com/certified/202406-34151
+.. _Jetson Orin Nano Developer Kit: https://ubuntu.com/certified/202406-34152
+.. _Jetson Orin NX SOM on Jetson Orin Nano Developer Kit: https://ubuntu.com/certified/202407-34213
 
 
 Features not supported in this release
@@ -88,9 +88,9 @@ The following tests have been excluded from the :abbr:`CQA (Compliance Quality A
    * - Issue
      - Description
    * - `2071401 <https://bugs.launchpad.net/riverside/+bug/2071401>`_ skipped
-     - RTC clock 1 (skipped) : the development kits don’t have an external battery included
+     - RTC clock 1 (skipped): the developer kits don’t have an external battery included
    * - `2071402 <https://bugs.launchpad.net/riverside/+bug/2071402>`_ adapted
-     - Thermal zones : Some of them aren’t readable on Nano and require a specific workaround on AGX
+     - Thermal zones: Some of them aren’t readable on Nano and require a specific workaround on AGX
    * - `2071403 <https://bugs.launchpad.net/riverside/+bug/2071403>`_ skipped
      - ``CAAM`` cryptography tests are only applicable to NXP devices
    * - `2071404 <https://bugs.launchpad.net/riverside/+bug/2071404>`_ skipped
@@ -104,7 +104,7 @@ The following tests have been excluded from the :abbr:`CQA (Compliance Quality A
    * - `2071418 <https://bugs.launchpad.net/riverside/+bug/2071418>`_ adapted
      - Tests have been adapted to match the detection of 2 :abbr:`SPI` controllers with 2 :abbr:`CS` per :abbr:`SPI`
    * - `2071419 <https://bugs.launchpad.net/riverside/+bug/2071419>`_ skipped
-     - Write to :abbr:`EEPROM` tests are not allowed on the development kits as that would break them
+     - Write to :abbr:`EEPROM` tests are not allowed on the developer kits as that would break them
    * - `2071422 <https://bugs.launchpad.net/riverside/+bug/2071422>`_ skipped
      - :abbr:`SPI` physical tests were skipped because that requires defining a specific PIN :abbr:`MUX` configuration
    * - `2073232 <https://bugs.launchpad.net/riverside/+bug/2073232>`_ adapted
@@ -124,25 +124,25 @@ Known issues
    * - Issue
      - Description
    * - `2061598 <https://bugs.launchpad.net/riverside/+bug/2061598>`_
-     - On an Orin NX development kit, the very first flash of the :abbr:`QSPI` boot firmware might fail due to a write protection bit being set. In this case you need to perform an initrd flash of the :abbr:`QSPI` firmware (only necessary once to fix this issue) by following these instructions: https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/IN/QuickStart.html#to-flash-the-jetson-developer-kit-operating-software. After this operation, every subsequent flash of the :abbr:`QSPI` firmware will work the usual way.
+     - On an Orin NX developer kit, the very first flash of the :abbr:`QSPI` boot firmware might fail due to a write protection bit being set. In this case you need to perform an initrd flash of the :abbr:`QSPI` firmware (only necessary once to fix this issue) by following these instructions: https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/IN/QuickStart.html#to-flash-the-jetson-developer-kit-operating-software. After this operation, every subsequent flash of the :abbr:`QSPI` firmware will work the usual way.
    * - `2071414 <https://bugs.launchpad.net/riverside/+bug/2071414>`_
      - Netplan.io package doesn’t support ``WPA2-PSK-SHA256`` in its current Jammy version. While the corrective patch is already available on the latest Ubuntu version (1.1.2), the Jammy backport should get released later on this year.
    * - `2039983 <https://bugs.launchpad.net/riverside/+bug/2039983>`_
-     - On AGX development kit, power cycling the device using an external power switch introduces a noise in the serial input buffer that can, depending on the nature of the power switch, pause the GRUB menu, or directly launch the default entry (action \= ‘Enter’).
+     - On the AGX developer kit, power cycling the device using an external power switch introduces a noise in the serial input buffer that can, depending on the nature of the power switch, pause the GRUB menu, or directly launch the default entry (action \= ‘Enter’).
    * - `2081138 <https://bugs.launchpad.net/riverside/+bug/2081138>`_
      - As part of the compliance tests for camera, we figured out that running  ``gst-device-monitor-1.0 Video/Source`` would not list any device. This is because ``gst-plugins-good1.0`` is released as v1.20 in Jammy, while this issue was resolved with a patch available with 1.24.
    * - `2081139 <https://bugs.launchpad.net/riverside/+bug/2081139>`_
-     - Similarly, the command ``gst-device-monitor-1.0`` will output a few “GStreamer-CRITICAL” when a camera is connected to the devkit. This is because the tool will send a ``VIDIOC_QUERYCAP`` instead of a ``VIDIOC_SUBDEV_QUERYCAP`` for a sub device. This needs to be fixed first in ``gst-plugins-good1.0`` before getting released in Ubuntu.
+     - Similarly, the command ``gst-device-monitor-1.0`` will output a few “GStreamer-CRITICAL” when a camera is connected to the developer kit. This is because the tool will send a ``VIDIOC_QUERYCAP`` instead of a ``VIDIOC_SUBDEV_QUERYCAP`` for a sub device. This needs to be fixed first in ``gst-plugins-good1.0`` before getting released in Ubuntu.
    * - `2091684 <https://bugs.launchpad.net/riverside/+bug/2091684>`_
-     - When a monitor is connected to the device, the gstreamer transcoding might be considerably slower than without.
+     - When a monitor is connected to the device, the GStreamer transcoding might be considerably slower than without.
    * - `2083007 <https://bugs.launchpad.net/riverside/+bug/2083007>`_
      - On AGX, after installing the ``nvpmodel`` snap, all CPU governor tests on policy 8 failed. That’s because the snap will install and apply the default related model.
    * - `2083009 <https://bugs.launchpad.net/riverside/+bug/2083009>`_
      - Similarly, on NX, after installing the ``nvpmodel`` snap, all CPU governor tests on policy 4 failed
    * - `2150448 <https://bugs.launchpad.net/riverside/+bug/2150448>`_
-     - While running the gstreamer image capture pipelines described in the `tegra snap samples repository`_, the pipeline can return an error code of 1 even though the image gets captured correctly. This is due to a bug in the nvarguscamerasrc plugin that will fail to clean up the pipeline correctly.
+     - While running the GStreamer image capture pipelines described in the `tegra snap samples repository`_, the pipeline can return an error code of 1 even though the image gets captured correctly. This is due to a bug in the nvarguscamerasrc plugin that will fail to clean up the pipeline correctly.
    * - NA
-     - Running LXD and Docker on the same host can cause `connectivity issues <https://documentation.ubuntu.com/lxd/en/latest/howto/network_bridge_firewalld/#prevent-connectivity-issues-with-lxd-and-docker>`_. This is something to keep in mind after installing Nvidia Container runtime.
+     - Running LXD and Docker on the same host can cause `connectivity issues <https://documentation.ubuntu.com/lxd/en/latest/howto/network_bridge_firewalld/#prevent-connectivity-issues-with-lxd-and-docker>`_. This is something to keep in mind after installing NVIDIA Container runtime.
 
 .. _tegra snap samples repository: https://github.com/canonical/tegra-snap-samples/tree/main/multimedia#camera-capture-using-gstreamer
 
@@ -150,4 +150,4 @@ Known issues
 Report Bugs
 -----------
 
-If a bug is found in a specific snap, bugs should be reported against that specific snap using the contact on that snap's page on https://snapcraft.io. If a generic Ubuntu Core system bug is discovered, please report it to snapd under https://bugs.launchpad.net/snapd/+filebug. For firmware related issues, report a bug `in the launchpad project <https://launchpad.net/ubuntu/+source/linux-firmware-nvidia-tegra>`_.
+If a bug is found in a specific snap, bugs should be reported against that specific snap using the contact on that snap's page on https://snapcraft.io. If a generic Ubuntu Core system bug is discovered, please report it to snapd under https://bugs.launchpad.net/snapd/+filebug. For firmware related issues, report a bug `in the Launchpad project <https://launchpad.net/ubuntu/+source/linux-firmware-nvidia-tegra>`_.

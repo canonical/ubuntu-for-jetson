@@ -7,7 +7,7 @@ NVIDIA JetPack on Ubuntu Server 22.04
 Install NVIDIA proprietary software
 ===================================
 
-The Ubuntu image brings anything necessary to boot Linux on a Jetson development kit. However, to unlock the features of the Orin’s SoC (wireless network, bluetooth, GPU, …) you can install additional NVIDIA proprietary drivers and libraries using a Launchpad PPA :
+The Ubuntu image brings everything necessary to boot Linux on a Jetson developer kit. However, to unlock the features of the Orin’s SoC (wireless network, Bluetooth, GPU, …) you can install additional NVIDIA proprietary drivers and libraries using a Launchpad PPA:
 
 .. code-block:: bash
 
@@ -33,7 +33,7 @@ SDKs like CUDA Toolkit and TensorRT that allow building AI applications on Jetso
     sudo add-apt-repository -y "deb https://repo.download.nvidia.com/jetson/common r36.4 main"
     sudo apt install -y cuda
 
-    # Tensor RT
+    # TensorRT
     sudo apt install -y libnvinfer-bin libnvinfer-samples
 
     # cuda-samples dependencies
@@ -145,7 +145,7 @@ Camera
 Prerequisites
 """""""""""""
 
-The following commands were tested on an IMX219 camera module connected to a Nano and NX devkit.
+The following commands were tested on Orin Nano and NX developer kits with IMX219 camera modules connected.
 
 .. code-block:: bash
 
@@ -218,14 +218,14 @@ Still with the same ``sensor-id``
 GStreamer
 ^^^^^^^^^
 
-Pre-requisites
-""""""""""""""
+Prerequisites for GStreamer
+"""""""""""""""""""""""""""
 
 Make sure to install the necessary GStreamer packages
 
 .. code-block:: bash
 
-    # Install gstreamer plugins
+    # Install GStreamer plugins
     sudo apt install -y gstreamer1.0-tools gstreamer1.0-alsa \
         gstreamer1.0-plugins-base gstreamer1.0-plugins-good \
         gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly \
@@ -258,7 +258,7 @@ Make sure to install the necessary GStreamer packages
 `Transcode using GStreamer <https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/TestPlanValidation.html#transcode-using-gstreamer>`_
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-Using a stream from the `Big Buck Bunny project <https://peach.blender.org/>`_, you can easily test the transcoding pipelines (note that Jetson Orin Nano don’t have hardware encoders and won’t be able to run these pipelines):
+Using a stream from the `Big Buck Bunny project <https://peach.blender.org/>`_, you can easily test the transcoding pipelines (note that Jetson Orin Nano doesn’t have hardware encoders and won’t be able to run these pipelines):
 
 .. code-block:: bash
 
@@ -326,7 +326,7 @@ Try to run a previously built CUDA sample application:
         /root/cuda-samples/Samples/1_Utilities/deviceQuery/deviceQuery
 
 .. _NVIDIA container test plan: https://docs.nvidia.com/jetson/archives/r36.4.3/DeveloperGuide/SD/TestPlanValidation.html#nvidia-containers
-.. _NVIDIA container toolkit: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-the-nvidia-container-toolkit
+.. _NVIDIA Container Toolkit: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-the-nvidia-container-toolkit
 
 VPI
 ^^^

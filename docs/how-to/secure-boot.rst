@@ -1,7 +1,7 @@
 .. _secure-boot:
 
-Setup secure boot
-=================
+Set up Secure Boot
+==================
 
 The NVIDIA Tegra boards come with full support for the Secure Boot specification, but do not come with any pre-loaded certificate in the firmware.
 
@@ -9,12 +9,12 @@ This document is intended to serve as a step-by-step guide for setting up Secure
 
 UEFI Secure Boot will validate all binaries loaded by the UEFI boot firmware but no boot codes running before that.
 
-.. _nvidia documentation: https://docs.nvidia.com/jetson/archives/r36.4/DeveloperGuide/SD/Security/SecureBoot.html#
+.. _NVIDIA documentation: https://docs.nvidia.com/jetson/archives/r36.4/DeveloperGuide/SD/Security/SecureBoot.html#
 
 Generating and downloading the keys
 -----------------------------------
 
-We need to manually generate a ``PK`` (Platform Key), ``KEK`` (Key Exchange Key) and a ``DB`` (Database Key). In addition to that, we need to provision a Microsoft ``KEK`` and ``DB`` since these will be needed to validate shim. During the boot process, shim will introduce Canonical certificates which will be used to validate grub and the kernel.
+We need to manually generate a ``PK`` (Platform Key), ``KEK`` (Key Exchange Key) and a ``DB`` (Database Key). In addition to that, we need to provision a Microsoft ``KEK`` and ``DB`` since these will be needed to validate shim. During the boot process, shim will introduce Canonical certificates which will be used to validate GRUB and the kernel.
 
 Download the 2023 Microsoft ``DB`` and ``KEK``:
 
@@ -55,7 +55,7 @@ Inside the BSP, we need to create a new directory for the UEFI keys. Then we nee
     # move microsoft certificates
     mv ~/Downloads/{msft_db_2011.der, msft_KEK_2011.der, msft_db_2023.der, msft_KEK_2023.der} ./
 
-For all keys and certificates, we also want to generate the corresponding EFI signature lists and save it in UEFI variables.  For the Microsoft certificates, we first need to convert the Microsoft certificates from :abbr:`DER (Distinguished Encoding Rules)` to :abbr:`PEM (Privacy Enhanced Mail)` and then to EFI signature list. You can do this by running the following commands:
+For all keys and certificates, we also want to generate the corresponding EFI signature lists and save them in UEFI variables.  For the Microsoft certificates, we first need to convert the Microsoft certificates from :abbr:`DER (Distinguished Encoding Rules)` to :abbr:`PEM (Privacy Enhanced Mail)` and then to EFI signature list. You can do this by running the following commands:
 
 .. code-block:: bash
 
@@ -121,7 +121,7 @@ And it will output the file ``uefi_keys/UefiDefaultSecurityKeys.dtbo``.
 Provisioning the Keys
 ---------------------
 
-We provision the keys by  running the ``$BSP_DIR/tools/kernel_flash/l4t_initrd_flash.sh`` script after booting the device into recovery. We copy the ``UefiDefaultSecurityKeys.dtbo`` into the ``$BSP_DIR/bootloader`` directory and then run the script:
+We provision the keys by running the ``$BSP_DIR/tools/kernel_flash/l4t_initrd_flash.sh`` script after booting the device into recovery. We copy the ``UefiDefaultSecurityKeys.dtbo`` into the ``$BSP_DIR/bootloader`` directory and then run the script:
 
 .. code-block:: bash
 
@@ -143,14 +143,14 @@ The ``$DEVICE`` variable can be either ``jetson-agx-orin-devkit`` or ``jetson-or
 Check if Secure Boot is Enabled
 -------------------------------
 
-You can check if secure boot is enabled or not by either going through the UEFI boot manager, or checking it once the image is booted.
+You can check if Secure Boot is enabled or not by either going through the UEFI boot manager, or checking it once the image is booted.
 
 Once you enter the UEFI boot manager, you can enter “Device Manager” \-\> “Secure Boot Configuration” and check if the box next to “Attempt Secure Boot” is checked or not.
 
 .. image:: firmware_secureboot.png
    :alt: Screenshot of the firmware Secure Boot Configuration menu
 
-Once the image is booted, you can simply run ``bootctl`` which will tell you if secure boot is enabled or not on the fourth line:
+Once the image is booted, you can simply run ``bootctl`` which will tell you if Secure Boot is enabled or not on the fourth line:
 
 .. code-block::
 

@@ -1,6 +1,6 @@
 # Ubuntu for Jetson Read The Docs
 
-*Public documentation for Ubuntu users on Jetson Orin development kits*
+*Public documentation for Ubuntu users on Jetson Orin Developer Kits*
 
 ## Description
 

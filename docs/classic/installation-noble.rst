@@ -7,7 +7,7 @@ NVIDIA JetPack on Ubuntu Server 24.04
 Install NVIDIA proprietary software
 ===================================
 
-The Ubuntu image brings anything necessary to boot Linux on a Jetson development kit. However, to unlock the features of the Tegra SoC (wireless network, bluetooth, GPU, …) you can install additional NVIDIA proprietary drivers and libraries using NVIDIA packages repository :
+The Ubuntu image brings everything necessary to boot Linux on a Jetson developer kit. However, to unlock the features of the Tegra SoC (wireless network, Bluetooth, GPU, …) you can install additional NVIDIA proprietary drivers and libraries using the NVIDIA package repository:
 
 .. code-block:: bash
 
@@ -43,7 +43,7 @@ SDKs like CUDA Toolkit and TensorRT that allow building AI applications on Jetso
     sudo apt update
     sudo apt install -y nvidia-l4t-cuda cuda-toolkit-13-0
 
-    # Tensor RT
+    # TensorRT
     sudo apt install -y libnvinfer-bin libnvinfer-samples
 
     # cuda-samples dependencies
@@ -148,14 +148,14 @@ TensorRT
 GStreamer
 ^^^^^^^^^
 
-Pre-requisites
-""""""""""""""
+Prerequisites for GStreamer
+"""""""""""""""""""""""""""
 
 Make sure to install the necessary GStreamer packages
 
 .. code-block:: bash
 
-    # Install gstreamer plugins and nvidia codecs
+    # Install GStreamer plugins and NVIDIA codecs
     sudo apt install -y gstreamer1.0-tools gstreamer1.0-alsa \
         gstreamer1.0-plugins-base gstreamer1.0-plugins-good \
         gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly \

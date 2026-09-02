@@ -10,7 +10,7 @@ Create an image definition file
 An image definition file, in YAML format, defines the various configurations required to build a custom Ubuntu image:
 
 * **class**: Defines the type of image, such as `cloud`, `installer` or `preinstalled` (Canonical certified Server images are preinstalled).
-* **kernel**: Specifies the preinstalled kernel in the image. The official Ubuntu kernel for Jetson is "linux-nvidia-tegra-jetson", but it can be replaced with an alternative custom kernel, for instance hosted in a PPA for development purpose.
+* **kernel**: Specifies the preinstalled kernel in the image. The official Ubuntu kernel for Jetson is "linux-nvidia-tegra-jetson", but it can be replaced with an alternative custom kernel, for instance hosted in a PPA for development purposes.
 * **gadget**: Boot assets of an image.
 * **customization**: Features such as particular snaps and packages that will come installed in the image.
 * **artifacts**: Artifacts to create, including (but not limited to) the actual images, and manifest files.
@@ -22,9 +22,9 @@ For more details about each field, refer to the `image definition`_ documentatio
 Ubuntu certified Image definition files
 ---------------------------------------
 
-The ubuntu-images repository serves as the official source for Canonical image definitions and scripts. It is used to build various Ubuntu versions and flavors. This includes optimized versions for Jetson Tegra hardware, currently supporting Ubuntu 22.04 (Jammy Jellyfish) for Jetson Orin platforms and 24.04 (Noble Numbat) for Jetson Thor devices.
+The ubuntu-images repository serves as the official source for Canonical image definitions and scripts. It is used to build various Ubuntu versions and flavors. This includes optimized versions for Jetson Tegra hardware, currently supporting Ubuntu 22.04 LTS (Jammy Jellyfish) for Jetson Orin platforms and Ubuntu 24.04 LTS (Noble Numbat) for Jetson Thor devices.
 
-The following commands allow to check the definition files used to generate the Ubuntu Server image certified by Canonical:
+The following commands allow you to check the definition files used to generate the Ubuntu Server image certified by Canonical:
 
 .. tabs::
 
