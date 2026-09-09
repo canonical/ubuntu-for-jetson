@@ -306,4 +306,4 @@ Once applied, your network interface should get up and running after a few secon
 
 NVIDIA JetPack
 ==============
-:doc:`/classic/installation`
+:doc:`/classic/jp-installation`

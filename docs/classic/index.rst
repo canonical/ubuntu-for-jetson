@@ -7,4 +7,4 @@ For the release notes, see :doc:`/reference/release-notes/index`.
 .. toctree::
    :maxdepth: 1
 
-   installation
+   jp-installation
